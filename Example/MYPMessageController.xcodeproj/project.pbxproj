@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0455625EE49BD93C2E9D72AB /* Pods-MYPMessageController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYPMessageController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MYPMessageController_Tests/Pods-MYPMessageController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4337ECE796CCDBA43B5686DF /* MYPMessageController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MYPMessageController.podspec; path = ../MYPMessageController.podspec; sourceTree = "<group>"; };
+		4337ECE796CCDBA43B5686DF /* MYPMessageController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MYPMessageController.podspec; path = ../MYPMessageController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		456FBC535B447F972F1FECEC /* Pods_MYPMessageController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYPMessageController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* MYPMessageController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYPMessageController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,11 +41,11 @@
 		607FACE51AFB9204008FA782 /* MYPMessageController_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYPMessageController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		804E21DE83C20D09F1B9E320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		804E21DE83C20D09F1B9E320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9C4F1639626D665E1C260B0D /* Pods_MYPMessageController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYPMessageController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D460CB6E97F3CB0B9BDF9DF /* Pods-MYPMessageController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYPMessageController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYPMessageController_Example/Pods-MYPMessageController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A40FEB413CAC8A62BDBECE95 /* Pods-MYPMessageController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYPMessageController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MYPMessageController_Example/Pods-MYPMessageController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A4B380EEE1254178ECF79AA9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A4B380EEE1254178ECF79AA9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D8541DD61A95E407F1E4609D /* Pods-MYPMessageController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYPMessageController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYPMessageController_Tests/Pods-MYPMessageController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

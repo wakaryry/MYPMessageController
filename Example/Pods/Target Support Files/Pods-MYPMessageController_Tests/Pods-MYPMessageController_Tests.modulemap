@@ -1,0 +1,6 @@
+framework module Pods_MYPMessageController_Tests {
+  umbrella header "Pods-MYPMessageController_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

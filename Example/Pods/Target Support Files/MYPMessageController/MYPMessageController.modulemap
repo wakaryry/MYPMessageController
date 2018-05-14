@@ -1,0 +1,6 @@
+framework module MYPMessageController {
+  umbrella header "MYPMessageController-umbrella.h"
+
+  export *
+  module * { export * }
+}

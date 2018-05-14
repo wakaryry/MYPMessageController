@@ -1,0 +1,16 @@
+PODS:
+  - MYPMessageController (0.1.0)
+
+DEPENDENCIES:
+  - MYPMessageController (from `../`)
+
+EXTERNAL SOURCES:
+  MYPMessageController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MYPMessageController: 1b021055cdc2c41ba1bfaa0b91fa4aa01a303586
+
+PODFILE CHECKSUM: 763219e17d95dd064db1ccb19dbf027f150191ef
+
+COCOAPODS: 1.5.2
