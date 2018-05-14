@@ -14,6 +14,7 @@ import UIKit
  height = 8 + 0 + 1 * 2 + textViewHeight.
  textViewHeight = textHeight + containerInset.
 */
+// It got a bug with IBDesignable: Failed to render and update auto layout status
 //@IBDesignable
 class MYPTextInputbarView: UIView {
     
