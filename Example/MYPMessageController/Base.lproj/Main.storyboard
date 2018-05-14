@@ -39,8 +39,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="start" id="LUS-6K-hsM">
                         <leftBarButtonItems>
-                            <barButtonItem systemItem="stop" id="2QE-mn-M8J"/>
-                            <barButtonItem systemItem="add" id="lAP-4C-TAc"/>
+                            <barButtonItem systemItem="stop" id="2QE-mn-M8J">
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="vXZ-lx-hvc" id="U1k-Lb-Aj8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="lAP-4C-TAc">
+                                <connections>
+                                    <action selector="toCode:" destination="vXZ-lx-hvc" id="BXj-iA-yp5"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UxL-i6-mQX">
                             <connections>
@@ -48,9 +56,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="textInputbar" destination="dLb-JI-Ors" id="pjE-iR-cF1"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +64,7 @@
         <!--Message Controller-->
         <scene sceneID="Ibj-2B-C7a">
             <objects>
-                <viewController id="6sj-c1-fZj" customClass="MYPMessageController" sceneMemberID="viewController">
+                <viewController id="6sj-c1-fZj" customClass="MYPMessageController" customModule="MYPMessageController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nuf-KB-3YB"/>
                         <viewControllerLayoutGuide type="bottom" id="8mm-Q4-47w"/>
