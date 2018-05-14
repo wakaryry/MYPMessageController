@@ -135,17 +135,3 @@ func MYPResignFirstResponder() {
     UIApplication.shared.sendAction(#selector(UIView.resignFirstResponder), to: nil, from: nil, for: nil)
 }
 
-var arrowDownImage: UIImage? {
-    // Get path for MYPMessageController bundle
-    let bundlePath = Bundle(for: MYPTextInputbarView.self).path(forResource: "MYPMessageController", ofType: "bundle")
-    let bundle: Bundle?
-    
-    // Load bundle
-    if let bundlePath = bundlePath {
-        bundle = Bundle(path: bundlePath)
-    } else {
-        bundle = nil
-    }
-    
-    return UIImage(named: "arrow_down", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-}

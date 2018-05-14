@@ -9,7 +9,7 @@
 import UIKit
 import MYPMessageController
 
-class StoryboardVC: MYPMessageController {
+class StoryboardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

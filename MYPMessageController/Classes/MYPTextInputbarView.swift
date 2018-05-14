@@ -55,6 +55,33 @@ class MYPTextInputbarView: UIView {
     
     private var previousOrigin = CGPoint.zero
     
+    private var addImage: UIImage? {
+        
+        return UIImage(named: "myp_add_white", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    private var microphoneImage: UIImage? {
+        return UIImage(named: "myp_microphone_white", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    private var emotionImage: UIImage? {
+        return UIImage(named: "myp_image_white", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    private var MYPXBundle: Bundle? {
+        // Get path for MYPMessageController bundle
+        let bundlePath = Bundle(for: MYPTextInputbarView.self).path(forResource: "MYPMessageController", ofType: "bundle")
+        let bundle: Bundle?
+        
+        // Load bundle
+        if let bundlePath = bundlePath {
+            bundle = Bundle(path: bundlePath)
+        } else {
+            bundle = nil
+        }
+        return bundle
+    }
+    
     /**used to set the image of left button or hide it.
      set it nil or blank will hide the leftButton.
      set non-nil or non-blank will change the image of the left button.
