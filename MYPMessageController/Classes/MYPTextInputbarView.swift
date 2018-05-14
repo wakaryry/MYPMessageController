@@ -14,7 +14,7 @@ import UIKit
  height = 8 + 0 + 1 * 2 + textViewHeight.
  textViewHeight = textHeight + containerInset.
 */
-@IBDesignable
+//@IBDesignable
 class MYPTextInputbarView: UIView {
     
     @IBOutlet weak var leftButton: UIButton!

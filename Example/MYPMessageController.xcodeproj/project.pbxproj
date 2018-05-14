@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CBED85EA80B907C422A8DE8 /* Pods_MYPMessageController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456FBC535B447F972F1FECEC /* Pods_MYPMessageController_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -15,6 +14,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		E92CF9E720A96A42008EA9E2 /* StoryboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92CF9E620A96A42008EA9E2 /* StoryboardVC.swift */; };
+		E92CF9E920A98B12008EA9E2 /* MYPMessageController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92CF9E820A98B12008EA9E2 /* MYPMessageController.framework */; };
+		E92CF9EA20A98B3A008EA9E2 /* Pods_MYPMessageController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456FBC535B447F972F1FECEC /* Pods_MYPMessageController_Example.framework */; };
+		E92CF9EB20A98B3A008EA9E2 /* Pods_MYPMessageController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F1639626D665E1C260B0D /* Pods_MYPMessageController_Tests.framework */; };
 		ECAF7665187AF409D9F8EF23 /* Pods_MYPMessageController_Example_MYPMessageController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5FF97C45FBC57EEE62C1D3 /* Pods_MYPMessageController_Example_MYPMessageController_Tests.framework */; };
 		EF57AE9CC9DB4787204BC284 /* Pods_MYPMessageController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F1639626D665E1C260B0D /* Pods_MYPMessageController_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,7 @@
 		AC5FF97C45FBC57EEE62C1D3 /* Pods_MYPMessageController_Example_MYPMessageController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYPMessageController_Example_MYPMessageController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8541DD61A95E407F1E4609D /* Pods-MYPMessageController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYPMessageController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYPMessageController_Tests/Pods-MYPMessageController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E92CF9E620A96A42008EA9E2 /* StoryboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardVC.swift; sourceTree = "<group>"; };
+		E92CF9E820A98B12008EA9E2 /* MYPMessageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MYPMessageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CBED85EA80B907C422A8DE8 /* Pods_MYPMessageController_Example.framework in Frameworks */,
+				E92CF9EA20A98B3A008EA9E2 /* Pods_MYPMessageController_Example.framework in Frameworks */,
+				E92CF9EB20A98B3A008EA9E2 /* Pods_MYPMessageController_Tests.framework in Frameworks */,
+				E92CF9E920A98B12008EA9E2 /* MYPMessageController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +155,7 @@
 		618EF0CF06E2CE6B855FCE5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E92CF9E820A98B12008EA9E2 /* MYPMessageController.framework */,
 				456FBC535B447F972F1FECEC /* Pods_MYPMessageController_Example.framework */,
 				9C4F1639626D665E1C260B0D /* Pods_MYPMessageController_Tests.framework */,
 				AC5FF97C45FBC57EEE62C1D3 /* Pods_MYPMessageController_Example_MYPMessageController_Tests.framework */,
