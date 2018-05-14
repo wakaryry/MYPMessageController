@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MYPMessageController_Example' do
+  pod 'MYPMessageController', :path => '../'
+
+  target 'MYPMessageController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
