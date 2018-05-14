@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MYPMessageController: 1b021055cdc2c41ba1bfaa0b91fa4aa01a303586
+  MYPMessageController: 9948ebdbe760dab8985b1e197fa4778956d66fd0
 
 PODFILE CHECKSUM: 763219e17d95dd064db1ccb19dbf027f150191ef
 
