@@ -403,7 +403,7 @@ class MYPTextInputbarView: UIView {
     //加载xib
     func loadViewFromNib() -> UIView {
         let className = type(of: self)
-        let bundle = Bundle(for: className)
+        let bundle = Bundle(path: Bundle(for: className).path(forResource: "MYPMessageController", ofType: "bundle")!)!
         let name = NSStringFromClass(className).components(separatedBy: ".").last
         let nib = UINib(nibName: name!, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView

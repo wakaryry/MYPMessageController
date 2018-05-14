@@ -10,8 +10,6 @@ import UIKit
 import MYPMessageController
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var textInputbar: MYPTextInputbarView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -33,12 +33,17 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.0'
+  s.requires_arc = true
 
-  s.source_files = 'MYPMessageController/Classes/**/*'
+  s.source_files = 'MYPMessageController/Classes/**/*.swift'
   
-  # s.resource_bundles = {
-  #   'MYPMessageController' => ['MYPMessageController/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'MYPMessageController' => ['MYPMessageController/Assets/*.png',
+     'MYPMessageController/Assets/*.xib',
+     'MYPMessageController/Assets/*.storyboard',
+     'MYPMessageController/Assets/*.xcassets'
+     ]
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Foundation'
