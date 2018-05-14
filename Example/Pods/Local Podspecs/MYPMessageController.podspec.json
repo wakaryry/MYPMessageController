@@ -20,7 +20,16 @@
     "ios": "10.0"
   },
   "swift_version": "4.0",
-  "source_files": "MYPMessageController/Classes/**/*",
+  "requires_arc": true,
+  "source_files": "MYPMessageController/Classes/**/*.swift",
+  "resource_bundles": {
+    "MYPMessageController": [
+      "MYPMessageController/Assets/*.png",
+      "MYPMessageController/Assets/*.xib",
+      "MYPMessageController/Assets/*.storyboard",
+      "MYPMessageController/Assets/*.xcassets"
+    ]
+  },
   "frameworks": [
     "UIKit",
     "Foundation"
