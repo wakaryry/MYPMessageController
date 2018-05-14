@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		E92CF9E720A96A42008EA9E2 /* StoryboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92CF9E620A96A42008EA9E2 /* StoryboardVC.swift */; };
 		EF57AE9CC9DB4787204BC284 /* Pods_MYPMessageController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F1639626D665E1C260B0D /* Pods_MYPMessageController_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		A40FEB413CAC8A62BDBECE95 /* Pods-MYPMessageController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYPMessageController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MYPMessageController_Example/Pods-MYPMessageController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A4B380EEE1254178ECF79AA9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D8541DD61A95E407F1E4609D /* Pods-MYPMessageController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYPMessageController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYPMessageController_Tests/Pods-MYPMessageController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E92CF9E620A96A42008EA9E2 /* StoryboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				E92CF9E620A96A42008EA9E2 /* StoryboardVC.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -326,6 +329,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E92CF9E720A96A42008EA9E2 /* StoryboardVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
