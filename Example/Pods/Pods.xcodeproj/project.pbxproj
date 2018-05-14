@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01446AE68834823D4AFB3F6164D70963 /* MYPMessageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYPMessageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01446AE68834823D4AFB3F6164D70963 /* MYPMessageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MYPMessageController.framework; path = MYPMessageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C06AAE2E204D317426DAA6FF1D9263 /* Pods-MYPMessageController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MYPMessageController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		088A6B79731D8D234569A8CD0E22A0BC /* MYPMessageController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MYPMessageController-dummy.m"; sourceTree = "<group>"; };
 		11D2763D3B128BAEC06B53928BCD96D3 /* Pods-MYPMessageController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MYPMessageController_Example.modulemap"; sourceTree = "<group>"; };
@@ -64,18 +64,18 @@
 		6790540343AACD73FF31E609A419A81B /* MYPTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextView.swift; path = MYPMessageController/Classes/MYPTextView.swift; sourceTree = "<group>"; };
 		6D131365BE7F4D53969C6A67D8EC3E33 /* UIResponder+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIResponder+MYPAddition.swift"; path = "MYPMessageController/Classes/UIResponder+MYPAddition.swift"; sourceTree = "<group>"; };
 		6F1191F898C5EA94E9DA556C45ACA206 /* UIScrollView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+MYPAddition.swift"; path = "MYPMessageController/Classes/UIScrollView+MYPAddition.swift"; sourceTree = "<group>"; };
-		7FCEC72679E101EF788C32BEC8055528 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7FCEC72679E101EF788C32BEC8055528 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		7FDB59F5F725A406D0934B07C524EEF8 /* MYPMessageController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MYPMessageController-prefix.pch"; sourceTree = "<group>"; };
 		8B4F4FAF014F9DBACD7315611662E706 /* MYPUIConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPUIConstants.swift; path = MYPMessageController/Classes/MYPUIConstants.swift; sourceTree = "<group>"; };
 		8CD710B171CDC0343CB991B7C5122D15 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ED21E690EF7B4CCF1737F8F18EAD9A6 /* Pods-MYPMessageController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MYPMessageController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EE2D43921D824691B84B6EC4A405F4C /* MYPTextInputbarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextInputbarView.swift; path = MYPMessageController/Classes/MYPTextInputbarView.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94D0395296A9A91399F110B7AA05D337 /* UIView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+MYPAddition.swift"; path = "MYPMessageController/Classes/UIView+MYPAddition.swift"; sourceTree = "<group>"; };
 		98095768F3EF6D244F5FB2F6DA99634D /* Pods-MYPMessageController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MYPMessageController_Tests.modulemap"; sourceTree = "<group>"; };
 		9FAF71CC3EA833B8D47163AB18C32D49 /* Pods-MYPMessageController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MYPMessageController_Tests-resources.sh"; sourceTree = "<group>"; };
 		A95C71BE81DEB5843448999F2B33EE7B /* MYPTextInputbarView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MYPTextInputbarView.xib; path = MYPMessageController/Classes/MYPTextInputbarView.xib; sourceTree = "<group>"; };
-		A9AAEB186194E21BE95696797CC750E4 /* Pods_MYPMessageController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYPMessageController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9AAEB186194E21BE95696797CC750E4 /* Pods_MYPMessageController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MYPMessageController_Tests.framework; path = "Pods-MYPMessageController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA29B358857C051F0734C3843BB4DB2B /* MYPMessageController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+CollectionViewDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		ADF5B52EB26F8F1A84ACE454AD2D4106 /* MYPInputAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPInputAccessoryView.swift; path = MYPMessageController/Classes/MYPInputAccessoryView.swift; sourceTree = "<group>"; };
 		AE8CDF1A23A99D4F1649937C74C2C6A9 /* Pods-MYPMessageController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MYPMessageController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -91,13 +91,13 @@
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D9E30BCC3B5A94B26A92FF1976DC6E1A /* MYPMessageController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MYPMessageController-umbrella.h"; sourceTree = "<group>"; };
 		DCCEDECD44DE1AFCFD89249D2186DC43 /* Pods-MYPMessageController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MYPMessageController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DF6B02F697CDFF1D2B4298436EB56381 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DF6B02F697CDFF1D2B4298436EB56381 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		E718E84A8576A32F32D3E1E50A38C04C /* Pods-MYPMessageController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MYPMessageController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E9ED1370891353268CB28B878EAA69BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBA1F1C7615F2089B23F1C19E93DF921 /* MYPMessageController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MYPMessageController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EBA1F1C7615F2089B23F1C19E93DF921 /* MYPMessageController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MYPMessageController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EEDFE83F988CEBEABC78AEF09B228004 /* MYPMessageController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MYPMessageController.xcconfig; sourceTree = "<group>"; };
 		FC71855E99033DE2DFF0DE9FFB68D846 /* MYPTextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextInput.swift; path = MYPMessageController/Classes/MYPTextInput.swift; sourceTree = "<group>"; };
-		FD64A5ED464F62436387229E6A603C11 /* Pods_MYPMessageController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYPMessageController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD64A5ED464F62436387229E6A603C11 /* Pods_MYPMessageController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MYPMessageController_Example.framework; path = "Pods-MYPMessageController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -656,7 +656,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
