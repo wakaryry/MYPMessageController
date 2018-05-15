@@ -11,7 +11,7 @@ import UIKit
 fileprivate let MYPBottomPanningEnabled = false
 fileprivate let MYPAutoCompletionViewDefaultHeight: CGFloat = 140.0
 
-class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
+open class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     
     /** read-only. The main table view managed by the controller object. Created by default initializing with -init or initWithNibName:bundle: */
     private(set) var tableView: UITableView?
@@ -175,7 +175,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
     /** true if the view controller's view's size is changing by its parent (i.e. when its window rotates or is resized) */
     private var isTransitioning = false
     
-    override var modalPresentationStyle: UIModalPresentationStyle {
+    override open var modalPresentationStyle: UIModalPresentationStyle {
         get {
             if let x = self.navigationController {
                 return x.modalPresentationStyle
@@ -404,7 +404,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         self.textView.isTypingSuggestionEnabled = enable
     }
     
-    override var edgesForExtendedLayout: UIRectEdge {
+    override open var edgesForExtendedLayout: UIRectEdge {
         get {
             return super.edgesForExtendedLayout
         }
@@ -419,11 +419,11 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
     }
 
     //MARK: view life cycle
-    override func loadView() {
+    override open func loadView() {
         super.loadView()
     }
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -436,7 +436,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         self.myp_registerKeyCommands()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Invalidates this flag when the view appears
@@ -451,7 +451,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.scrollViewProxy!.flashScrollIndicators()
@@ -459,7 +459,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         self.isViewVisible = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Stops the keyboard from being dismissed during the navigation controller's "swipe-to-pop"
@@ -468,25 +468,25 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         self.isViewVisible = false
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override open func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         // Caches the text before it's too late!
         self.cacheTextView()
     }
     
-    override func viewWillLayoutSubviews() {
+    override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         self.myp_adjustContentConfigurationIfNeeded()
     }
     
-    override func viewDidLayoutSubviews() {
+    override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     
     @available(iOS 11.0, *)
-    override func viewSafeAreaInsetsDidChange() {
+    override open func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         self.myp_updateViewConstraints()
     }
@@ -659,7 +659,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         self.init(tableViewStyle: .plain)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         /**
          Initializes either a table or collection view controller.
          You must override either +tableViewStyleForCoder: or +collectionViewLayoutForCoder: to define witch view to be layed out.
@@ -1736,7 +1736,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
     
     //MARK: delegate methods requiring super
     /** UITextViewDelegate */
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    open func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if !(textView is MYPTextView) {
             return true
         }
@@ -1763,32 +1763,32 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         }
     }
     
-    func textViewDidChange(_ textView: UITextView) {
+    open func textViewDidChange(_ textView: UITextView) {
         // Keep to avoid unnecessary crashes. Was meant to be overriden in subclass while calling super.
     }
     
-    func textViewDidChangeSelection(_ textView: UITextView) {
+    open func textViewDidChangeSelection(_ textView: UITextView) {
         // Keep to avoid unnecessary crashes. Was meant to be overriden in subclass while calling super.
     }
     
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+    open func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         return true
     }
     
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+    open func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         return true
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    open func textViewDidBeginEditing(_ textView: UITextView) {
         // No implementation here. Meant to be overriden in subclass.
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    open func textViewDidEndEditing(_ textView: UITextView) {
         // No implementation here. Meant to be overriden in subclass.
     }
     
     /** UIScrollViewDelegate */
-    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+    open func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         if !self.scrollViewProxy!.scrollsToTop || self.keyboardStatus == .willShow {
             return false
         }
@@ -1801,15 +1801,15 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
         return true
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         self.isMovingKeyboard = false
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.isMovingKeyboard = false
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == self.autoCompletionView {
             var frame = self.autoCompletionHairline.frame
             frame.origin.y = scrollView.contentOffset.y
@@ -1824,7 +1824,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
     }
     
     /** UIGestureRecognizerDelegate */
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.singleTapGesture {
             return self.textView.isFirstResponder && !self.ignoreTextInputbarAdjustment()
         }
@@ -2092,20 +2092,20 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
     }
     
     //MARK: auto-rotation
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+    override open func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         self.myp_prepareForInterfaceTransition(with: coordinator.transitionDuration)
         super.viewWillTransition(to: size, with: coordinator)
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .all
     }
     
-    override var shouldAutorotate: Bool {
+    override open var shouldAutorotate: Bool {
         return true
     }
     
@@ -2129,7 +2129,7 @@ class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecog
     }
     
     //MARK: lifetime
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
