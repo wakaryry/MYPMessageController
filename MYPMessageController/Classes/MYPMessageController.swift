@@ -584,7 +584,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      - Parameters:
          - style: A constant that specifies the style of main table view that the controller object is to manage (UITableViewStylePlain or UITableViewStyleGrouped).
      */
-    init(tableViewStyle style: UITableViewStyle) {
+    public init(tableViewStyle style: UITableViewStyle) {
         super.init(nibName: nil, bundle: nil)
         
         self.tableView = self.tableView(with: style)
@@ -624,7 +624,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      - Parameters:
          - layout: The layout object to associate with the collection view. The layout controls how the collection view presents its cells and supplementary views.
      */
-    init(collectionViewLayout layout: UICollectionViewLayout) {
+    public init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(nibName: nil, bundle: nil)
         
         self.collectionView = self.collectionView(with: layout)
@@ -639,7 +639,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      - Parameters:
          - scrollView: UISCrollView to be used as the main content area.
      */
-    init(scrollView: UIScrollView) {
+    public init(scrollView: UIScrollView) {
         super.init(nibName: nil, bundle: nil)
         
         self.scrollView = scrollView
