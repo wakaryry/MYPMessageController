@@ -16,7 +16,7 @@ import UIKit
 */
 // It got a bug with IBDesignable: Failed to render and update auto layout status
 //@IBDesignable
-class MYPTextInputbarView: UIView {
+open class MYPTextInputbarView: UIView {
     
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -189,7 +189,7 @@ class MYPTextInputbarView: UIView {
     }
     
     /** The custom input accessory view, used as empty achor view to detect the keyboard frame. */
-    override var inputAccessoryView: MYPInputAccessoryView {
+    override open var inputAccessoryView: MYPInputAccessoryView {
         return inputAccessoryViewHelper
     }
     
@@ -297,21 +297,21 @@ class MYPTextInputbarView: UIView {
         return false
     }
     
-    override class var requiresConstraintBasedLayout: Bool {
+    override open class var requiresConstraintBasedLayout: Bool {
         return true
     }
     
-    override var intrinsicContentSize: CGSize {
+    override open var intrinsicContentSize: CGSize {
         return CGSize(width: UIViewNoIntrinsicMetric, height: self.minimumInputbarHeight)
     }
     
-    override var backgroundColor: UIColor? {
+    override open var backgroundColor: UIColor? {
         didSet {
             //do some
         }
     }
     
-    override var tintColor: UIColor! {
+    override open var tintColor: UIColor! {
         didSet {
             //do some
         }
@@ -348,7 +348,7 @@ class MYPTextInputbarView: UIView {
         commonSetting()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         contentView = loadViewFromNib()
         addSubview(contentView)
