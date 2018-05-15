@@ -1,4 +1,4 @@
-@version = '0.1.1'
+@version = '0.2.0'
 #
 # Be sure to run `pod lib lint MYPMessageController.podspec' to ensure this is a
 # valid spec before submitting.
