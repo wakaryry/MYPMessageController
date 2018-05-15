@@ -1,6 +1,5 @@
 # MYPMessageController
 
-[![CI Status](https://img.shields.io/travis/wakaryry/MYPMessageController.svg?style=flat)](https://travis-ci.org/wakaryry/MYPMessageController)
 [![Version](https://img.shields.io/cocoapods/v/MYPMessageController.svg?style=flat)](https://cocoapods.org/pods/MYPMessageController)
 [![License](https://img.shields.io/cocoapods/l/MYPMessageController.svg?style=flat)](https://cocoapods.org/pods/MYPMessageController)
 [![Platform](https://img.shields.io/cocoapods/p/MYPMessageController.svg?style=flat)](https://cocoapods.org/pods/MYPMessageController)
@@ -9,9 +8,11 @@ MYPMessageController is a message style controller with a growable textview inpu
 
 It could be used in many cases, especailly in conversation style or comment style or discussion style.
 
-![message style controller with growable input view](https://github.com/wakaryry/MYPMessageController/blob/master/controller.jpg)
+![message style controller with growable input view](https://github.com/wakaryry/MYPMessageController/blob/master/screens/surfaceStart.jpeg)
 
-![table view and cell inverted supported](https://github.com/wakaryry/MYPMessageController/blob/master/inverted.jpg)
+![text input](https://github.com/wakaryry/MYPMessageController/blob/master/screens/pasteIntoText.jpeg)
+
+![table view and cell inverted supported](https://github.com/wakaryry/MYPMessageController/blob/master/screens/keyboardAndUndo.jpeg)
 
 ## Features
 - configurable action and surfaces: 
