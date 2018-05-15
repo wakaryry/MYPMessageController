@@ -6,14 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--start-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MYPMessageController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="StoryboardVC" customModule="MYPMessageController_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -21,38 +20,12 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLb-JI-Ors" customClass="MYPTextInputbarView" customModule="MYPMessageController">
-                                <rect key="frame" x="0.0" y="600" width="375" height="67"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="cZe-X4-QK2"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dLb-JI-Ors" secondAttribute="trailing" id="1Ej-A6-aY2"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="dLb-JI-Ors" secondAttribute="bottom" id="KOu-r6-lDh"/>
-                            <constraint firstItem="dLb-JI-Ors" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fif-2H-GJs"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="start" id="LUS-6K-hsM">
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="stop" id="2QE-mn-M8J">
-                                <connections>
-                                    <action selector="dismissKeyboard:" destination="vXZ-lx-hvc" id="U1k-Lb-Aj8"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="lAP-4C-TAc">
-                                <connections>
-                                    <action selector="toCode:" destination="vXZ-lx-hvc" id="BXj-iA-yp5"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UxL-i6-mQX">
                             <connections>
-                                <segue destination="6sj-c1-fZj" kind="show" id="bxc-61-Uqi"/>
+                                <action selector="toCode:" destination="vXZ-lx-hvc" id="1rK-6p-tFb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -60,24 +33,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856.79999999999995" y="8.5457271364317844"/>
-        </scene>
-        <!--Message Controller-->
-        <scene sceneID="Ibj-2B-C7a">
-            <objects>
-                <viewController id="6sj-c1-fZj" customClass="MYPMessageController" customModule="MYPMessageController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nuf-KB-3YB"/>
-                        <viewControllerLayoutGuide type="bottom" id="8mm-Q4-47w"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fot-Fe-kCD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bUT-cc-ILF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1574" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9QR-mx-SZr">

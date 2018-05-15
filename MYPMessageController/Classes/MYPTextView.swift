@@ -9,7 +9,7 @@
 import UIKit
 
 /** A custom text input view. */
-class MYPTextView: UITextView, MYPTextInput {
+public class MYPTextView: UITextView, MYPTextInput {
     /** The label used as placeholder */
     lazy private var placeholderLabel: UILabel = {
         let label = UILabel()
@@ -196,7 +196,7 @@ class MYPTextView: UITextView, MYPTextInput {
     }
     
     //MARK: - External Keyboard Support
-    override var keyCommands: [UIKeyCommand]? {
+    override public var keyCommands: [UIKeyCommand]? {
         var commands: [UIKeyCommand]? = nil
         if self.registeredKeyCommands.count > 0 {
             for command in self.registeredKeyCommands.values {
@@ -225,7 +225,7 @@ class MYPTextView: UITextView, MYPTextInput {
         self.myp_commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.myp_commonInit()
@@ -253,7 +253,7 @@ class MYPTextView: UITextView, MYPTextInput {
     
     //MARK: - UIView Overrides
     // read-only
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         var height = self.font!.lineHeight
         height += self.textContainerInset.top + self.textContainerInset.bottom
         
@@ -280,11 +280,11 @@ class MYPTextView: UITextView, MYPTextInput {
         return height
     }
     
-    override class var requiresConstraintBasedLayout: Bool {
+    override public class var requiresConstraintBasedLayout: Bool {
         return true
     }
     
-    override var contentOffset: CGPoint {
+    override public var contentOffset: CGPoint {
         get {
             return super.contentOffset
         }
@@ -295,14 +295,14 @@ class MYPTextView: UITextView, MYPTextInput {
         }
     }
     
-    override func layoutIfNeeded() {
+    override public func layoutIfNeeded() {
         if self.window == nil {
             return
         }
         super.layoutIfNeeded()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         self.placeholderLabel.isHidden = self.myp_shouldHidePlaceholder()
@@ -335,7 +335,7 @@ class MYPTextView: UITextView, MYPTextInput {
     }
     
     //MARK: - UITextView Overrides
-    override var selectedRange: NSRange {
+    override public var selectedRange: NSRange {
         get {
             return super.selectedRange
         }
@@ -346,7 +346,7 @@ class MYPTextView: UITextView, MYPTextInput {
         }
     }
     
-    override var selectedTextRange: UITextRange? {
+    override public var selectedTextRange: UITextRange? {
         get {
             return super.selectedTextRange
         }
@@ -357,7 +357,7 @@ class MYPTextView: UITextView, MYPTextInput {
         }
     }
     
-    override var text: String! {
+    override public var text: String! {
         get {
             return self.attributedText.string
         }
@@ -371,7 +371,7 @@ class MYPTextView: UITextView, MYPTextInput {
         }
     }
     
-    override var attributedText: NSAttributedString! {
+    override public var attributedText: NSAttributedString! {
         get {
             return super.attributedText
         }
@@ -384,7 +384,7 @@ class MYPTextView: UITextView, MYPTextInput {
         }
     }
     
-    override var textAlignment: NSTextAlignment {
+    override public var textAlignment: NSTextAlignment {
         get {
             return super.textAlignment
         }
@@ -396,7 +396,7 @@ class MYPTextView: UITextView, MYPTextInput {
         }
     }
     
-    override var font: UIFont? {
+    override public var font: UIFont? {
         get {
             return super.font
         }
@@ -419,16 +419,16 @@ class MYPTextView: UITextView, MYPTextInput {
     }
     
     //MARK: - UITextInput Overrides
-    override func beginFloatingCursor(at point: CGPoint) {
+    override public func beginFloatingCursor(at point: CGPoint) {
         super.beginFloatingCursor(at: point)
         self.isTrackpadEnabled = true
     }
     
-    override func updateFloatingCursor(at point: CGPoint) {
+    override public func updateFloatingCursor(at point: CGPoint) {
         super.updateFloatingCursor(at: point)
     }
     
-    override func endFloatingCursor() {
+    override public func endFloatingCursor() {
         super.endFloatingCursor()
         self.isTrackpadEnabled = false
         
@@ -469,16 +469,16 @@ class MYPTextView: UITextView, MYPTextInput {
     }
     
     //MARK: - UIResponder Overrides
-    override var canBecomeFirstResponder: Bool {
+    override public var canBecomeFirstResponder: Bool {
         self.myp_addCustomMenuControllerItems()
         return super.canBecomeFirstResponder
     }
     
-    override func becomeFirstResponder() -> Bool {
+    override public func becomeFirstResponder() -> Bool {
         return super.becomeFirstResponder()
     }
     
-    override var canResignFirstResponder: Bool {
+    override public var canResignFirstResponder: Bool {
         // Removes undo/redo items
         if self.isUndoManagerEnabled {
             self.undoManager?.removeAllActions()
@@ -486,12 +486,12 @@ class MYPTextView: UITextView, MYPTextInput {
         return super.canResignFirstResponder
     }
     
-    override func resignFirstResponder() -> Bool {
+    override public func resignFirstResponder() -> Bool {
         return super.resignFirstResponder()
     }
     
     // MARK: - MenuController
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+    override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         if action == #selector(delete(_:)) {
             return false
         }
@@ -517,7 +517,7 @@ class MYPTextView: UITextView, MYPTextInput {
         return super.canPerformAction(action, withSender: sender)
     }
     
-    override func paste(_ sender: Any?) {
+    override public func paste(_ sender: Any?) {
         let pastedItem = self.myp_pastedItem()
         
         if let s = pastedItem {
@@ -694,7 +694,7 @@ class MYPTextView: UITextView, MYPTextInput {
     }
     
     //MARK: - KVO Listener
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if object is MYPTextView {
             if (object as! MYPTextView) == self && keyPath == NSStringFromSelector(#selector(getter: contentSize)) {
                 NotificationCenter.default.post(name: Notification.Name.MYPTextInputTask.MYPTextViewContentSizeDidChangeNotification, object: self, userInfo: nil)
@@ -705,7 +705,7 @@ class MYPTextView: UITextView, MYPTextInput {
     }
     
     //MARK: - Motion Events
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override public func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if event?.type == UIEventType.motion && event?.subtype == UIEventSubtype.motionShake {
             NotificationCenter.default.post(name: Notification.Name.MYPTextInputTask.MYPTextViewDidShakeNotification, object: self)
         }

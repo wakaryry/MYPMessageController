@@ -14,13 +14,13 @@ fileprivate let MYPAutoCompletionViewDefaultHeight: CGFloat = 140.0
 open class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     
     /** read-only. The main table view managed by the controller object. Created by default initializing with -init or initWithNibName:bundle: */
-    private(set) var tableView: UITableView?
+    open private(set) var tableView: UITableView?
     
     /** read-only. The main collection view managed by the controller object. Not nil if the controller is initialised with -initWithCollectionViewLayout: */
-    private(set) var collectionView: UICollectionView?
+    open private(set) var collectionView: UICollectionView?
     
     /** read-only. The main scroll view managed by the controller object. Not nil if the controller is initialised with -initWithScrollView: */
-    private(set) var scrollView: UIScrollView?
+    open private(set) var scrollView: UIScrollView?
     
     /** read-only. The inputbar view containing a text view and buttons. */
     var textInputbar: MYPTextInputbarView {
@@ -127,7 +127,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     private(set) var keyboardStatus: MYPKeyboardStatus?
     
     /** Convenience accessors (accessed through the text input bar) */
-    var textView: MYPTextView {
+    public var textView: MYPTextView {
         return self.textInputbar.textView
     }
     var leftButton: UIButton {
@@ -655,7 +655,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         self.init(tableViewStyle: .plain)
     }
     
-    convenience init() {
+    convenience public init() {
         self.init(tableViewStyle: .plain)
     }
     
@@ -898,7 +898,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      You can override this method to perform additional tasks associated with the send button.
      You MUST call super at some point in your implementation.
      */
-    @objc func didPressSendButton(sender: UIButton) {
+    @objc open func didPressSendButton(sender: UIButton) {
         if self.shouldClearTextAtSendButtonPress {
             self.textView.myp_clearText(shouldClearUndo: true)
         }
