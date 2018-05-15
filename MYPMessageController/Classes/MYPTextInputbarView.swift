@@ -58,15 +58,15 @@ open class MYPTextInputbarView: UIView {
     
     private var addImage: UIImage? {
         
-        return UIImage(named: "myp_add_white", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+        return UIImage(named: "myp_plus", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     }
     
     private var microphoneImage: UIImage? {
-        return UIImage(named: "myp_microphone_white", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+        return UIImage(named: "myp_microphone", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     }
     
     private var emotionImage: UIImage? {
-        return UIImage(named: "myp_image_white", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+        return UIImage(named: "myp_smile", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     }
     
     private var MYPXBundle: Bundle? {

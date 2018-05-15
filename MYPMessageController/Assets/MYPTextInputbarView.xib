@@ -54,7 +54,7 @@
                         <constraint firstAttribute="height" constant="40" id="tsq-T7-KjD"/>
                     </constraints>
                     <color key="tintColor" red="0.1643605598" green="0.43636056070000001" blue="0.66001457249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" image="myp_microphone_white"/>
+                    <state key="normal" image="myp_microphone"/>
                 </button>
                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fd-mf-S1A">
                     <rect key="frame" x="223" y="618" width="40" height="40"/>
@@ -62,7 +62,7 @@
                         <constraint firstAttribute="width" constant="40" id="MuF-b7-M7a"/>
                     </constraints>
                     <color key="tintColor" red="0.1643605598" green="0.43636056070000001" blue="0.66001457249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" image="myp_image_white"/>
+                    <state key="normal" image="myp_smile"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybD-Zh-7SR">
                     <rect key="frame" x="311" y="618" width="56" height="40"/>
@@ -88,7 +88,7 @@
                         <constraint firstAttribute="width" constant="40" id="v72-Dx-eJo"/>
                     </constraints>
                     <color key="tintColor" red="0.1643605598" green="0.43636056070000001" blue="0.66001457249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" image="myp_add_white"/>
+                    <state key="normal" image="myp_plus"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ek4-r9-zna" userLabel="bottomDivider">
                     <rect key="frame" x="56" y="658" width="159" height="1"/>
@@ -134,8 +134,8 @@
         </view>
     </objects>
     <resources>
-        <image name="myp_add_white" width="24" height="24"/>
-        <image name="myp_image_white" width="24" height="24"/>
-        <image name="myp_microphone_white" width="24" height="24"/>
+        <image name="myp_microphone" width="16" height="16"/>
+        <image name="myp_plus" width="16" height="16"/>
+        <image name="myp_smile" width="16" height="16"/>
     </resources>
 </document>

@@ -23,6 +23,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="start" id="LUS-6K-hsM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="ShK-SS-LxS">
+                            <connections>
+                                <segue destination="3ze-68-KnD" kind="show" id="Gxc-9e-A2r"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UxL-i6-mQX">
                             <connections>
                                 <action selector="toCode:" destination="vXZ-lx-hvc" id="1rK-6p-tFb"/>
@@ -33,6 +38,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856.79999999999995" y="8.5457271364317844"/>
+        </scene>
+        <!--In ChildVC-->
+        <scene sceneID="L3e-qq-BIG">
+            <objects>
+                <viewController title="In ChildVC" id="3ze-68-KnD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SFq-JA-RhM"/>
+                        <viewControllerLayoutGuide type="bottom" id="p2j-9i-BO8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BIy-K0-yaT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="te3-lz-XSG">
+                                <rect key="frame" x="0.0" y="192" width="375" height="475"/>
+                                <connections>
+                                    <segue destination="lGf-63-9c6" kind="embed" id="f6c-KG-5Rt"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MN-Ec-d39">
+                                <rect key="frame" x="0.0" y="64" width="375" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% Off Right Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVD-0W-rQs">
+                                        <rect key="frame" x="103" y="52" width="168" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1643605598" green="0.43636056070000001" blue="0.66001457249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FiF-3v-Ai4"/>
+                                    <constraint firstItem="lVD-0W-rQs" firstAttribute="centerX" secondItem="4MN-Ec-d39" secondAttribute="centerX" id="eVC-9T-tVs"/>
+                                    <constraint firstItem="lVD-0W-rQs" firstAttribute="centerY" secondItem="4MN-Ec-d39" secondAttribute="centerY" id="j0D-fn-3GH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="te3-lz-XSG" firstAttribute="leading" secondItem="BIy-K0-yaT" secondAttribute="leading" id="BsS-8O-Ab3"/>
+                            <constraint firstItem="p2j-9i-BO8" firstAttribute="top" secondItem="te3-lz-XSG" secondAttribute="bottom" id="FTC-35-khd"/>
+                            <constraint firstItem="4MN-Ec-d39" firstAttribute="leading" secondItem="BIy-K0-yaT" secondAttribute="leading" id="Qng-4g-imO"/>
+                            <constraint firstItem="4MN-Ec-d39" firstAttribute="top" secondItem="SFq-JA-RhM" secondAttribute="bottom" id="aOQ-lI-LYi"/>
+                            <constraint firstAttribute="trailing" secondItem="te3-lz-XSG" secondAttribute="trailing" id="aSd-fQ-MJR"/>
+                            <constraint firstAttribute="trailing" secondItem="4MN-Ec-d39" secondAttribute="trailing" id="pNn-rY-bkf"/>
+                            <constraint firstItem="te3-lz-XSG" firstAttribute="top" secondItem="4MN-Ec-d39" secondAttribute="bottom" id="zgX-kp-krT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNH-Ic-V9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1519.2" y="8.5457271364317844"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9QR-mx-SZr">
@@ -51,6 +108,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkG-dR-USp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="146" y="9"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3kB-lg-VS4">
+            <objects>
+                <viewController id="lGf-63-9c6" customClass="ViewController" customModule="MYPMessageController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Htj-ij-IDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="475"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LaS-bc-DE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>
