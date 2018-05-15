@@ -1,6 +1,6 @@
 {
   "name": "MYPMessageController",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "A message style controller with a growable textview input.",
   "description": "MYPMessageController is a message style controller with a growable textview input.\n\nIt could be used in many cases, especailly in conversation style or comment style or discussion style.",
   "homepage": "https://github.com/wakaryry/MYPMessageController",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/wakaryry/MYPMessageController.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "social_media_url": "https://github.com/wakaryry/",
   "platforms": {
