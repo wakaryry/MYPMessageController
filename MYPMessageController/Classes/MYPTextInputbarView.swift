@@ -507,7 +507,7 @@ open class MYPTextInputbarView: UIView {
     }
     
     //MARK: - observers
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if object as? CALayer == self.layer && (keyPath == NSStringFromSelector(#selector(getter: CALayer.position))) {
             if previousOrigin != frame.origin {
                 previousOrigin = frame.origin

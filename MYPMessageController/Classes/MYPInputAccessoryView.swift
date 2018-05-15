@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MYPInputAccessoryView: UIView {
+public class MYPInputAccessoryView: UIView {
     /* The system keyboard view used as reference. */
     private(set) weak var keyboardViewProxy: UIView?
 }
