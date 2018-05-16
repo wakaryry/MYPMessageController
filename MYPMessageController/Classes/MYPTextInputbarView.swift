@@ -192,18 +192,6 @@ open class MYPTextInputbarView: UIView {
         return text.count > 0 && !self.isLimitExceeded ? true : false
     }
     
-    /** The custom input accessory view, used as empty achor view to detect the keyboard frame. */
-    override open var inputAccessoryView: MYPInputAccessoryView {
-        return inputAccessoryViewHelper
-    }
-    
-    private var inputAccessoryViewHelper: MYPInputAccessoryView = {
-        let acV = MYPInputAccessoryView(frame: .zero)
-        acV.backgroundColor = .clear
-        acV.isUserInteractionEnabled = false
-        return acV
-    }()
-    
     /** true if animations should have bouncy effects. Default is false. */
     var bounces = false
     
