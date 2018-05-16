@@ -68,7 +68,7 @@ extension MYPMessageController {
      You can override this method to perform additional tasks associated with text changes.
      You MUST call super at some point in your implementation.
      */
-    func textSelectionDidChange() {
+    open func textSelectionDidChange() {
         // The text view must be first responder
         if !self.textView.isFirstResponder || self.keyboardStatus != .didShow {
             return
@@ -95,15 +95,15 @@ extension MYPMessageController {
      You can override this method to perform additional tasks associated with the left button.
      You don't need call super since this method doesn't do anything.
      */
-    @objc func didPressLeftButton(sender: UIButton) {
+    @objc open func didPressLeftButton(sender: UIButton) {
         // do nothing here. override it in subclass
     }
     
-    @objc func didPressRightButton(sender: UIButton) {
+    @objc open func didPressRightButton(sender: UIButton) {
         // do nothing here. override it in subclass
     }
     
-    @objc func didPressRightMoreButton(sender: UIButton) {
+    @objc open func didPressRightMoreButton(sender: UIButton) {
         // do nothing here. override it in subclass
     }
     
@@ -130,7 +130,7 @@ extension MYPMessageController {
      
      - Returns: true if the right button can be pressed.
      */
-    func canPressSendButton() -> Bool {
+    open func canPressSendButton() -> Bool {
         let text = self.textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if text.count > 0 && !self.textInputbar.isLimitExceeded {
@@ -157,7 +157,7 @@ extension MYPMessageController {
      - Parameters:
      - userInfo: The payload containing the media data, content and media types.
      */
-    func didPasteMediaContent(userInfo: [String: Any]) {
+    open func didPasteMediaContent(userInfo: [String: Any]) {
         // not supported yet now
     }
     
@@ -166,7 +166,7 @@ extension MYPMessageController {
      You can override this method to perform additional tasks associated with the shake gesture.
      Calling super will prompt a system alert view with undo option. This will not be called if 'undoShakingEnabled' is set to false and/or if the text view's content is empty.
      */
-    func willRequestUndo() {
+    open func willRequestUndo() {
         let aTitle = NSLocalizedString("Undo Typing", comment: "")
         let acceptTitle = NSLocalizedString("Undo", comment: "")
         let cancelTitle = NSLocalizedString("Cancel", comment: "")
@@ -197,7 +197,7 @@ extension MYPMessageController {
      You can override this method to perform additional tasks associated with presenting the keyboard.
      You SHOULD call super to inherit some conditionals.
      */
-    func presentKeyboard(animated: Bool) {
+    open func presentKeyboard(animated: Bool) {
         // Skips if already first responder
         if self.textView.isFirstResponder {
             return
@@ -218,7 +218,7 @@ extension MYPMessageController {
      You can override this method to perform additional tasks associated with dismissing the keyboard.
      You SHOULD call super to inherit some conditionals.
      */
-    func dismissKeyboard(animated: Bool) {
+    open func dismissKeyboard(animated: Bool) {
         if !self.textView.isFirstResponder && self.keyboardHeightC.constant > 0 {
             self.view.window?.endEditing(false)
         }
@@ -243,7 +243,7 @@ extension MYPMessageController {
      - responder: The current first responder object.
      - Returns: true so the text input bar still move up/down.
      */
-    func forceTextInputbarAdjustment(for responder: UIResponder?) -> Bool {
+    open func forceTextInputbarAdjustment(for responder: UIResponder?) -> Bool {
         return false
     }
     
@@ -254,7 +254,7 @@ extension MYPMessageController {
      
      - Returns: true so the text input bar still move up/down.
      */
-    func ignoreTextInputbarAdjustment() -> Bool {
+    open func ignoreTextInputbarAdjustment() -> Bool {
         if self.isExternalKeyboardDetected || self.isKeyboardUndocked {
             return true
         }
@@ -271,7 +271,7 @@ extension MYPMessageController {
      - Parameters:
      - keyCommand: The UIKeyCommand object being recognized.
      */
-    func didPressReturnKey(_ keyCommand: UIKeyCommand?) {
+    open func didPressReturnKey(_ keyCommand: UIKeyCommand?) {
         // TODO: we need to change it into insert "\n", not a send action
         self.myp_performSendAction()
     }
@@ -284,7 +284,7 @@ extension MYPMessageController {
      - Parameters:
      - keyCommand: The UIKeyCommand object being recognized.
      */
-    func didPressEscapeKey(_ keyCommand: UIKeyCommand?) {
+    open func didPressEscapeKey(_ keyCommand: UIKeyCommand?) {
         if self.isAutoCompleting {
             self.cancelAutoCompletion()
         }
@@ -306,7 +306,7 @@ extension MYPMessageController {
      - Parameters:
      - keyCommand: The UIKeyCommand object being recognized.
      */
-    func didPressArrowKey(_ keyCommand: UIKeyCommand?) {
+    open func didPressArrowKey(_ keyCommand: UIKeyCommand?) {
         if keyCommand == nil {
             return
         }
