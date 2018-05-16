@@ -61,12 +61,16 @@ open class MYPTextInputbarView: UIView {
         return UIImage(named: "myp_plus", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     }
     
-    private var microphoneImage: UIImage? {
-        return UIImage(named: "myp_microphone", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    private var speakImage: UIImage? {
+        return UIImage(named: "myp_speak", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     }
     
     private var emotionImage: UIImage? {
         return UIImage(named: "myp_smile", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    private var keyboardImage: UIImage? {
+        return UIImage(named: "myp_keyboard", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     }
     
     private var MYPXBundle: Bundle? {
