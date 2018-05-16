@@ -138,15 +138,15 @@ extension MYPMessageController {
      You don't need call super since this method doesn't do anything.
      */
     @objc open func didPressLeftButton(sender: UIButton) {
-        // do nothing here. override it in subclass
+        // if could or should, change the image of button
     }
     
     @objc open func didPressRightButton(sender: UIButton) {
-        // do nothing here. override it in subclass
+        // if could or should, change the image of button
     }
     
     @objc open func didPressRightMoreButton(sender: UIButton) {
-        // do nothing here. override it in subclass
+        // if could or should, change the image of button
     }
     
     /**
