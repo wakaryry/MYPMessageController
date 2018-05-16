@@ -284,8 +284,8 @@ open class MYPTextInputbarView: UIView {
         height += self.contentInset.bottom
         height += self.topDividerHeightC.constant
         height += self.bottomDividerHeightC.constant
-        
-        return height
+        // to fix the scrollable bug when not reached maxNumberOfLines
+        return height + 1.0
     }
     
     /** The maximum character count allowed. Default is 0, which means limitless.*/
