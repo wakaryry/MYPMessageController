@@ -22,7 +22,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     open private(set) var scrollView: UIScrollView?
     
     /** read-only. The inputbar view containing a text view and buttons. */
-    var textInputbar: MYPTextInputbarView {
+    open var textInputbar: MYPTextInputbarView {
         // we could use a helper to make it read-only.
         // or use private(set) with no helper to make it read-only
         get {
@@ -67,14 +67,14 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     }()
     
     /** true if animations should have bouncy effects. Default is true. */
-    var bounces = true {
+    open var bounces = true {
         didSet {
             self.textInputbar.bounces = self.bounces
         }
     }
     
     /** true if text view's content can be cleaned with a shake gesture. Default is false. */
-    var isShakeToClearEnabled = false
+    open var isShakeToClearEnabled = false
     
     /**
      true if keyboard can be dismissed gradually with a vertical panning gesture. Default is true.
@@ -82,19 +82,19 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      This feature doesn't work on iOS 9 due to no legit alternatives to detect the keyboard view.
      Open Radar: http://openradar.appspot.com/radar?id=5021485877952512
      */
-    var isKeyboardPanningEnabled = true
+    open var isKeyboardPanningEnabled = true
     
     /** true if an external keyboard has been detected (this value updates only when the text view becomes first responder). */
-    private(set) var isExternalKeyboardDetected = false
+    open private(set) var isExternalKeyboardDetected = false
     
     /** true if the keyboard has been detected as undocked or split (iPad Only). */
-    private(set) var isKeyboardUndocked = false
+    open private(set) var isKeyboardUndocked = false
     
     /** true if after send button press, the text view is cleared out. Default is true. */
-    var shouldClearTextAtSendButtonPress = true
+    open var shouldClearTextAtSendButtonPress = true
     
     /** true if the scrollView should scroll to bottom when the keyboard is shown. Default is false.*/
-    var shouldScrollToBottomAfterKeyboardShows = false
+    open var shouldScrollToBottomAfterKeyboardShows = false
     
     /**
      true if the main table view is inverted. Default is true.
@@ -102,7 +102,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      If inverted, you must assign the same transform property to your cells to match the orientation (ie: cell.transform = tableView.transform;)
      Inverting the table view will enable some great features such as content offset corrections automatically when resizing the text input and/or showing autocompletion.
      */
-    var isInverted = true {
+    open var isInverted = true {
         didSet {
             if self.isInverted == oldValue {
                 return
@@ -116,30 +116,36 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     /** true if the view controller is presented inside of a popover controller.
      If true, the keyboard won't move the text input bar and tapping on the tableView/collectionView will not cause the keyboard to be dismissed.
      This property is compatible only with iPad. */
-    var isPresentedInPopover: Bool {
+    open var isPresentedInPopover: Bool {
         return self.isPresentedInPopoverHepler && MYP_IS_IPAD
     }
     
     private var isPresentedInPopoverHepler = false
     
     /** The current keyboard status (will/did hide, will/did show) */
-    private(set) var keyboardStatus: MYPKeyboardStatus?
+    open private(set) var keyboardStatus: MYPKeyboardStatus?
     
     /** Convenience accessors (accessed through the text input bar) */
-    public var textView: MYPTextView {
+    open var textView: MYPTextView {
         return self.textInputbar.textView
     }
-    var leftButton: UIButton {
+    open var leftButton: UIButton {
         return self.textInputbar.leftButton
     }
-    var rightButton: UIButton {
+    open var rightButton: UIButton {
         return self.textInputbar.rightButton
     }
-    var rightMoreButton: UIButton {
+    open var rightMoreButton: UIButton {
         return self.textInputbar.rightMoreButton
     }
-    var sendButton: UIButton {
+    open var sendButton: UIButton {
         return self.textInputbar.sendButton
+    }
+    open var text: String {
+        return self.textInputbar.textView.text
+    }
+    open var attributedText: NSAttributedString {
+        return self.textInputbar.textView.attributedText
     }
     
     // The shared scrollView pointer, either a tableView or collectionView
@@ -169,7 +175,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     
     /** true if the view controller did appear and everything is finished configurating.
        This allows blocking some layout animations among other things. */
-    private var isViewVisible = false
+    internal var isViewVisible = false
     
     /** true if the view controller's view's size is changing by its parent (i.e. when its window rotates or is resized) */
     internal var isTransitioning = false
@@ -190,7 +196,19 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         }
     }
     
-    private func myp_appropriateKeyboardHeight(from notification: Notification) -> CGFloat {
+    private func myp_updateInsetAdjustmentBehavior() {
+        // Deactivate automatic scrollView adjustment for inverted table view
+        if #available(iOS 11.0, *) {
+            if self.isInverted {
+                self.tableView?.contentInsetAdjustmentBehavior = .never
+            }
+            else {
+                self.tableView?.contentInsetAdjustmentBehavior = .automatic
+            }
+        }
+    }
+    
+    internal func myp_appropriateKeyboardHeight(from notification: Notification) -> CGFloat {
         // Let's first detect keyboard special states such as external keyboard, undocked or split layouts.
         self.myp_detectKeyboardStates(in: notification)
         
@@ -203,7 +221,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         return self.myp_appropriateKeyboardHeight(from: keyboardRect!)
     }
     
-    private func myp_appropriateKeyboardHeight(from rect: CGRect) -> CGFloat {
+    internal func myp_appropriateKeyboardHeight(from rect: CGRect) -> CGFloat {
         let keyboardRect = self.view.convert(rect, from: nil)
         
         let viewHeight = self.view.bounds.height
@@ -375,34 +393,6 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         return true
     }
     
-    internal func myp_enableTypingSuggestionIfNeeded() {
-        if !self.textView.isFirstResponder {
-            return
-        }
-        
-        let enable = !self.isAutoCompleting
-        
-        let inputPrimaryLanguage = self.textView.textInputMode?.primaryLanguage
-        
-        // Toggling autocorrect on Japanese keyboards breaks autocompletion by replacing the autocompletion prefix by an empty string.
-        // So for now, let's not disable autocorrection for Japanese.
-        if inputPrimaryLanguage == "ja-JP" {
-            return
-        }
-        
-        // Let's avoid refreshing the text view while dictation mode is enabled.
-        // This solves a crash some users were experiencing when auto-completing with the dictation input mode.
-        if inputPrimaryLanguage == "dictation" {
-            return
-        }
-        
-        if enable == false && !self.shouldDisableTypingSuggestionForAutoCompletion() {
-            return
-        }
-        
-        self.textView.isTypingSuggestionEnabled = enable
-    }
-    
     override open var edgesForExtendedLayout: UIRectEdge {
         get {
             return super.edgesForExtendedLayout
@@ -414,188 +404,6 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
             super.edgesForExtendedLayout = newValue
             
             self.myp_updateViewConstraints()
-        }
-    }
-
-    //MARK: view life cycle
-    override open func loadView() {
-        super.loadView()
-    }
-    
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.view.addSubview(self.scrollViewProxy!)
-        self.view.addSubview(self.autoCompletionView)
-        self.view.addSubview(self.textInputbar)
-        
-        self.myp_setupViewConstraints()
-        
-        self.myp_registerKeyCommands()
-    }
-    
-    override open func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Invalidates this flag when the view appears
-        self.textView.didNotResignFirstResponder = false
-        
-        // Forces laying out the recently added subviews and update their constraints
-        self.view.layoutIfNeeded()
-        
-        UIView.performWithoutAnimation {
-            // Reloads any cached text
-            self.myp_reloadTextView()
-        }
-    }
-    
-    override open func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.scrollViewProxy!.flashScrollIndicators()
-        
-        self.isViewVisible = true
-    }
-    
-    override open func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Stops the keyboard from being dismissed during the navigation controller's "swipe-to-pop"
-        self.textView.didNotResignFirstResponder = self.isMovingFromParentViewController
-        
-        self.isViewVisible = false
-    }
-    
-    override open func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        // Caches the text before it's too late!
-        self.cacheTextView()
-    }
-    
-    override open func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        self.myp_adjustContentConfigurationIfNeeded()
-    }
-    
-    override open func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
-    @available(iOS 11.0, *)
-    override open func viewSafeAreaInsetsDidChange() {
-        super.viewSafeAreaInsetsDidChange()
-        self.myp_updateViewConstraints()
-    }
-    
-    private func myp_setupViewConstraints() {
-        
-        let views = ["scrollView": scrollViewProxy!, "autoCompletionView": autoCompletionView, "textInputbar": textInputbar]
-        
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView(0@750)]-0@999-[textInputbar(>=0)]|", options: [], metrics: nil, views: views))
-        
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=0)-[autoCompletionView(0@750)]-0@999-[textInputbar]", options: [], metrics: nil, views: views))
-        
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|", options: [], metrics: nil, views: views))
-        
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[autoCompletionView]|", options: [], metrics: nil, views: views))
-        
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[textInputbar]|", options: [], metrics: nil, views: views))
-        
-        scrollViewHeightC = view.myp_constraint(for: .height, firstItem: scrollViewProxy, secondItem: nil)!
-        autoCompletionViewHeightC = view.myp_constraint(for: .height, firstItem: autoCompletionView, secondItem: nil)!
-        textInputbarHeightC = view.myp_constraint(for: .height, firstItem: textInputbar, secondItem: nil)!
-        keyboardHeightC = view.myp_constraint(for: .bottom, firstItem: view, secondItem: textInputbar)!
-        
-        self.myp_updateViewConstraints()
-
-    }
-    
-    private func myp_updateViewConstraints() {
-        self.textInputbarHeightC.constant = self.textInputbar.minimumInputbarHeight
-        self.scrollViewHeightC.constant = self.myp_appropriateScrollViewHeight()
-        self.keyboardHeightC.constant = self.myp_appropriateKeyboardHeight(from: .null)
-        
-        super.updateViewConstraints()
-    }
-    
-    private func myp_adjustContentConfigurationIfNeeded() {
-        var contentInset = self.scrollViewProxy!.contentInset
-        
-        // When inverted, we need to substract the top bars height (generally status bar + navigation bar's) to align the top of the
-        // scrollView correctly to its top edge.
-        if self.isInverted {
-            contentInset.bottom = self.myp_topBarsHeight()
-            contentInset.top = contentInset.bottom > 0.0 ? 0.0 : contentInset.top
-        }
-        else {
-            contentInset.bottom = 0.0
-        }
-        
-        self.scrollViewProxy?.contentInset = contentInset
-        self.scrollViewProxy?.scrollIndicatorInsets = contentInset
-    }
-    
-    private func myp_updateInsetAdjustmentBehavior() {
-        // Deactivate automatic scrollView adjustment for inverted table view
-        if #available(iOS 11.0, *) {
-            if self.isInverted {
-                self.tableView?.contentInsetAdjustmentBehavior = .never
-            }
-            else {
-                self.tableView?.contentInsetAdjustmentBehavior = .automatic
-            }
-        }
-    }
-    
-    private func myp_reloadTextView() {
-        let key = self.myp_keyForPersistency()
-        
-        if key == nil {
-            return
-        }
-        
-        var cachedAttributedText = NSAttributedString(string: "")
-        
-        let obj = UserDefaults.standard.object(forKey: key!)
-        
-        if obj != nil {
-            if obj is String {
-                cachedAttributedText = NSAttributedString(string: obj as! String)
-            }
-            else if obj is Data {
-                cachedAttributedText = NSKeyedUnarchiver.unarchiveObject(with: obj as! Data) as! NSAttributedString
-            }
-        }
-        
-        if self.textView.attributedText.length == 0 || cachedAttributedText.length > 0 {
-            self.textView.attributedText = cachedAttributedText
-        }
-    }
-    
-    private func myp_registerKeyCommands() {
-        weak var weakSelf = self
-        
-        // Enter Key
-        self.textView.observe(keyInput: "\r", modifiers: UIKeyModifierFlags(rawValue: 0), title: NSLocalizedString("Send/Accept", comment: "Send")) { (keyCommand) in
-            weakSelf?.didPressReturnKey(keyCommand)
-        }
-        
-        // Esc Key
-        self.textView.observe(keyInput: UIKeyInputEscape, modifiers: UIKeyModifierFlags(rawValue: 0), title: NSLocalizedString("Dismiss", comment: "Dismiss")) { (keyCommand) in
-            weakSelf?.didPressEscapeKey(keyCommand)
-        }
-        
-        // Up Arrow
-        self.textView.observe(keyInput: UIKeyInputUpArrow, modifiers: UIKeyModifierFlags(rawValue: 0), title: nil) { (keyCommand) in
-            weakSelf?.didPressArrowKey(keyCommand)
-        }
-        
-        // Down Arrow
-        self.textView.observe(keyInput: UIKeyInputDownArrow, modifiers: UIKeyModifierFlags(rawValue: 0), title: nil) { (keyCommand) in
-            weakSelf?.didPressArrowKey(keyCommand)
         }
     }
     
@@ -708,7 +516,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      Returns the tableView style to be configured when using Interface Builder. Default is UITableViewStyle.plain.
      You must override this method if you want to configure a tableView.
      */
-    class func tableViewStyle(for decoder: NSCoder?) -> UITableViewStyle {
+    open class func tableViewStyle(for decoder: NSCoder?) -> UITableViewStyle {
         return .plain
     }
     
@@ -720,7 +528,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      - decoder: An unarchiver object.
      - Returns: The collectionView style to be used in the new instantiated collectionView.
      */
-    class func collectionViewLayout(for decoder: NSCoder?) -> UICollectionViewLayout? {
+    open class func collectionViewLayout(for decoder: NSCoder?) -> UICollectionViewLayout? {
         return nil
     }
     
@@ -739,12 +547,12 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     }
     
     @objc private func myp_didPanTextInputBar(recognizer: UIPanGestureRecognizer) {
-        print("Message Controller: didPanTextInputBar")
+        
         // Textinput dragging isn't supported when
         if self.view.window == nil || !self.isKeyboardPanningEnabled || self.ignoreTextInputbarAdjustment() || self.isPresentedInPopover {
             return
         }
-        print("Message Controller: handlePanGestureRecognizer")
+        
         DispatchQueue.main.async {
             self.myp_handlePanGestureRecognizer(recognizer)
         }
@@ -755,13 +563,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
             self.dismissKeyboard(animated: true)
         }
     }
-    // TODO: didPanScrollView!!!
-    /** This is not used?!
-    @objc private func myp_didPanTextView(recognizer: UIPanGestureRecognizer) {
-        print("Message Controller: didPanTextView")
-        self.presentKeyboard(animated: true)
-    }
-    */
+    
     private var startPoint = CGPoint.zero
     private var originFrame = CGRect.zero
     private var isDragging = false
@@ -802,6 +604,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
             }
             else {
                 if recognizer.view == self.textInputbar && gestureVelocity.y < 0 {
+                    print("Present")
                     self.presentKeyboard(animated: true)
                 }
                 return
@@ -924,55 +727,13 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     
     //MARK: text input bar adjustment
     /** true if the text inputbar is hidden. Default is false. */
-    var textInputbarHidden: Bool {
+    open var textInputbarHidden: Bool {
         get {
             return self.textInputbar.isHidden
         }
         set {
             self.setTextInputbarHidden(newValue, animated: false)
         }
-    }
-    
-    /**
-     Changes the visibility of the text input bar.
-     Calling this method with the animated parameter set to NO is equivalent to setting the value of the toolbarHidden property directly.
-     
-     - Parameters:
-         - hidden: Specify true to hide the toolbar or false to show it.
-         - animated: Specify true if you want the toolbar to be animated on or off the screen.
-     */
-    func setTextInputbarHidden(_ hidden: Bool, animated: Bool) {
-        if self.textInputbarHidden == hidden {
-            return
-        }
-        
-        self.textInputbar.isHidden = hidden
-        
-        if #available(iOS 11.0, *) {
-            self.viewSafeAreaInsetsDidChange()
-        }
-        
-        weak var weakSelf = self
-        
-        if animated {
-            UIView.animate(withDuration: 0.25, animations: {
-                weakSelf!.textInputbarHeightC.constant = hidden ? 0.0 : weakSelf!.textInputbar.appropriateHeight
-                weakSelf!.view.layoutIfNeeded()
-            }) { (finished) in
-                if hidden {
-                    self.dismissKeyboard(animated: true)
-                }
-            }
-        }
-        else {
-            self.textInputbarHeightC.constant = hidden ? 0.0 : self.textInputbar.appropriateHeight
-            self.view.layoutIfNeeded()
-            
-            if hidden {
-                self.dismissKeyboard(animated: false)
-            }
-        }
-        
     }
     
     private func myp_dismissTextInputbarIfNeeded() {
@@ -993,7 +754,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     //MARK: text auto-completion
     
     /** read-only. The table view used to display autocompletion results. */
-    var autoCompletionView: UITableView {
+    open var autoCompletionView: UITableView {
         return self.autoCompletionViewHelper
     }
     

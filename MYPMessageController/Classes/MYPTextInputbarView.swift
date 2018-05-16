@@ -384,6 +384,14 @@ open class MYPTextInputbarView: UIView {
         self.myp_registerNotifications()
         
         self.layer.addObserver(self, forKeyPath: NSStringFromSelector(#selector(getter: CALayer.position)), options: [.new, .old], context: nil)
+        
+        self.textView.resignFirstResponderCallback = {[weak self] in
+            self?.bottomDivider.backgroundColor = UIColor.lightGray
+        }
+        
+        self.textView.becomeFirstResponderCallback = {[weak self] in
+            self?.bottomDivider.backgroundColor = self?.sendButton.tintColor
+        }
     }
     
     /** update action button's initial height and width*/

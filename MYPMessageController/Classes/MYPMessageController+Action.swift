@@ -11,6 +11,48 @@ extension MYPMessageController {
     
     //MARK: Interaction Notifications
     /**
+     Changes the visibility of the text input bar.
+     Calling this method with the animated parameter set to NO is equivalent to setting the value of the toolbarHidden property directly.
+     
+     - Parameters:
+     - hidden: Specify true to hide the toolbar or false to show it.
+     - animated: Specify true if you want the toolbar to be animated on or off the screen.
+     */
+    open func setTextInputbarHidden(_ hidden: Bool, animated: Bool) {
+        if self.textInputbarHidden == hidden {
+            return
+        }
+        
+        self.textInputbar.isHidden = hidden
+        
+        if #available(iOS 11.0, *) {
+            self.viewSafeAreaInsetsDidChange()
+        }
+        
+        weak var weakSelf = self
+        
+        if animated {
+            UIView.animate(withDuration: 0.25, animations: {
+                weakSelf!.textInputbarHeightC.constant = hidden ? 0.0 : weakSelf!.textInputbar.appropriateHeight
+                weakSelf!.view.layoutIfNeeded()
+            }) { (finished) in
+                if hidden {
+                    self.dismissKeyboard(animated: true)
+                }
+            }
+        }
+        else {
+            self.textInputbarHeightC.constant = hidden ? 0.0 : self.textInputbar.appropriateHeight
+            self.view.layoutIfNeeded()
+            
+            if hidden {
+                self.dismissKeyboard(animated: false)
+            }
+        }
+        
+    }
+    
+    /**
      Notifies the view controller that the text will update.
      You can override this method to perform additional tasks associated with text changes.
      You MUST call super at some point in your implementation.

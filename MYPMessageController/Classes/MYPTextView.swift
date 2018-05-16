@@ -468,6 +468,9 @@ public class MYPTextView: UITextView, MYPTextInput {
         self.didNotResignFirstResponder = false
     }
     
+    internal var becomeFirstResponderCallback: (() -> Void)?
+    internal var resignFirstResponderCallback: (() -> Void)?
+    
     //MARK: - UIResponder Overrides
     override public var canBecomeFirstResponder: Bool {
         self.myp_addCustomMenuControllerItems()
@@ -475,6 +478,9 @@ public class MYPTextView: UITextView, MYPTextInput {
     }
     
     override public func becomeFirstResponder() -> Bool {
+        if let x = becomeFirstResponderCallback {
+            x()
+        }
         return super.becomeFirstResponder()
     }
     
@@ -487,6 +493,9 @@ public class MYPTextView: UITextView, MYPTextInput {
     }
     
     override public func resignFirstResponder() -> Bool {
+        if let x = resignFirstResponderCallback {
+            x()
+        }
         return super.resignFirstResponder()
     }
     

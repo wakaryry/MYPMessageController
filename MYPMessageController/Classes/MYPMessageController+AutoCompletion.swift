@@ -14,7 +14,7 @@ extension MYPMessageController {
      The prefix must be valid string (i.e: '@', '#', '\', and so on).
      Prefixes can be of any length.
      */
-    func registerPrefixesForAutoCompletion(with prefixes: [String]?) {
+    open func registerPrefixesForAutoCompletion(with prefixes: [String]?) {
         if prefixes?.count ?? 0 == 0 {
             return
         }
@@ -51,7 +51,7 @@ extension MYPMessageController {
      
      - Returns: true if the controller should not hide the quick type bar.
      */
-    func shouldDisableTypingSuggestionForAutoCompletion() -> Bool {
+    open func shouldDisableTypingSuggestionForAutoCompletion() -> Bool {
         if self.registeredPrefixes == nil || (self.registeredPrefixes?.count ?? 0) == 0 {
             return false
         }
@@ -70,7 +70,7 @@ extension MYPMessageController {
      - prefix: The detected prefix.
      - word: The detected word.
      */
-    func didChangeAutoCompletionPrefix(_ prefix: String?, andWord word: String?) {
+    open func didChangeAutoCompletionPrefix(_ prefix: String?, andWord word: String?) {
         // override in subclass
     }
     
@@ -81,7 +81,7 @@ extension MYPMessageController {
      - Parameters:
      - show: true if the autocompletion view should be shown.
      */
-    func showAutoCompletionView(_ show: Bool) {
+    open func showAutoCompletionView(_ show: Bool) {
         // Reloads the tableview before showing/hiding
         if show {
             self.autoCompletionView.reloadData()
@@ -126,7 +126,7 @@ extension MYPMessageController {
      - word: A word to search for autocompletion
      - prefixRange: The range in which prefix spans.
      */
-    func showAutoCompletionView(withPrefix prefix: String, word: String, prefixRange: NSRange) {
+    open func showAutoCompletionView(withPrefix prefix: String, word: String, prefixRange: NSRange) {
         if self.registeredPrefixes?.contains(prefix) ?? false {
             self.foundPrefix = prefix
             self.foundWord = word
@@ -144,7 +144,7 @@ extension MYPMessageController {
      
      - Returns: The autocompletion view's height.
      */
-    func heightForAutoCompletionView() -> CGFloat {
+    open func heightForAutoCompletionView() -> CGFloat {
         return 0.0
     }
     
@@ -154,7 +154,7 @@ extension MYPMessageController {
      
      - Returns: The autocompletion view's max height.
      */
-    func maximumHeightForAutoCompletionView() -> CGFloat {
+    open func maximumHeightForAutoCompletionView() -> CGFloat {
         var maxHeight = MYPAutoCompletionViewDefaultHeight
         
         if self.isAutoCompleting {
@@ -172,7 +172,7 @@ extension MYPMessageController {
     /**
      Cancels and hides the autocompletion view, animated.
      */
-    func cancelAutoCompletion() {
+    open func cancelAutoCompletion() {
         self.myp_invalidateAutoCompletion()
         self.myp_hideAutoCompletionViewIfNeeded()
     }
@@ -184,7 +184,7 @@ extension MYPMessageController {
      - Parameters:
      - string: The string to be used for replacing autocompletion placeholders.
      */
-    func acceptAutoCompletion(with string: String?) {
+    open func acceptAutoCompletion(with string: String?) {
         self.acceptAutoCompletion(with: string, keepPrefix: true)
     }
     
@@ -195,7 +195,7 @@ extension MYPMessageController {
      - string: The string to be used for replacing autocompletion placeholders.
      - keepPrefix: YES if the prefix shouldn't be overidden.
      */
-    func acceptAutoCompletion(with string: String?, keepPrefix: Bool) {
+    open func acceptAutoCompletion(with string: String?, keepPrefix: Bool) {
         if string?.isEmpty ?? false {
             return
         }
@@ -278,6 +278,34 @@ extension MYPMessageController {
         }
         
         self.didChangeAutoCompletionPrefix(self.foundPrefix, andWord: self.foundWord)
+    }
+    
+    internal func myp_enableTypingSuggestionIfNeeded() {
+        if !self.textView.isFirstResponder {
+            return
+        }
+        
+        let enable = !self.isAutoCompleting
+        
+        let inputPrimaryLanguage = self.textView.textInputMode?.primaryLanguage
+        
+        // Toggling autocorrect on Japanese keyboards breaks autocompletion by replacing the autocompletion prefix by an empty string.
+        // So for now, let's not disable autocorrection for Japanese.
+        if inputPrimaryLanguage == "ja-JP" {
+            return
+        }
+        
+        // Let's avoid refreshing the text view while dictation mode is enabled.
+        // This solves a crash some users were experiencing when auto-completing with the dictation input mode.
+        if inputPrimaryLanguage == "dictation" {
+            return
+        }
+        
+        if enable == false && !self.shouldDisableTypingSuggestionForAutoCompletion() {
+            return
+        }
+        
+        self.textView.isTypingSuggestionEnabled = enable
     }
     
     internal func myp_hideAutoCompletionViewIfNeeded() {
