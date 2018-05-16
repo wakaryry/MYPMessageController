@@ -564,25 +564,9 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         }
     }
     
-    private var startPoint = CGPoint.zero
-    private var originFrame = CGRect.zero
-    private var isDragging = false
-    private var isPresenting = false
-    private var keyboardView: UIView? {
-        return self.textInputbar.inputAccessoryView.keyboardViewProxy
-    }
-    
     private func myp_handlePanGestureRecognizer(_ recognizer: UIPanGestureRecognizer) {
         
-        if keyboardView == nil {
-            return
-        }
-        
-        let gestureLocation = recognizer.location(in: self.view)
         let gestureVelocity = recognizer.velocity(in: self.view)
-        
-        let keyboardMaxY = MYPKeyWindowBounds!.height
-        let keyboardMinY = keyboardMaxY - keyboardView!.frame.height
         
         // Skips this if it's not the expected textView.
         // Checking the keyboard height constant helps to disable the view constraints update on iPad when the keyboard is undocked.
@@ -599,129 +583,21 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
                         return
                     }
                 }
-                
-                isPresenting = true
             }
             else {
                 if recognizer.view == self.textInputbar && gestureVelocity.y < 0 {
-                    print("Present")
                     self.presentKeyboard(animated: true)
                 }
                 return
             }
         }
         
-        switch recognizer.state {
-        case .began:
-            startPoint = .zero
-            isDragging = false
-            if isPresenting {
-                // Let's first present the keyboard without animation
-                self.presentKeyboard(animated: false)
-                
-                // So we can capture the keyboard's view
-                originFrame = keyboardView!.frame
-                originFrame.origin.y = self.view.frame.maxY
-                
-                // And move the keyboard to the bottom edge
-                // TODO: Fix an occasional layout glitch when the keyboard appears for the first time.
-                keyboardView?.frame = originFrame
+        if recognizer.view == self.scrollViewProxy {
+            guard recognizer.state == .changed else { return }
+            let location = recognizer.location(in: self.view)
+            if self.textInputbar.frame.contains(location) {
+                self.dismissKeyboard(animated: true)
             }
-            break
-        case .changed:
-            if self.textInputbar.frame.contains(gestureLocation) || isDragging || isPresenting {
-                if startPoint == .zero {
-                    startPoint = gestureLocation
-                    isDragging = true
-                    
-                    if !isPresenting {
-                        originFrame = keyboardView!.frame
-                    }
-                }
-                
-                self.isMovingKeyboard = true
-                
-                let transition = CGPoint(x: gestureLocation.x - startPoint.x, y: gestureLocation.y - startPoint.y)
-                var keyboardFrame = originFrame
-                
-                if isPresenting {
-                    keyboardFrame.origin.y += transition.y
-                }
-                else {
-                    keyboardFrame.origin.y += max(transition.y, 0.0)
-                }
-                
-                // Makes sure they keyboard is always anchored to the bottom
-                if keyboardFrame.minY < keyboardMinY {
-                    keyboardFrame.origin.y = keyboardMinY
-                }
-                
-                keyboardView?.frame = keyboardFrame
-                
-                self.keyboardHeightC.constant = self.myp_appropriateKeyboardHeight(from: keyboardFrame)
-                self.scrollViewHeightC.constant = self.myp_appropriateScrollViewHeight()
-                
-                // layoutIfNeeded must be called before any further scrollView internal adjustments (content offset and size)
-                self.view.layoutIfNeeded()
-                
-                // Overrides the scrollView's contentOffset to allow following the same position when dragging the keyboard
-                var offset = self.scrollViewOffsetBeforeDragging
-                
-                if self.isInverted {
-                    if !self.scrollViewProxy!.isDecelerating && self.scrollViewProxy!.isTracking {
-                        self.scrollViewProxy!.contentOffset = self.scrollViewOffsetBeforeDragging
-                    }
-                }
-                else {
-                    let heightDelta = self.keyboardHeightBeforeDragging - self.keyboardHeightC.constant
-                    offset.y -= heightDelta
-                    
-                    self.scrollViewProxy?.contentOffset = offset
-                }
-            }
-            break
-        case .possible, .cancelled, .ended, .failed:
-            if !isDragging {
-                break
-            }
-            
-            let transition = CGPoint(x: 0.0, y: fabs(gestureLocation.y - startPoint.y))
-            var keyboardFrame = originFrame
-            
-            if isPresenting {
-                keyboardFrame.origin.y = keyboardMinY
-            }
-            
-            // The velocity can be changed to hide or show the keyboard based on the gesture
-            let minVelocity: CGFloat = 20.0
-            let minDistance = keyboardFrame.height / 2.0
-            
-            let hide = (gestureVelocity.y > minVelocity) || (isPresenting && transition.y < minDistance) || (!isPresenting && transition.y > minDistance)
-            
-            if hide {
-                keyboardFrame.origin.y = keyboardMaxY
-                
-                self.keyboardHeightC.constant = self.myp_appropriateKeyboardHeight(from: keyboardFrame)
-                self.scrollViewHeightC.constant = self.myp_appropriateScrollViewHeight()
-                
-                UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
-                    self.view.layoutIfNeeded()
-                    self.keyboardView?.frame = keyboardFrame
-                }) { (finished) in
-                    if hide {
-                        self.dismissKeyboard(animated: false)
-                    }
-                    
-                    // Tear down
-                    self.startPoint = .zero
-                    self.originFrame = .zero
-                    self.isDragging = false
-                    self.isPresenting = false
-                    
-                    self.isMovingKeyboard = false
-                }
-            }
-            break
         }
     }
     
