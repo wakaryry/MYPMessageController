@@ -44,6 +44,7 @@
 		E9EAE7BE20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7BD20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift */; };
 		E9EAE7C020ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7BF20ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift */; };
 		E9EAE7C420AC04EA00696EA3 /* MYPMessageController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7C320AC04EA00696EA3 /* MYPMessageController+Action.swift */; };
+		E9EAE7C620AC09AD00696EA3 /* MYPMessageController+CacheText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7C520AC09AD00696EA3 /* MYPMessageController+CacheText.swift */; };
 		F164BCD68A42CA142E24986910564D4A /* MYPMessageController+TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4740C01C7E067B709AB46DECCDEDDCA2 /* MYPMessageController+TableDelegate.swift */; };
 		FBDAA58364464504D22940A0295C20FD /* Pods-MYPMessageController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F2CBEB138856C316FFD02FE55EEA3 /* Pods-MYPMessageController_Example-dummy.m */; };
 /* End PBXBuildFile section */
@@ -134,6 +135,7 @@
 		E9EAE7BD20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+UITextViewDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+UITextViewDelegate.swift"; sourceTree = "<group>"; };
 		E9EAE7BF20ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+AutoCompletion.swift"; path = "MYPMessageController/Classes/MYPMessageController+AutoCompletion.swift"; sourceTree = "<group>"; };
 		E9EAE7C320AC04EA00696EA3 /* MYPMessageController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+Action.swift"; path = "MYPMessageController/Classes/MYPMessageController+Action.swift"; sourceTree = "<group>"; };
+		E9EAE7C520AC09AD00696EA3 /* MYPMessageController+CacheText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MYPMessageController+CacheText.swift"; sourceTree = "<group>"; };
 		E9ED1370891353268CB28B878EAA69BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC806D21029504C2EB3F05784882F3F2 /* myp_keyboard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_keyboard@2x.png"; path = "MYPMessageController/Assets/myp_keyboard@2x.png"; sourceTree = "<group>"; };
 		EDCC204EE65C221C6A2E5915AEF63552 /* myp_speak@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_speak@2x.png"; path = "MYPMessageController/Assets/myp_speak@2x.png"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				63927D1CC754BDA44745BE9B1C3B3764 /* MYPInputAccessoryView.swift */,
 				7132BDC9E067A2D7FE3EC7B40B9D88D4 /* MYPMessageController.swift */,
+				E9EAE7C520AC09AD00696EA3 /* MYPMessageController+CacheText.swift */,
 				E9EAE7C320AC04EA00696EA3 /* MYPMessageController+Action.swift */,
 				E9EAE7BF20ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift */,
 				E9EAE7BD20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift */,
@@ -541,6 +544,7 @@
 				88D1166B4437AC5EE4145D26431BC204 /* MYPUIConstants.swift in Sources */,
 				E9EAE7C020ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift in Sources */,
 				0D4DCE0C8517367231211CC2BADFBA1D /* UIResponder+MYPAddition.swift in Sources */,
+				E9EAE7C620AC09AD00696EA3 /* MYPMessageController+CacheText.swift in Sources */,
 				E9EAE7C420AC04EA00696EA3 /* MYPMessageController+Action.swift in Sources */,
 				E9EAE7BE20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift in Sources */,
 				058E7B1A16AA62400FB4913CF228A3EC /* UIScrollView+MYPAddition.swift in Sources */,
