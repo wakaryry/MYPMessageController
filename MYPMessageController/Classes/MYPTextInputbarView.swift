@@ -388,12 +388,14 @@ open class MYPTextInputbarView: UIView {
         self.bottomDividerHeightC.constant = MYPOnePixal
         
         let initialHeight = self.textView.intrinsicContentSize.height
-        self.actionButtonHeightC.constant = initialHeight
+        // made top margin 8
+        let actualSize = initialHeight - 8.0
+        self.actionButtonHeightC.constant = actualSize
         
         // first initial width and height
-        self.leftButtonWidthC.constant = initialHeight
-        self.rightButtonWidthC.constant = initialHeight
-        self.rightMoreButtonWidthC.constant = initialHeight
+        self.leftButtonWidthC.constant = actualSize
+        self.rightButtonWidthC.constant = actualSize
+        self.rightMoreButtonWidthC.constant = actualSize
         
         // then record the new size
         self.initialButtonMargin = self.textViewLeftLeadingC.constant
