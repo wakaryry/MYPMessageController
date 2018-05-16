@@ -17,7 +17,7 @@ extension MYPMessageController {
      
      - Returns: The string key for which to enable text caching.
      */
-    func keyForTextCaching() -> String? {
+    open func keyForTextCaching() -> String? {
         // No implementation here. Meant to be overriden in subclass.
         return nil
     }
@@ -35,7 +35,7 @@ extension MYPMessageController {
     /**
      Removes all the cached text from disk.
      */
-    class func clearAllCachedText() {
+    open class func clearAllCachedText() {
         var cachedKeys = [String]()
         
         for key in UserDefaults.standard.dictionaryRepresentation().keys {
@@ -59,14 +59,14 @@ extension MYPMessageController {
      Removes the current view controller's cached text.
      To enable this, you must return a valid key string in -keyForTextCaching.
      */
-    func clearCachedText() {
+    open func clearCachedText() {
         self.myp_cacheAttributedTextToDisk(nil)
     }
     
     /**
      Caches text to disk.
      */
-    @objc func cacheTextView() {
+    @objc open func cacheTextView() {
         self.myp_cacheAttributedTextToDisk(self.textView.attributedText)
     }
     
