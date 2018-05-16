@@ -569,7 +569,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     private var isDragging = false
     private var isPresenting = false
     private var keyboardView: UIView? {
-        return UIView() //self.textInputbar.inputAccessoryView.keyboardViewProxy
+        return self.textInputbar.inputAccessoryView.keyboardViewProxy
     }
     
     private func myp_handlePanGestureRecognizer(_ recognizer: UIPanGestureRecognizer) {
@@ -577,7 +577,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         if keyboardView == nil {
             return
         }
-        print("Message Controller: Have keyboardView")
+        
         let gestureLocation = recognizer.location(in: self.view)
         let gestureVelocity = recognizer.velocity(in: self.view)
         
