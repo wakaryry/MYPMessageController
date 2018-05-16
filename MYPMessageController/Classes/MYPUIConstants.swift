@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum MYPKeyboardStatus : Int {
+public enum MYPKeyboardStatus : Int {
     case didHide
     case willShow
     case didShow
