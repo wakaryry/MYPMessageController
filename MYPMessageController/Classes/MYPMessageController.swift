@@ -146,8 +146,8 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     // The shared scrollView pointer, either a tableView or collectionView
     private weak var scrollViewProxy: UIScrollView?
     
-    private var scrollViewOffsetBeforeDragging: CGPoint?
-    private var keyboardHeightBeforeDragging: CGFloat?
+    private var scrollViewOffsetBeforeDragging: CGPoint = CGPoint.zero
+    private var keyboardHeightBeforeDragging: CGFloat = 0
     
     // A hairline displayed on top of the auto-completion view, to better separate the content from the control.
     lazy private var autoCompletionHairline: UIView = {
@@ -1073,7 +1073,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     private var isDragging = false
     private var isPresenting = false
     private var keyboardView: UIView? {
-        return self.textInputbar.inputAccessoryView.keyboardViewProxy
+        return UIView() //self.textInputbar.inputAccessoryView.keyboardViewProxy
     }
     
     private func myp_handlePanGestureRecognizer(_ recognizer: UIPanGestureRecognizer) {
@@ -1168,15 +1168,15 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
                 self.view.layoutIfNeeded()
                 
                 // Overrides the scrollView's contentOffset to allow following the same position when dragging the keyboard
-                var offset = self.scrollViewOffsetBeforeDragging!
+                var offset = self.scrollViewOffsetBeforeDragging
                 
                 if self.isInverted {
                     if !self.scrollViewProxy!.isDecelerating && self.scrollViewProxy!.isTracking {
-                        self.scrollViewProxy!.contentOffset = self.scrollViewOffsetBeforeDragging!
+                        self.scrollViewProxy!.contentOffset = self.scrollViewOffsetBeforeDragging
                     }
                 }
                 else {
-                    let heightDelta = self.keyboardHeightBeforeDragging! - self.keyboardHeightC.constant
+                    let heightDelta = self.keyboardHeightBeforeDragging - self.keyboardHeightC.constant
                     offset.y -= heightDelta
                     
                     self.scrollViewProxy?.contentOffset = offset
@@ -1732,59 +1732,6 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         
         let attributedText = NSAttributedString(string: text)
         self.myp_cacheAttributedTextToDisk(attributedText)
-    }
-    
-    //MARK: delegate methods requiring super
-    /** UITextViewDelegate */
-    open func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if !(textView is MYPTextView) {
-            return true
-        }
-        
-        let textView = textView as! MYPTextView
-        
-        let newWordInserted = !(text.rangeOfCharacter(from: .whitespacesAndNewlines)?.isEmpty ?? true)
-        
-        // Records text for undo for every new word
-        if newWordInserted {
-            textView.myp_prepareForUndo(description: "Word Change")
-        }
-        
-        if text == "\n" {
-            textView.myp_insertNewLineBreak()
-            
-            return false
-        }
-        else {
-            let dict = ["text": text, "range": range] as [String : Any]
-            NotificationCenter.default.post(name: Notification.Name.MYPTextInputTask.MYPTextViewTextWillChangeNotification, object: self, userInfo: dict)
-            
-            return true
-        }
-    }
-    
-    open func textViewDidChange(_ textView: UITextView) {
-        // Keep to avoid unnecessary crashes. Was meant to be overriden in subclass while calling super.
-    }
-    
-    open func textViewDidChangeSelection(_ textView: UITextView) {
-        // Keep to avoid unnecessary crashes. Was meant to be overriden in subclass while calling super.
-    }
-    
-    open func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        return true
-    }
-    
-    open func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        return true
-    }
-    
-    open func textViewDidBeginEditing(_ textView: UITextView) {
-        // No implementation here. Meant to be overriden in subclass.
-    }
-    
-    open func textViewDidEndEditing(_ textView: UITextView) {
-        // No implementation here. Meant to be overriden in subclass.
     }
     
     /** UIScrollViewDelegate */
