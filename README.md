@@ -8,11 +8,7 @@ MYPMessageController is a message style controller with a growable textview inpu
 
 It could be used in many cases, especailly in conversation style or comment style or discussion style.
 
-![message style controller with growable input view](https://github.com/wakaryry/MYPMessageController/blob/master/screens/surfaceStart.jpeg)
-
-![text input](https://github.com/wakaryry/MYPMessageController/blob/master/screens/pasteIntoText.jpeg)
-
-![table view and cell inverted supported](https://github.com/wakaryry/MYPMessageController/blob/master/screens/keyboardAndUndo.jpeg)
+![message style controller with growable input view](https://github.com/wakaryry/MYPMessageController/blob/master/screens/looks.png)
 
 ## Features
 - configurable action and surfaces: 
