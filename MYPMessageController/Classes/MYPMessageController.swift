@@ -9,7 +9,6 @@
 import UIKit
 
 fileprivate let MYPBottomPanningEnabled = false
-fileprivate let MYPAutoCompletionViewDefaultHeight: CGFloat = 140.0
 
 open class MYPMessageController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     
@@ -160,9 +159,9 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     }()
     
     // Auto-Layout height constraints used for updating their constants
-    private var scrollViewHeightC: NSLayoutConstraint = NSLayoutConstraint()
+    internal var scrollViewHeightC: NSLayoutConstraint = NSLayoutConstraint()
     private var textInputbarHeightC: NSLayoutConstraint = NSLayoutConstraint()
-    private var autoCompletionViewHeightC: NSLayoutConstraint = NSLayoutConstraint()
+    internal var autoCompletionViewHeightC: NSLayoutConstraint = NSLayoutConstraint()
     private var keyboardHeightC: NSLayoutConstraint = NSLayoutConstraint()
     
     /** true if the user is moving the keyboard with a gesture */
@@ -173,7 +172,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     private var isViewVisible = false
     
     /** true if the view controller's view's size is changing by its parent (i.e. when its window rotates or is resized) */
-    private var isTransitioning = false
+    internal var isTransitioning = false
     
     override open var modalPresentationStyle: UIModalPresentationStyle {
         get {
@@ -306,7 +305,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         return scrollHeight
     }
     
-    private func myp_topBarsHeight() -> CGFloat {
+    internal func myp_topBarsHeight() -> CGFloat {
         // No need to adjust if the edge isn't available
         if self.edgesForExtendedLayout.rawValue & UIRectEdge.top.rawValue == 0 {
             return 0.0
@@ -376,7 +375,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         return true
     }
     
-    private func myp_enableTypingSuggestionIfNeeded() {
+    internal func myp_enableTypingSuggestionIfNeeded() {
         if !self.textView.isFirstResponder {
             return
         }
@@ -582,7 +581,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      If you use the standard -init method, a table view with plain style will be created.
      
      - Parameters:
-         - style: A constant that specifies the style of main table view that the controller object is to manage (UITableViewStylePlain or UITableViewStyleGrouped).
+     - style: A constant that specifies the style of main table view that the controller object is to manage (UITableViewStylePlain or UITableViewStyleGrouped).
      */
     public init(tableViewStyle style: UITableViewStyle) {
         super.init(nibName: nil, bundle: nil)
@@ -602,7 +601,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         table.clipsToBounds = false
         
         self.myp_updateInsetAdjustmentBehavior()
-
+        
         return table
     }
     
@@ -622,7 +621,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      If you use the standard -init method, a table view with plain style will be created.
      
      - Parameters:
-         - layout: The layout object to associate with the collection view. The layout controls how the collection view presents its cells and supplementary views.
+     - layout: The layout object to associate with the collection view. The layout controls how the collection view presents its cells and supplementary views.
      */
     public init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(nibName: nil, bundle: nil)
@@ -637,7 +636,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      Initializes a text view controller to manage an arbitraty scroll view. The caller is responsible for configuration of the scroll view, including wiring the delegate.
      
      - Parameters:
-         - scrollView: UISCrollView to be used as the main content area.
+     - scrollView: UISCrollView to be used as the main content area.
      */
     public init(scrollView: UIScrollView) {
         super.init(nibName: nil, bundle: nil)
@@ -694,7 +693,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      You must override this method if you want to configure a collectionView.
      
      - Parameters:
-         - decoder: An unarchiver object.
+     - decoder: An unarchiver object.
      - Returns: The collectionView style to be used in the new instantiated collectionView.
      */
     class func collectionViewLayout(for decoder: NSCoder?) -> UICollectionViewLayout? {
@@ -1320,7 +1319,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     }()
     
     /** true if the autocompletion mode is active. */
-    private(set) var isAutoCompleting = false {
+    var isAutoCompleting = false {
         didSet {
             if self.isAutoCompleting == oldValue {
                 return
@@ -1339,292 +1338,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     var foundWord: String?
     
     /** An array containing all the registered prefix strings for autocompletion. */
-    private(set) var registeredPrefixes: Set<String>?
-    
-    /**
-     Registers any string prefix for autocompletion detection, like for user mentions or hashtags autocompletion.
-     The prefix must be valid string (i.e: '@', '#', '\', and so on).
-     Prefixes can be of any length.
-     */
-    func registerPrefixesForAutoCompletion(with prefixes: [String]?) {
-        if prefixes?.count ?? 0 == 0 {
-            return
-        }
-        
-        var aSet = self.registeredPrefixes ?? Set<String>()
-        if let x = prefixes {
-            let otherSet = Set(x)
-            for a in otherSet {
-                aSet.insert(a)
-            }
-        }
-        
-        self.registeredPrefixes = aSet
-    }
-    
-    /**
-     Verifies that controller is allowed to process the textView's text for auto-completion.
-     You can override this method to disable momentarily the auto-completion feature, or to let it visible for longer time.
-     You SHOULD call super to inherit some conditionals.
-     
-     - Returns: true if the controller is allowed to process the text for auto-completion.
-     */
-    func shouldProcessTextForAutoCompletion() -> Bool {
-        if self.registeredPrefixes == nil || (self.registeredPrefixes?.count ?? 0) == 0 {
-            return false
-        }
-        return true
-    }
-    
-    /**
-     During text autocompletion, by default, auto-correction and spell checking are disabled.
-     Doing so, refreshes the text input to get rid of the Quick Type bar.
-     You can override this method to avoid disabling in some cases.
-     
-     - Returns: true if the controller should not hide the quick type bar.
-     */
-    func shouldDisableTypingSuggestionForAutoCompletion() -> Bool {
-        if self.registeredPrefixes == nil || (self.registeredPrefixes?.count ?? 0) == 0 {
-            return false
-        }
-        
-        return true
-    }
-    
-    /**
-     Notifies the view controller either the autocompletion prefix or word have changed.
-     Use this method to modify your data source or fetch data asynchronously from an HTTP resource.
-     Once your data source is ready, make sure to call -showAutoCompletionView: to display the view accordingly.
-     You don't need call super since this method doesn't do anything.
-     You SHOULD call super to inherit some conditionals.
-     
-     - Parameters:
-         - prefix: The detected prefix.
-         - word: The detected word.
-     */
-    func didChangeAutoCompletionPrefix(_ prefix: String?, andWord word: String?) {
-        // override in subclass
-    }
-    
-    /**
-     Use this method to programatically show/hide the autocompletion view.
-     Right before the view is shown, -reloadData is called. So avoid calling it manually.
-     
-     - Parameters:
-         - show: true if the autocompletion view should be shown.
-     */
-    func showAutoCompletionView(_ show: Bool) {
-        // Reloads the tableview before showing/hiding
-        if show {
-            self.autoCompletionView.reloadData()
-        }
-        
-        self.isAutoCompleting = show
-        
-        // Toggles auto-correction if requiered
-        self.myp_enableTypingSuggestionIfNeeded()
-        
-        var viewHeight = show ? self.heightForAutoCompletionView() : 0.0
-        
-        if self.autoCompletionViewHeightC.constant == viewHeight {
-            return
-        }
-        
-        // If the auto-completion view height is bigger than the maximum height allows, it is reduce to that size. Default 140 pts.
-        let maxHeight = self.maximumHeightForAutoCompletionView()
-        
-        if viewHeight > maxHeight {
-            viewHeight = maxHeight
-        }
-        
-        let contentViewHeight = self.scrollViewHeightC.constant + self.autoCompletionViewHeightC.constant
-        
-        // On iPhone, the auto-completion view can't extend beyond the content view height
-        if MYP_IS_IPHONE && viewHeight > contentViewHeight {
-            viewHeight = contentViewHeight
-        }
-        
-        self.autoCompletionViewHeightC.constant = viewHeight
-        
-        self.view.myp_animateLayoutIfNeeded(withBounce: self.bounces, options: [.curveEaseInOut, .layoutSubviews, .beginFromCurrentState, .allowUserInteraction], animations: nil)
-    }
-    
-    /**
-     Use this method to programatically show the autocompletion view, with provided prefix and word to search.
-     Right before the view is shown, -reloadData is called. So avoid calling it manually.
-     
-     - Parameters:
-         - prefix: A prefix that is used to trigger autocompletion
-         - word: A word to search for autocompletion
-         - prefixRange: The range in which prefix spans.
-     */
-    func showAutoCompletionView(withPrefix prefix: String, word: String, prefixRange: NSRange) {
-        if self.registeredPrefixes?.contains(prefix) ?? false {
-            self.foundPrefix = prefix
-            self.foundWord = word
-            self.foundPrefixRange = prefixRange
-            
-            self.didChangeAutoCompletionPrefix(self.foundPrefix, andWord: self.foundWord)
-            
-            self.showAutoCompletionView(true)
-        }
-    }
-    
-    /**
-     Returns a custom height for the autocompletion view. Default is 0.0.
-     You can override this method to return a custom height.
-     
-     - Returns: The autocompletion view's height.
-     */
-    func heightForAutoCompletionView() -> CGFloat {
-        return 0.0
-    }
-    
-    /**
-     Returns the maximum height for the autocompletion view. Default is 140 pts.
-     You can override this method to return a custom max height.
-     
-     - Returns: The autocompletion view's max height.
-     */
-    func maximumHeightForAutoCompletionView() -> CGFloat {
-        var maxHeight = MYPAutoCompletionViewDefaultHeight
-        
-        if self.isAutoCompleting {
-            var scrollHeight = self.scrollViewHeightC.constant
-            scrollHeight -= self.myp_topBarsHeight()
-            
-            if scrollHeight < maxHeight {
-                maxHeight = scrollHeight
-            }
-        }
-        
-        return maxHeight
-    }
-    
-    /**
-     Cancels and hides the autocompletion view, animated.
-     */
-    func cancelAutoCompletion() {
-        self.myp_invalidateAutoCompletion()
-        self.myp_hideAutoCompletionViewIfNeeded()
-    }
-    
-    /**
-     Accepts the autocompletion, replacing the detected word with a new string, keeping the prefix.
-     This method is a convinience of -acceptAutoCompletionWithString:keepPrefix:
-     
-     - Parameters:
-         - string: The string to be used for replacing autocompletion placeholders.
-     */
-    func acceptAutoCompletion(with string: String?) {
-        self.acceptAutoCompletion(with: string, keepPrefix: true)
-    }
-    
-    /**
-     Accepts the autocompletion, replacing the detected word with a new string, and optionally replacing the prefix too.
-     
-     - Parameters:
-         - string: The string to be used for replacing autocompletion placeholders.
-         - keepPrefix: YES if the prefix shouldn't be overidden.
-     */
-    func acceptAutoCompletion(with string: String?, keepPrefix: Bool) {
-        if string?.isEmpty ?? false {
-            return
-        }
-        
-        var location = self.foundPrefixRange.location
-        if keepPrefix {
-            location += self.foundPrefixRange.length
-        }
-        
-        var length = self.foundWord?.count ?? 0
-        if !keepPrefix {
-            length += self.foundPrefixRange.length
-        }
-        
-        let range = NSRange(location: location, length: length)
-        let insertionRange = self.textView.myp_insert(text: string!, in: range)
-        
-        self.textView.selectedRange = NSRange(location: insertionRange.location, length: 0)
-        
-        self.textView.myp_scrollToCaretPosition(animated: false)
-        
-        self.cancelAutoCompletion()
-    }
-    
-    private func myp_processtextForAutoCompletion() {
-        let text: String = self.textView.text
-        if (!self.isAutoCompleting && text.count == 0) || self.isTransitioning || !self.shouldProcessTextForAutoCompletion() {
-            return
-        }
-        
-        self.textView.look(for: self.registeredPrefixes) { (prefix, word, wordRange) in
-            if prefix?.count ?? 0 > 0 && word?.count ?? 0 > 0 {
-                // Captures the detected symbol prefix
-                self.foundPrefix = prefix!
-                
-                // Removes the found prefix, or not.
-                let index = word!.index(word!.startIndex, offsetBy: prefix!.count)
-                self.foundWord = String(word![index...])
-                
-                // Used later for replacing the detected range with a new string alias returned in -acceptAutoCompletionWithString:
-                self.foundPrefixRange = NSMakeRange(wordRange
-                    .location, prefix!.count)
-                
-                self.myp_handleProcessedWord(word!, wordRange: wordRange)
-            }
-            else {
-                self.cancelAutoCompletion()
-            }
-        }
-    }
-    
-    private func myp_handleProcessedWord(_ word: String, wordRange: NSRange) {
-        // Cancel auto-completion if the cursor is placed before the prefix
-        if self.textView.selectedRange.location <= self.foundPrefixRange.location {
-            self.cancelAutoCompletion()
-            return
-        }
-        
-        if self.foundPrefix?.count ?? 0 > 0 {
-            if wordRange.length == 0 || wordRange.length != word.count {
-                self.cancelAutoCompletion()
-                return
-            }
-            
-            if word.count > 0 {
-                // If the prefix is still contained in the word, cancels
-                if !self.foundWord!.contains(self.foundPrefix!) {
-                    self.cancelAutoCompletion()
-                    return
-                }
-            }
-            else {
-                self.cancelAutoCompletion()
-                return
-            }
-        }
-        else {
-            self.cancelAutoCompletion()
-            return
-        }
-        
-        self.didChangeAutoCompletionPrefix(self.foundPrefix, andWord: self.foundWord)
-    }
-    
-    private func myp_hideAutoCompletionViewIfNeeded() {
-        if self.isAutoCompleting {
-            self.showAutoCompletionView(false)
-        }
-    }
-    
-    private func myp_invalidateAutoCompletion() {
-        self.foundPrefix = nil
-        self.foundWord = nil
-        self.foundPrefixRange = NSMakeRange(0, 0)
-        
-        self.autoCompletionView.contentOffset = .zero
-    }
+    var registeredPrefixes: Set<String>?
     
     //MARK: text cache
     /**

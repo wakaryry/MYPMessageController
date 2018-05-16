@@ -42,6 +42,7 @@
 		D31C88BFC48256E9FB65FB053EC8DAEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		DEB85E067761AD99704D8CCFAD92464B /* Pods-MYPMessageController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6C435907E6FCAF4013279CD6202F865 /* Pods-MYPMessageController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9EAE7BE20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7BD20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift */; };
+		E9EAE7C020ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7BF20ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift */; };
 		F164BCD68A42CA142E24986910564D4A /* MYPMessageController+TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4740C01C7E067B709AB46DECCDEDDCA2 /* MYPMessageController+TableDelegate.swift */; };
 		FBDAA58364464504D22940A0295C20FD /* Pods-MYPMessageController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F2CBEB138856C316FFD02FE55EEA3 /* Pods-MYPMessageController_Example-dummy.m */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,7 @@
 		E6987352957A7BAC65422DCA85C5096F /* MYPMessageController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MYPMessageController-prefix.pch"; sourceTree = "<group>"; };
 		E718E84A8576A32F32D3E1E50A38C04C /* Pods-MYPMessageController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MYPMessageController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E9EAE7BD20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+UITextViewDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+UITextViewDelegate.swift"; sourceTree = "<group>"; };
+		E9EAE7BF20ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+AutoCompletion.swift"; path = "MYPMessageController/Classes/MYPMessageController+AutoCompletion.swift"; sourceTree = "<group>"; };
 		E9ED1370891353268CB28B878EAA69BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC806D21029504C2EB3F05784882F3F2 /* myp_keyboard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_keyboard@2x.png"; path = "MYPMessageController/Assets/myp_keyboard@2x.png"; sourceTree = "<group>"; };
 		EDCC204EE65C221C6A2E5915AEF63552 /* myp_speak@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_speak@2x.png"; path = "MYPMessageController/Assets/myp_speak@2x.png"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				63927D1CC754BDA44745BE9B1C3B3764 /* MYPInputAccessoryView.swift */,
 				7132BDC9E067A2D7FE3EC7B40B9D88D4 /* MYPMessageController.swift */,
+				E9EAE7BF20ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift */,
 				E9EAE7BD20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift */,
 				976E49374A7E844D00EDC2D0F49BE46E /* MYPMessageController+CollectionViewDelegate.swift */,
 				4740C01C7E067B709AB46DECCDEDDCA2 /* MYPMessageController+TableDelegate.swift */,
@@ -533,6 +536,7 @@
 				367525C5F81803800F9A2DF187F73AE4 /* MYPTextView+MYPAddition.swift in Sources */,
 				938B3652C34D0B34EC0B9D0265CD8E6E /* MYPTextView.swift in Sources */,
 				88D1166B4437AC5EE4145D26431BC204 /* MYPUIConstants.swift in Sources */,
+				E9EAE7C020ABFFE900696EA3 /* MYPMessageController+AutoCompletion.swift in Sources */,
 				0D4DCE0C8517367231211CC2BADFBA1D /* UIResponder+MYPAddition.swift in Sources */,
 				E9EAE7BE20ABFD7B00696EA3 /* MYPMessageController+UITextViewDelegate.swift in Sources */,
 				058E7B1A16AA62400FB4913CF228A3EC /* UIScrollView+MYPAddition.swift in Sources */,
