@@ -59,44 +59,13 @@ open class MYPTextInputbarView: UIView {
     
     private var previousOrigin = CGPoint.zero
     
-    private var addImage: UIImage? {
-        
-        return UIImage(named: "myp_plus", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-    }
-    
-    private var speakImage: UIImage? {
-        return UIImage(named: "myp_speak", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-    }
-    
-    private var emotionImage: UIImage? {
-        return UIImage(named: "myp_smile", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-    }
-    
-    private var keyboardImage: UIImage? {
-        return UIImage(named: "myp_keyboard", in: MYPXBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-    }
-    
-    private var MYPXBundle: Bundle? {
-        // Get path for MYPMessageController bundle
-        let bundlePath = Bundle(for: MYPTextInputbarView.self).path(forResource: "MYPMessageController", ofType: "bundle")
-        let bundle: Bundle?
-        
-        // Load bundle
-        if let bundlePath = bundlePath {
-            bundle = Bundle(path: bundlePath)
-        } else {
-            bundle = nil
-        }
-        return bundle
-    }
-    
     /**used to set the image of left button or hide it.
      set it nil or blank will hide the leftButton.
      set non-nil or non-blank will change the image of the left button.
      Default, it will show the default left button.
      The button height is almost 32-36. We could make the image size (36, 36)
      */
-    var leftButtonImageName: String? = "_myp_xxoox0x_" {
+    var leftButtonImageName: String? = MYPLeftButtonImageNameToken {
         didSet {
             if leftButtonImageName == oldValue {
                 return
@@ -114,7 +83,7 @@ open class MYPTextInputbarView: UIView {
         }
     }
     
-    var rightButtonImageName: String? = "_myp_xxoox0x_" {
+    var rightButtonImageName: String? = MYPRightButtonImageNameToken {
         didSet {
             if rightButtonImageName == oldValue {
                 return
@@ -132,7 +101,7 @@ open class MYPTextInputbarView: UIView {
         }
     }
     
-    var rightMoreButtonImageName: String? = "_myp_xxoox0x_" {
+    var rightMoreButtonImageName: String? = MYPRightMoreButtonImageNameToken {
         didSet {
             if rightMoreButtonImageName == oldValue {
                 return
@@ -149,6 +118,10 @@ open class MYPTextInputbarView: UIView {
             */
         }
     }
+    
+    var leftButtonSecondImageName: String? = MYPLeftButtonSecondImageNameToken
+    var rightButtonoSecondImageName: String? = MYPRightButtonSecondImageNameToken
+    var rightMoreButtonSecondImageName: String? = MYPRightMoreButtonSecondImageNameToken
     
     var autoHideSendButton: Bool = false {
         didSet {
@@ -361,6 +334,7 @@ open class MYPTextInputbarView: UIView {
         self.previousOrigin = self.frame.origin
         
         self.myp_updateSendButtonsConstraints()
+        self.myp_initialButtonImageState()
         
         self.myp_registerNotifications()
         
@@ -373,6 +347,12 @@ open class MYPTextInputbarView: UIView {
         self.textView.becomeFirstResponderCallback = {[weak self] in
             self?.bottomDivider.backgroundColor = self?.sendButton.tintColor
         }
+    }
+    
+    private func myp_initialButtonImageState() {
+        self.leftButton.tag = MYPButtonImageState.initial.rawValue
+        self.rightButton.tag = MYPButtonImageState.initial.rawValue
+        self.rightMoreButton.tag = MYPButtonImageState.initial.rawValue
     }
     
     /** update action button's initial height and width*/

@@ -16,6 +16,44 @@ public enum MYPKeyboardStatus : Int {
     case willHide
 }
 
+public enum MYPButtonImageState: Int {
+    case initial = 0
+    case changed = 1
+}
+
+internal let MYPLeftButtonImageNameToken = "myp_speak"
+internal let MYPRightButtonImageNameToken = "myp_smile"
+internal let MYPRightMoreButtonImageNameToken = "myp_plus"
+internal let MYPLeftButtonSecondImageNameToken = "myp_keyboard"
+internal let MYPRightButtonSecondImageNameToken = "myp_keyboard"
+internal let MYPRightMoreButtonSecondImageNameToken = "myp_plus"
+
+internal let MYPLeftButtonImage = UIImage(named: MYPLeftButtonImageNameToken, in: MYPXBundle, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+
+internal let MYPRightButtonImage = UIImage(named: MYPRightButtonImageNameToken, in: MYPXBundle, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+
+internal let MYPRightMoreButtonImage = UIImage(named: MYPRightMoreButtonImageNameToken, in: MYPXBundle, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+
+internal let MYPLeftButtonSecondImage = UIImage(named: MYPLeftButtonSecondImageNameToken, in: MYPXBundle, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+
+internal let MYPRightButtonSecondImage = UIImage(named: MYPRightButtonSecondImageNameToken, in: MYPXBundle, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+
+internal let MYPRightMoreButtonSecondImage = UIImage(named: MYPRightMoreButtonSecondImageNameToken, in: MYPXBundle, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+
+internal var MYPXBundle: Bundle? {
+    // Get path for MYPMessageController bundle
+    let bundlePath = Bundle(for: MYPMessageController.self).path(forResource: "MYPMessageController", ofType: "bundle")
+    let bundle: Bundle?
+    
+    // Load bundle
+    if let bundlePath = bundlePath {
+        bundle = Bundle(path: bundlePath)
+    } else {
+        bundle = nil
+    }
+    return bundle
+}
+
 let MYPOnePixal = 1 / UIScreen.main.scale
 // 当线宽为奇数时，需要偏移
 let MYPOnePixalOffset = MYPOnePixal / 2

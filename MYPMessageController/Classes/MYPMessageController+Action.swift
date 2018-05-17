@@ -355,4 +355,38 @@ extension MYPMessageController {
         self.textView.didPressArrowKey(keyCommand!)
     }
     
+    private func changeLeftButtonImage() {
+        let nm = self.textInputbar.leftButtonSecondImageName
+        if nm == MYPButtonImageNameToken {
+            if self.imageState(for: self.leftButton) == .initial {
+                
+            }
+        }
+        if self.textInputbar.leftButtonSecondImageName == nil || self.textInputbar.leftButtonSecondImageName == "" {
+            
+        }
+    }
+    
+    private func changeRightButtonImage() {
+        
+    }
+    
+    private func changeRightMoreButtonImage() {
+        
+    }
+    
+    private func changeImageStateTag(for button: UIButton) {
+        if self.imageState(for: button) == .initial {
+            button.tag = MYPButtonImageState.changed.rawValue
+            return
+        }
+        button.tag = MYPButtonImageState.initial.rawValue
+    }
+    
+    private func imageState(for button: UIButton) -> MYPButtonImageState {
+        if button.tag == 0 {
+            return .initial
+        }
+        return .changed
+    }
 }
