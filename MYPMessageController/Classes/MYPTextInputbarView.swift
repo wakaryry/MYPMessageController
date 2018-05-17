@@ -23,6 +23,7 @@ open class MYPTextInputbarView: UIView {
     @IBOutlet weak var rightMoreButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var textView: MYPTextView!
+    @IBOutlet weak var holdToSpeakButton: UIButton!
     
     @IBOutlet weak var topDivider: UIView!
     @IBOutlet weak var bottomDivider: UIView!
@@ -49,6 +50,7 @@ open class MYPTextInputbarView: UIView {
     
     // we change the button size height and width into textView's minimumHeight in the commonSetting
     @IBOutlet weak var actionButtonHeightC: NSLayoutConstraint!
+    @IBOutlet weak var holdToSpeakButtonHeightC: NSLayoutConstraint!
     
     private var initialButtonMargin: CGFloat = 0.0
     private var initialButtonWidth: CGFloat = 0.0
@@ -389,8 +391,9 @@ open class MYPTextInputbarView: UIView {
         
         let initialHeight = self.textView.intrinsicContentSize.height
         // made top margin 8
-        let actualSize = initialHeight - 8.0
+        let actualSize = initialHeight - 0.0
         self.actionButtonHeightC.constant = actualSize
+        self.holdToSpeakButtonHeightC.constant = initialHeight
         
         // first initial width and height
         self.leftButtonWidthC.constant = actualSize
@@ -401,6 +404,10 @@ open class MYPTextInputbarView: UIView {
         self.initialButtonMargin = self.textViewLeftLeadingC.constant
         self.initialButtonWidth = self.leftButtonWidthC.constant
         self.initialSendButtonWidth = self.sendButtonWidthC.constant
+        
+        self.holdToSpeakButton.layer.cornerRadius = 3.0
+        self.holdToSpeakButton.layer.borderWidth = MYPOnePixal
+        self.holdToSpeakButton.layer.borderColor = UIColor.lightGray.cgColor
         
         // we must have this, otherwise we will get a wrong initial height of inputbar view
         // but we got a `EXC_BAD_ACCESS with code=2` bug when used in messageController

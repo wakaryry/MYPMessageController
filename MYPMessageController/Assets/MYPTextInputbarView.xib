@@ -19,6 +19,8 @@
                 <outlet property="contentLeftLeadingC" destination="TEr-4j-G3T" id="qGQ-wZ-I6d"/>
                 <outlet property="contentRightTrailingC" destination="gCx-z4-QmL" id="rT7-6j-K1l"/>
                 <outlet property="contentTopMarginC" destination="eW1-4f-LaS" id="Ab3-aV-76g"/>
+                <outlet property="holdToSpeakButton" destination="Gf8-jX-0fV" id="tpr-Vo-dQE"/>
+                <outlet property="holdToSpeakButtonHeightC" destination="ct0-b9-u2v" id="gL4-Qp-vf8"/>
                 <outlet property="leftButton" destination="a5d-eH-tHZ" id="Rcd-Nt-rpA"/>
                 <outlet property="leftButtonWidthC" destination="5o9-zn-0NS" id="gVJ-dX-HoH"/>
                 <outlet property="rightButton" destination="9Fd-mf-S1A" id="1jS-Ea-BbL"/>
@@ -41,7 +43,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="23F-zB-Pi8" customClass="MYPTextView" customModule="MYPMessageController" customModuleProvider="target">
-                    <rect key="frame" x="56" y="21" width="159" height="637"/>
+                    <rect key="frame" x="56" y="29" width="159" height="629"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="scrollIndicatorInsets" minX="-1" minY="0.0" maxX="1" maxY="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -104,6 +106,16 @@
                         <constraint firstAttribute="height" constant="1" id="BSu-uo-Cou"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-jX-0fV">
+                    <rect key="frame" x="56" y="626" width="159" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="ct0-b9-u2v"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="按住 说话">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -111,6 +123,7 @@
                 <constraint firstItem="ybD-Zh-7SR" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" id="82O-BE-GZ8"/>
                 <constraint firstItem="23F-zB-Pi8" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" id="AN2-5i-JnS"/>
                 <constraint firstItem="NZ6-sQ-2mD" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" constant="9" id="I5u-EM-4d9"/>
+                <constraint firstItem="Gf8-jX-0fV" firstAttribute="trailing" secondItem="23F-zB-Pi8" secondAttribute="trailing" id="JDV-ja-dki"/>
                 <constraint firstAttribute="trailing" secondItem="BjJ-2F-vO8" secondAttribute="trailing" id="JXP-cd-rBe"/>
                 <constraint firstItem="BGU-u4-6rK" firstAttribute="height" secondItem="a5d-eH-tHZ" secondAttribute="height" id="Jok-9b-gmG"/>
                 <constraint firstItem="9Fd-mf-S1A" firstAttribute="height" secondItem="a5d-eH-tHZ" secondAttribute="height" id="Moa-1b-Tlp"/>
@@ -121,11 +134,13 @@
                 <constraint firstItem="23F-zB-Pi8" firstAttribute="leading" secondItem="a5d-eH-tHZ" secondAttribute="trailing" constant="8" id="ajj-af-kuS"/>
                 <constraint firstItem="ek4-r9-zna" firstAttribute="leading" secondItem="23F-zB-Pi8" secondAttribute="leading" id="b2D-Cg-37o"/>
                 <constraint firstItem="BGU-u4-6rK" firstAttribute="leading" secondItem="9Fd-mf-S1A" secondAttribute="trailing" constant="8" id="dfJ-h5-LwJ"/>
-                <constraint firstItem="23F-zB-Pi8" firstAttribute="top" secondItem="BjJ-2F-vO8" secondAttribute="bottom" id="eW1-4f-LaS"/>
+                <constraint firstItem="23F-zB-Pi8" firstAttribute="top" secondItem="BjJ-2F-vO8" secondAttribute="bottom" constant="8" id="eW1-4f-LaS"/>
                 <constraint firstItem="NZ6-sQ-2mD" firstAttribute="trailing" secondItem="ybD-Zh-7SR" secondAttribute="trailing" constant="8" id="gCx-z4-QmL"/>
                 <constraint firstItem="ybD-Zh-7SR" firstAttribute="height" secondItem="a5d-eH-tHZ" secondAttribute="height" id="hYi-E8-aUc"/>
                 <constraint firstItem="ybD-Zh-7SR" firstAttribute="leading" secondItem="BGU-u4-6rK" secondAttribute="trailing" id="iAE-YH-8LK"/>
                 <constraint firstItem="BGU-u4-6rK" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" id="men-5V-ZhW"/>
+                <constraint firstItem="Gf8-jX-0fV" firstAttribute="leading" secondItem="23F-zB-Pi8" secondAttribute="leading" id="nCg-bi-bxm"/>
+                <constraint firstItem="Gf8-jX-0fV" firstAttribute="bottom" secondItem="23F-zB-Pi8" secondAttribute="bottom" id="pVy-ys-Sxs"/>
                 <constraint firstItem="9Fd-mf-S1A" firstAttribute="leading" secondItem="23F-zB-Pi8" secondAttribute="trailing" constant="8" id="pod-uA-F99"/>
                 <constraint firstItem="9Fd-mf-S1A" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" id="r3e-Xi-LQV"/>
             </constraints>
