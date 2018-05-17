@@ -1,5 +1,3 @@
-# MYPMessageController
-
 [![Version](https://img.shields.io/cocoapods/v/MYPMessageController.svg?style=flat)](https://cocoapods.org/pods/MYPMessageController)
 [![License](https://img.shields.io/cocoapods/l/MYPMessageController.svg?style=flat)](https://cocoapods.org/pods/MYPMessageController)
 [![Platform](https://img.shields.io/cocoapods/p/MYPMessageController.svg?style=flat)](https://cocoapods.org/pods/MYPMessageController)
