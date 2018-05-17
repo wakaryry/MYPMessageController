@@ -139,14 +139,38 @@ extension MYPMessageController {
      */
     @objc open func didPressLeftButton(sender: UIButton) {
         // if could or should, change the image of button
+        self.changeImageStateTag(for: sender)
+        self.changeLeftButtonImage()
+        self.resetButtonsImageState(from: sender)
+        
+        // if default action is allowed
+        if self.maintainDefaultLeftAction {
+            
+        }
     }
     
     @objc open func didPressRightButton(sender: UIButton) {
         // if could or should, change the image of button
+        self.changeImageStateTag(for: sender)
+        self.changeRightButtonImage()
+        self.resetButtonsImageState(from: sender)
+        
+        // if default action is allowed
+        if self.maintainDefaultRightAction {
+            
+        }
     }
     
     @objc open func didPressRightMoreButton(sender: UIButton) {
         // if could or should, change the image of button
+        self.changeImageStateTag(for: sender)
+        self.changeRightMoreButtonImage()
+        self.resetButtonsImageState(from: sender)
+        
+        // if default action is allowed
+        if self.maintainDefaultRightMoreAction {
+            
+        }
     }
     
     /**
@@ -432,6 +456,89 @@ extension MYPMessageController {
             }
             self.rightMoreButton.setImage(UIImage(named: nm!, in: Bundle.main, compatibleWith: nil), for: .normal)
             return
+        }
+    }
+    
+    /** when tap an action button, other buttons' image maight be to change.
+     There should be only one button is in its changed state!
+     */
+    private func resetButtonsImageState(from button: UIButton) {
+        if button == self.leftButton {
+            if self.textInputbar.rightButtonImageName != nil && self.textInputbar.rightButtonImageName != "" {
+                if self.imageState(for: self.rightButton) == .changed {
+                    self.changeImageStateTag(for: self.rightButton)
+                    if self.textInputbar.rightButtonImageName == MYPRightButtonImageNameToken {
+                        self.rightButton.setImage(MYPRightButtonImage, for: .normal)
+                    }
+                    else {
+                        self.rightButton.setImage(UIImage(named: self.textInputbar.rightButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                    }
+                }
+            }
+            
+            if self.textInputbar.rightMoreButtonImageName != nil && self.textInputbar.rightMoreButtonImageName != "" {
+                if self.imageState(for: self.rightMoreButton) == .changed {
+                    self.changeImageStateTag(for: self.rightMoreButton)
+                    if self.textInputbar.rightMoreButtonImageName == MYPRightMoreButtonImageNameToken {
+                        self.rightMoreButton.setImage(MYPRightMoreButtonImage, for: .normal)
+                    }
+                    else {
+                        self.rightMoreButton.setImage(UIImage(named: self.textInputbar.rightMoreButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                    }
+                }
+            }
+        }
+        
+        if button == self.rightButton {
+            if self.textInputbar.leftButtonImageName != nil && self.textInputbar.leftButtonImageName != "" {
+                if self.imageState(for: self.leftButton) == .changed {
+                    self.changeImageStateTag(for: self.leftButton)
+                    if self.textInputbar.leftButtonImageName == MYPLeftButtonImageNameToken {
+                        self.leftButton.setImage(MYPLeftButtonImage, for: .normal)
+                    }
+                    else {
+                        self.leftButton.setImage(UIImage(named: self.textInputbar.leftButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                    }
+                }
+            }
+            
+            if self.textInputbar.rightMoreButtonImageName != nil && self.textInputbar.rightMoreButtonImageName != "" {
+                if self.imageState(for: self.rightMoreButton) == .changed {
+                    self.changeImageStateTag(for: self.rightMoreButton)
+                    if self.textInputbar.rightMoreButtonImageName == MYPRightMoreButtonImageNameToken {
+                        self.rightMoreButton.setImage(MYPRightMoreButtonImage, for: .normal)
+                    }
+                    else {
+                        self.rightMoreButton.setImage(UIImage(named: self.textInputbar.rightMoreButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                    }
+                }
+            }
+        }
+        
+        if button == self.rightMoreButton {
+            if self.textInputbar.leftButtonImageName != nil && self.textInputbar.leftButtonImageName != "" {
+                if self.imageState(for: self.leftButton) == .changed {
+                    self.changeImageStateTag(for: self.leftButton)
+                    if self.textInputbar.leftButtonImageName == MYPLeftButtonImageNameToken {
+                        self.leftButton.setImage(MYPLeftButtonImage, for: .normal)
+                    }
+                    else {
+                        self.leftButton.setImage(UIImage(named: self.textInputbar.leftButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                    }
+                }
+            }
+            
+            if self.textInputbar.rightButtonImageName != nil && self.textInputbar.rightButtonImageName != "" {
+                if self.imageState(for: self.rightButton) == .changed {
+                    self.changeImageStateTag(for: self.rightButton)
+                    if self.textInputbar.rightButtonImageName == MYPRightButtonImageNameToken {
+                        self.rightButton.setImage(MYPRightButtonImage, for: .normal)
+                    }
+                    else {
+                        self.rightButton.setImage(UIImage(named: self.textInputbar.rightButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                    }
+                }
+            }
         }
     }
     
