@@ -26,11 +26,9 @@ open class MYPTextInputbarView: UIView {
     @IBOutlet weak var holdToSpeakButton: UIButton!
     
     @IBOutlet weak var topDivider: UIView!
-    @IBOutlet weak var bottomDivider: UIView!
     
     @IBOutlet weak var topDividerHeightC: NSLayoutConstraint!
-    @IBOutlet weak var bottomDividerHeightC: NSLayoutConstraint!
-    
+
     @IBOutlet weak var leftButtonWidthC: NSLayoutConstraint!
     // to leftButton
     @IBOutlet weak var textViewLeftLeadingC: NSLayoutConstraint!
@@ -232,7 +230,7 @@ open class MYPTextInputbarView: UIView {
     var minimumInputbarHeight: CGFloat {
         var minimumHeight = self.textView.intrinsicContentSize.height
         
-        minimumHeight += self.topDividerHeightC.constant + self.contentInset.top + self.contentInset.bottom + self.bottomDividerHeightC.constant
+        minimumHeight += self.topDividerHeightC.constant + self.contentInset.top + self.contentInset.bottom
         return minimumHeight
     }
     
@@ -273,7 +271,6 @@ open class MYPTextInputbarView: UIView {
         height += self.contentInset.top
         height += self.contentInset.bottom
         height += self.topDividerHeightC.constant
-        height += self.bottomDividerHeightC.constant
         // to fix the scrollable bug when not reached maxNumberOfLines
         return height + 1.0
     }
@@ -317,15 +314,6 @@ open class MYPTextInputbarView: UIView {
         }
         set {
             self.topDivider.backgroundColor = newValue
-        }
-    }
-    
-    var bottomDividerBackgroundColor: UIColor? {
-        get {
-            return self.bottomDivider.backgroundColor
-        }
-        set {
-            self.bottomDivider.backgroundColor = newValue
         }
     }
     
@@ -376,18 +364,17 @@ open class MYPTextInputbarView: UIView {
         self.layer.addObserver(self, forKeyPath: NSStringFromSelector(#selector(getter: CALayer.position)), options: [.new, .old], context: nil)
         
         self.textView.resignFirstResponderCallback = {[weak self] in
-            self?.bottomDivider.backgroundColor = UIColor.lightGray
+            self?.textView.dividerColor = UIColor.lightGray
         }
         
         self.textView.becomeFirstResponderCallback = {[weak self] in
-            self?.bottomDivider.backgroundColor = self?.sendButton.tintColor
+            self?.textView.dividerColor = self?.sendButton.tintColor
         }
     }
     
     /** update action button's initial height and width*/
     private func myp_initialActionButtonHeightAndWidth() {
         self.topDividerHeightC.constant = MYPOnePixal
-        self.bottomDividerHeightC.constant = MYPOnePixal
         
         let initialHeight = self.textView.intrinsicContentSize.height
         // made top margin 8
