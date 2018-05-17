@@ -148,6 +148,11 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         return self.textInputbar.textView.attributedText
     }
     
+    open var maintainDefaultLeftAction = true
+    open var maintainDefaultRightAction = true
+    open var maintainDefaultRightMoreAction = true
+    open var maintainDefaultSendAction = true
+    
     // The shared scrollView pointer, either a tableView or collectionView
     internal weak var scrollViewProxy: UIScrollView?
     

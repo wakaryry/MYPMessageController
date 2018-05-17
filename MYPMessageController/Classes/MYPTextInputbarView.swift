@@ -120,7 +120,7 @@ open class MYPTextInputbarView: UIView {
     }
     
     var leftButtonSecondImageName: String? = MYPLeftButtonSecondImageNameToken
-    var rightButtonoSecondImageName: String? = MYPRightButtonSecondImageNameToken
+    var rightButtonSecondImageName: String? = MYPRightButtonSecondImageNameToken
     var rightMoreButtonSecondImageName: String? = MYPRightMoreButtonSecondImageNameToken
     
     var autoHideSendButton: Bool = false {

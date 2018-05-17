@@ -365,7 +365,7 @@ extension MYPMessageController {
         let nm = self.textInputbar.leftButtonSecondImageName
         
         // if could change image
-        if self.textInputbar.leftButtonSecondImageName != nil && self.textInputbar.leftButtonSecondImageName != "" {
+        if nm != nil && nm != "" {
             if self.imageState(for: self.leftButton) == .initial {
                 if self.textInputbar.leftButtonImageName == MYPLeftButtonImageNameToken {
                     self.leftButton.setImage(MYPLeftButtonImage, for: .normal)
@@ -384,11 +384,55 @@ extension MYPMessageController {
     }
     
     private func changeRightButtonImage() {
+        if self.textInputbar.rightButtonImageName == nil || self.textInputbar.rightButtonImageName == "" {
+            return
+        }
         
+        let nm = self.textInputbar.rightButtonSecondImageName
+        
+        // if could change image
+        if nm != nil && nm != "" {
+            if self.imageState(for: self.rightButton) == .initial {
+                if self.textInputbar.rightButtonImageName == MYPRightButtonImageNameToken {
+                    self.rightButton.setImage(MYPRightButtonImage, for: .normal)
+                    return
+                }
+                self.rightButton.setImage(UIImage(named: self.textInputbar.rightButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                return
+            }
+            if nm == MYPRightButtonSecondImageNameToken {
+                self.rightButton.setImage(MYPRightButtonSecondImage, for: .normal)
+                return
+            }
+            self.rightButton.setImage(UIImage(named: nm!, in: Bundle.main, compatibleWith: nil), for: .normal)
+            return
+        }
     }
     
     private func changeRightMoreButtonImage() {
+        if self.textInputbar.rightMoreButtonImageName == nil || self.textInputbar.rightMoreButtonImageName == "" {
+            return
+        }
         
+        let nm = self.textInputbar.rightMoreButtonSecondImageName
+        
+        // if could change image
+        if nm != nil && nm != "" {
+            if self.imageState(for: self.rightMoreButton) == .initial {
+                if self.textInputbar.rightMoreButtonImageName == MYPRightMoreButtonImageNameToken {
+                    self.rightMoreButton.setImage(MYPRightMoreButtonImage, for: .normal)
+                    return
+                }
+                self.rightMoreButton.setImage(UIImage(named: self.textInputbar.rightMoreButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                return
+            }
+            if nm == MYPRightMoreButtonSecondImageNameToken {
+                self.rightMoreButton.setImage(MYPRightMoreButtonSecondImage, for: .normal)
+                return
+            }
+            self.rightMoreButton.setImage(UIImage(named: nm!, in: Bundle.main, compatibleWith: nil), for: .normal)
+            return
+        }
     }
     
     private func changeImageStateTag(for button: UIButton) {
