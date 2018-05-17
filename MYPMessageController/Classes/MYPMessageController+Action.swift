@@ -356,14 +356,30 @@ extension MYPMessageController {
     }
     
     private func changeLeftButtonImage() {
-        let nm = self.textInputbar.leftButtonSecondImageName
-        if nm == MYPButtonImageNameToken {
-            if self.imageState(for: self.leftButton) == .initial {
-                
-            }
+        // if should not show left button, do nothing.
+        // It's no need since we just call this func when leftButton could tap!
+        if self.textInputbar.leftButtonImageName == nil || self.textInputbar.leftButtonImageName == "" {
+            return
         }
-        if self.textInputbar.leftButtonSecondImageName == nil || self.textInputbar.leftButtonSecondImageName == "" {
-            
+        
+        let nm = self.textInputbar.leftButtonSecondImageName
+        
+        // if could change image
+        if self.textInputbar.leftButtonSecondImageName != nil && self.textInputbar.leftButtonSecondImageName != "" {
+            if self.imageState(for: self.leftButton) == .initial {
+                if self.textInputbar.leftButtonImageName == MYPLeftButtonImageNameToken {
+                    self.leftButton.setImage(MYPLeftButtonImage, for: .normal)
+                    return
+                }
+                self.leftButton.setImage(UIImage(named: self.textInputbar.leftButtonImageName!, in: Bundle.main, compatibleWith: nil), for: .normal)
+                return
+            }
+            if nm == MYPLeftButtonSecondImageNameToken {
+                self.leftButton.setImage(MYPLeftButtonSecondImage, for: .normal)
+                return
+            }
+            self.leftButton.setImage(UIImage(named: nm!, in: Bundle.main, compatibleWith: nil), for: .normal)
+            return
         }
     }
     
