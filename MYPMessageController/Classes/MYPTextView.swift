@@ -136,24 +136,6 @@ public class MYPTextView: UITextView, MYPTextInput {
         }
     }
     
-    lazy private var bottomDivider: UIView = {
-        let v = UIView()
-        v.clipsToBounds = false
-        v.autoresizesSubviews = false
-        v.backgroundColor = .lightGray
-        self.addSubview(v)
-        return v
-    }()
-    
-    internal var dividerColor: UIColor? {
-        get {
-            return self.bottomDivider.backgroundColor
-        }
-        set {
-            self.bottomDivider.backgroundColor = newValue
-        }
-    }
-    
     /** true if the text view is and can still expand it self, depending if the maximum number of lines are reached. */
     var isExpanding: Bool {
         if self.numberOfLines >= self.maxNumberOfLines {
@@ -331,8 +313,6 @@ public class MYPTextView: UITextView, MYPTextInput {
                 self.sendSubview(toBack: self.placeholderLabel)
             }
         }
-    
-        self.bottomDivider.frame = CGRect(x: 0.0, y: self.bounds.height - MYPOnePixal, width: self.bounds.width, height: MYPOnePixal)
     }
     
     private func myp_shouldHidePlaceholder() -> Bool {

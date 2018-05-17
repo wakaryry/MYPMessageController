@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MYPTextInputbarView" customModule="MYPMessageController" customModuleProvider="target">
             <connections>
                 <outlet property="actionButtonHeightC" destination="tsq-T7-KjD" id="9uj-s5-8fF"/>
+                <outlet property="bottomDivider" destination="Gyt-B3-ilk" id="WRh-kV-GDM"/>
+                <outlet property="bottomDividerHeightC" destination="Qb6-MR-f7s" id="3iP-sE-76u"/>
                 <outlet property="contentBottomMarginC" destination="kIf-Lv-qlC" id="Dgw-2g-uNq"/>
                 <outlet property="contentLeftLeadingC" destination="TEr-4j-G3T" id="qGQ-wZ-I6d"/>
                 <outlet property="contentRightTrailingC" destination="gCx-z4-QmL" id="rT7-6j-K1l"/>
@@ -99,6 +101,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-jX-0fV">
                     <rect key="frame" x="56" y="627" width="159" height="32"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="ct0-b9-u2v"/>
                     </constraints>
@@ -107,10 +110,18 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-B3-ilk">
+                    <rect key="frame" x="56" y="658" width="159" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Qb6-MR-f7s"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="BjJ-2F-vO8" firstAttribute="leading" secondItem="elX-4J-tEL" secondAttribute="leading" id="6Mq-su-i98"/>
+                <constraint firstItem="Gyt-B3-ilk" firstAttribute="trailing" secondItem="23F-zB-Pi8" secondAttribute="trailing" id="7j8-Sx-uP3"/>
                 <constraint firstItem="ybD-Zh-7SR" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" id="82O-BE-GZ8"/>
                 <constraint firstItem="23F-zB-Pi8" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" id="AN2-5i-JnS"/>
                 <constraint firstItem="Gf8-jX-0fV" firstAttribute="trailing" secondItem="23F-zB-Pi8" secondAttribute="trailing" id="JDV-ja-dki"/>
@@ -131,6 +142,8 @@
                 <constraint firstItem="Gf8-jX-0fV" firstAttribute="bottom" secondItem="23F-zB-Pi8" secondAttribute="bottom" id="pVy-ys-Sxs"/>
                 <constraint firstItem="9Fd-mf-S1A" firstAttribute="leading" secondItem="23F-zB-Pi8" secondAttribute="trailing" constant="8" id="pod-uA-F99"/>
                 <constraint firstItem="9Fd-mf-S1A" firstAttribute="bottom" secondItem="a5d-eH-tHZ" secondAttribute="bottom" id="r3e-Xi-LQV"/>
+                <constraint firstItem="Gyt-B3-ilk" firstAttribute="leading" secondItem="23F-zB-Pi8" secondAttribute="leading" id="wS4-1Z-E4a"/>
+                <constraint firstItem="Gyt-B3-ilk" firstAttribute="bottom" secondItem="23F-zB-Pi8" secondAttribute="bottom" id="yXl-Ib-sB5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="NZ6-sQ-2mD"/>
             <point key="canvasLocation" x="-61.5" y="-248.5"/>

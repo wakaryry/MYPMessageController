@@ -26,9 +26,12 @@ open class MYPTextInputbarView: UIView {
     @IBOutlet weak var holdToSpeakButton: UIButton!
     
     @IBOutlet weak var topDivider: UIView!
+    @IBOutlet weak var bottomDivider: UIView!
     
     @IBOutlet weak var topDividerHeightC: NSLayoutConstraint!
-
+    // no need to count the height into height of bar
+    @IBOutlet weak var bottomDividerHeightC: NSLayoutConstraint!
+    
     @IBOutlet weak var leftButtonWidthC: NSLayoutConstraint!
     // to leftButton
     @IBOutlet weak var textViewLeftLeadingC: NSLayoutConstraint!
@@ -364,17 +367,18 @@ open class MYPTextInputbarView: UIView {
         self.layer.addObserver(self, forKeyPath: NSStringFromSelector(#selector(getter: CALayer.position)), options: [.new, .old], context: nil)
         
         self.textView.resignFirstResponderCallback = {[weak self] in
-            self?.textView.dividerColor = UIColor.lightGray
+            self?.bottomDivider.backgroundColor = UIColor.lightGray
         }
         
         self.textView.becomeFirstResponderCallback = {[weak self] in
-            self?.textView.dividerColor = self?.sendButton.tintColor
+            self?.bottomDivider.backgroundColor = self?.sendButton.tintColor
         }
     }
     
     /** update action button's initial height and width*/
     private func myp_initialActionButtonHeightAndWidth() {
         self.topDividerHeightC.constant = MYPOnePixal
+        self.bottomDividerHeightC.constant = MYPOnePixal
         
         let initialHeight = self.textView.intrinsicContentSize.height
         // made top margin 8
@@ -395,6 +399,7 @@ open class MYPTextInputbarView: UIView {
         self.holdToSpeakButton.layer.cornerRadius = 3.0
         self.holdToSpeakButton.layer.borderWidth = MYPOnePixal
         self.holdToSpeakButton.layer.borderColor = UIColor.lightGray.cgColor
+        self.holdToSpeakButton.isHidden = true
         
         // we must have this, otherwise we will get a wrong initial height of inputbar view
         // but we got a `EXC_BAD_ACCESS with code=2` bug when used in messageController
