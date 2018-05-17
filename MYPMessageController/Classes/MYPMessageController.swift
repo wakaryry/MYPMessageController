@@ -76,14 +76,6 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     /** true if text view's content can be cleaned with a shake gesture. Default is false. */
     open var isShakeToClearEnabled = false
     
-    /**
-     true if keyboard can be dismissed gradually with a vertical panning gesture. Default is true.
-     
-     This feature doesn't work on iOS 9 due to no legit alternatives to detect the keyboard view.
-     Open Radar: http://openradar.appspot.com/radar?id=5021485877952512
-     */
-    open var isKeyboardPanningEnabled = true
-    
     /** true if an external keyboard has been detected (this value updates only when the text view becomes first responder). */
     open private(set) var isExternalKeyboardDetected = false
     
@@ -553,7 +545,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     @objc private func myp_didPanTextInputBar(recognizer: UIPanGestureRecognizer) {
         
         // Textinput dragging isn't supported when
-        if self.view.window == nil || !self.isKeyboardPanningEnabled || self.ignoreTextInputbarAdjustment() || self.isPresentedInPopover {
+        if self.view.window == nil || self.ignoreTextInputbarAdjustment() || self.isPresentedInPopover {
             return
         }
         
@@ -718,7 +710,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
             return self.textView.isFirstResponder && !self.ignoreTextInputbarAdjustment()
         }
         else if gestureRecognizer == self.verticalPanGesture {
-            return self.isKeyboardPanningEnabled && !self.ignoreTextInputbarAdjustment()
+            return !self.ignoreTextInputbarAdjustment()
         }
         
         return false
