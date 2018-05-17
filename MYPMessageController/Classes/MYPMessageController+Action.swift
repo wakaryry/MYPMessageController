@@ -145,7 +145,12 @@ extension MYPMessageController {
         
         // if default action is allowed
         if self.maintainDefaultLeftAction {
-            
+            if self.imageState(for: sender) == .changed {
+                self.showHoldToSpeakView(true)
+            }
+            else {
+                self.showHoldToSpeakView(false)
+            }
         }
     }
     
@@ -555,5 +560,21 @@ extension MYPMessageController {
             return .initial
         }
         return .changed
+    }
+    
+    private func showHoldToSpeakView(_ shouldShow: Bool) {
+        if shouldShow {
+            self.textView.text = ""
+            self.dismissKeyboard(animated: true)
+            self.textView.isHidden = true
+            self.textInputbar.bottomDivider.isHidden = true
+            self.textInputbar.holdToSpeakButton.isHidden = false
+        }
+        else {
+            self.textInputbar.holdToSpeakButton.isHidden = true
+            self.textView.isHidden = false
+            self.textInputbar.bottomDivider.isHidden = false
+            self.textView.text = "朝辞白帝彩云间，我在这里等你还。两岸猿声啼不住，轻舟已过万重山。"
+        }
     }
 }
