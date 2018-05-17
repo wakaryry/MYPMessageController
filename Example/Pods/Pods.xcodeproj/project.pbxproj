@@ -42,7 +42,6 @@
 		E0425B3EB34A2CE22DC901A207E98392 /* myp_speak@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA10CFEC9CBBF8C4FFB7DF71B8E52E5 /* myp_speak@2x.png */; };
 		E122227132C3E57FA68BE9E8DCDD2144 /* UIResponder+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED48EA5E53993AC9F5A713495644B9C2 /* UIResponder+MYPAddition.swift */; };
 		E7947AC9A7DBC54F352CFDF97FE6338F /* myp_smile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E74C05ACBE51D78D68AC3D540B3149A8 /* myp_smile@3x.png */; };
-		E9EAE7CA20AD2AA800696EA3 /* MYPDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7C920AD2AA800696EA3 /* MYPDivider.swift */; };
 		EA0CB873910F32FBDC5F0B20583B26E5 /* myp_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE72C93864C6FE9325C68AA7205150E /* myp_plus@2x.png */; };
 		ECB4088AF57584559CF00EAA84EDA36D /* myp_speak.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFE06FA10027500A6136A8BAA7E8D40 /* myp_speak.png */; };
 		F80C14CEEC46FB6D74CB57CE2ED90821 /* myp_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F6C5AA4D68B8D84CD812A87E0A47F /* myp_keyboard@2x.png */; };
@@ -135,7 +134,6 @@
 		E74C05ACBE51D78D68AC3D540B3149A8 /* myp_smile@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_smile@3x.png"; path = "MYPMessageController/Assets/myp_smile@3x.png"; sourceTree = "<group>"; };
 		E74D3D4342A6DAFC6BCE77ECBEC04071 /* MYPTextView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPTextView+MYPAddition.swift"; path = "MYPMessageController/Classes/MYPTextView+MYPAddition.swift"; sourceTree = "<group>"; };
 		E770B6987E9C7046DC3A085404EEB574 /* MYPMessageController+TableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+TableDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+TableDelegate.swift"; sourceTree = "<group>"; };
-		E9EAE7C920AD2AA800696EA3 /* MYPDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MYPDivider.swift; path = MYPMessageController/Classes/MYPDivider.swift; sourceTree = "<group>"; };
 		E9ED1370891353268CB28B878EAA69BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED48EA5E53993AC9F5A713495644B9C2 /* UIResponder+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIResponder+MYPAddition.swift"; path = "MYPMessageController/Classes/UIResponder+MYPAddition.swift"; sourceTree = "<group>"; };
 		ED60506EEB4F99BBD5FC44F9D623EB19 /* ResourceBundle-MYPMessageController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MYPMessageController-Info.plist"; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 				CBBEB65CEA65CE1D20B45A19E49EF96A /* MYPTextView.swift */,
 				E74D3D4342A6DAFC6BCE77ECBEC04071 /* MYPTextView+MYPAddition.swift */,
 				E3E3AB32029AEBF6AFB8B9446B4FD5F5 /* MYPUIConstants.swift */,
-				E9EAE7C920AD2AA800696EA3 /* MYPDivider.swift */,
 				ED48EA5E53993AC9F5A713495644B9C2 /* UIResponder+MYPAddition.swift */,
 				7E27F25319A65F0C2EF8D739E365C082 /* UIScrollView+MYPAddition.swift */,
 				5A13912D7C91F22E05DFBFAA2B7840F0 /* UIView+MYPAddition.swift */,
@@ -537,7 +534,6 @@
 			files = (
 				D08437B900EDD09E9A62B1DD38DF5CAC /* MYPMessageController+Action.swift in Sources */,
 				CD2ECE45E0BEC9BF20274C60972751E9 /* MYPMessageController+AutoCompletion.swift in Sources */,
-				E9EAE7CA20AD2AA800696EA3 /* MYPDivider.swift in Sources */,
 				5FF943B2795CD626457682AAFCA8ABC3 /* MYPMessageController+CacheText.swift in Sources */,
 				B3F5AEE791A06244165B70FFC27BC34D /* MYPMessageController+CollectionViewDelegate.swift in Sources */,
 				26ADB9ADB5107F604E1141A98FB1ADD3 /* MYPMessageController+LifeCycle.swift in Sources */,
