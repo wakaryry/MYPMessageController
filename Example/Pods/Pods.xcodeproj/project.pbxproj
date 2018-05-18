@@ -45,6 +45,8 @@
 		E9EAE7CC20AEB09600696EA3 /* MYPEmotionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9EAE7CB20AEB09600696EA3 /* MYPEmotionView.xib */; };
 		E9EAE7CE20AEB0B300696EA3 /* MYPMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9EAE7CD20AEB0B300696EA3 /* MYPMoreView.xib */; };
 		E9EAE7D020AEB55300696EA3 /* MYPXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7CF20AEB55300696EA3 /* MYPXibView.swift */; };
+		E9EAE7D220AEB83A00696EA3 /* MYPEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7D120AEB83A00696EA3 /* MYPEmotionView.swift */; };
+		E9EAE7D420AEB84D00696EA3 /* MYPMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7D320AEB84D00696EA3 /* MYPMoreView.swift */; };
 		EA0CB873910F32FBDC5F0B20583B26E5 /* myp_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE72C93864C6FE9325C68AA7205150E /* myp_plus@2x.png */; };
 		ECB4088AF57584559CF00EAA84EDA36D /* myp_speak.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFE06FA10027500A6136A8BAA7E8D40 /* myp_speak.png */; };
 		F80C14CEEC46FB6D74CB57CE2ED90821 /* myp_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F6C5AA4D68B8D84CD812A87E0A47F /* myp_keyboard@2x.png */; };
@@ -140,6 +142,8 @@
 		E9EAE7CB20AEB09600696EA3 /* MYPEmotionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYPEmotionView.xib; path = MYPMessageController/Assets/MYPEmotionView.xib; sourceTree = "<group>"; };
 		E9EAE7CD20AEB0B300696EA3 /* MYPMoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYPMoreView.xib; path = MYPMessageController/Assets/MYPMoreView.xib; sourceTree = "<group>"; };
 		E9EAE7CF20AEB55300696EA3 /* MYPXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MYPXibView.swift; path = MYPMessageController/Classes/MYPXibView.swift; sourceTree = "<group>"; };
+		E9EAE7D120AEB83A00696EA3 /* MYPEmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MYPEmotionView.swift; path = MYPMessageController/Classes/MYPEmotionView.swift; sourceTree = "<group>"; };
+		E9EAE7D320AEB84D00696EA3 /* MYPMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MYPMoreView.swift; path = MYPMessageController/Classes/MYPMoreView.swift; sourceTree = "<group>"; };
 		E9ED1370891353268CB28B878EAA69BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED48EA5E53993AC9F5A713495644B9C2 /* UIResponder+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIResponder+MYPAddition.swift"; path = "MYPMessageController/Classes/UIResponder+MYPAddition.swift"; sourceTree = "<group>"; };
 		ED60506EEB4F99BBD5FC44F9D623EB19 /* ResourceBundle-MYPMessageController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MYPMessageController-Info.plist"; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				2409D723E15EB6083A1051E16B42F67C /* MYPMessageController+UITextViewDelegate.swift */,
 				96F8A794A2DFB584C3E966D9E75176F4 /* MYPTextInput.swift */,
 				A1C7AC0244608D4A8D5EE6A815CB82A0 /* MYPTextInputbarView.swift */,
+				E9EAE7D120AEB83A00696EA3 /* MYPEmotionView.swift */,
+				E9EAE7D320AEB84D00696EA3 /* MYPMoreView.swift */,
 				CBBEB65CEA65CE1D20B45A19E49EF96A /* MYPTextView.swift */,
 				E74D3D4342A6DAFC6BCE77ECBEC04071 /* MYPTextView+MYPAddition.swift */,
 				E3E3AB32029AEBF6AFB8B9446B4FD5F5 /* MYPUIConstants.swift */,
@@ -551,8 +557,10 @@
 				0719D16B2AD908CB4B8E5A5441B77598 /* MYPMessageController+TableDelegate.swift in Sources */,
 				FE11E42030C7DA3B583E341DF0020620 /* MYPMessageController+UITextViewDelegate.swift in Sources */,
 				97BD00F58BE7C3CD398D10AF2A87FD72 /* MYPMessageController-dummy.m in Sources */,
+				E9EAE7D420AEB84D00696EA3 /* MYPMoreView.swift in Sources */,
 				57AC41CD46312030F52CFECF2CB41A8D /* MYPMessageController.swift in Sources */,
 				E9EAE7D020AEB55300696EA3 /* MYPXibView.swift in Sources */,
+				E9EAE7D220AEB83A00696EA3 /* MYPEmotionView.swift in Sources */,
 				CDC0086C2180E52EC2115F32E7F548BD /* MYPTextInput.swift in Sources */,
 				9B881722E9F899B2218723B924945FD6 /* MYPTextInputbarView.swift in Sources */,
 				9FE348529B335642D46AF6655AC14DA4 /* MYPTextView+MYPAddition.swift in Sources */,
