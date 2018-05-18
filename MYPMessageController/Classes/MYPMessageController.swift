@@ -582,7 +582,10 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
             }
             else {
                 if recognizer.view == self.textInputbar && gestureVelocity.y < 0 {
-                    self.presentKeyboard(animated: true)
+                    // add the condition when holdToSpeak button is hidden, then could pan to show keyboard
+                    if self.textInputbar.holdToSpeakButton.isHidden {
+                        self.presentKeyboard(animated: true)
+                    }
                 }
                 return
             }
