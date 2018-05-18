@@ -15,8 +15,38 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kuh-iS-sQg">
+                    <rect key="frame" x="0.0" y="635" width="375" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="8Px-HN-v7X"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </pageControl>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Imw-PI-WLW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JDd-oA-Krf">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Imw-PI-WLW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0lG-pL-q1E"/>
+                <constraint firstItem="Imw-PI-WLW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="LdH-x0-JkU"/>
+                <constraint firstItem="Imw-PI-WLW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QZx-tD-X52"/>
+                <constraint firstItem="kuh-iS-sQg" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="XPV-Wk-BKP"/>
+                <constraint firstItem="kuh-iS-sQg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="htZ-wW-fci"/>
+                <constraint firstItem="kuh-iS-sQg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ulk-H9-ND1"/>
+                <constraint firstItem="kuh-iS-sQg" firstAttribute="top" secondItem="Imw-PI-WLW" secondAttribute="bottom" id="wtk-ie-l4Q"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
 </document>
