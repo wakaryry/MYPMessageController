@@ -5,7 +5,7 @@
 //  Created by wakary redou on 2018/5/18.
 //
 
-class MYPXibView: UIView {
+open class MYPXibView: UIView {
     //初始化时将xib中的view添加进来
     var contentView:UIView!
     
