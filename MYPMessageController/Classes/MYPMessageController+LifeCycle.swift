@@ -91,11 +91,19 @@ extension MYPMessageController {
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=0)-[autoCompletionView(0@750)]-0@999-[textInputbar]", options: [], metrics: nil, views: views))
         
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[textInputbar]-0@999-[emotionView(0)]", options: [], metrics: nil, views: views))
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[textInputbar]-0@999-[moreView(0)]", options: [], metrics: nil, views: views))
+        
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|", options: [], metrics: nil, views: views))
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[autoCompletionView]|", options: [], metrics: nil, views: views))
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[textInputbar]|", options: [], metrics: nil, views: views))
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[emotionView]|", options: [], metrics: nil, views: views))
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[moreView]|", options: [], metrics: nil, views: views))
         
         scrollViewHeightC = view.myp_constraint(for: .height, firstItem: scrollViewProxy, secondItem: nil)!
         autoCompletionViewHeightC = view.myp_constraint(for: .height, firstItem: autoCompletionView, secondItem: nil)!
