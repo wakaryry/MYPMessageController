@@ -45,6 +45,12 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         return bar
     }()
     
+    /** emotion keyboard view*/
+    open var emotionView: MYPEmotionView = MYPEmotionView()
+    
+    /** more items keyboard view*/
+    open var moreView: MYPMoreView = MYPMoreView()
+    
     /** read-only. A single tap gesture used to dismiss the keyboard. MYPMessageController is its delegate. */
     lazy private(set) var singleTapGesture: UIGestureRecognizer = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(myp_didTapScrollView))

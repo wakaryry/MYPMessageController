@@ -20,6 +20,8 @@ extension MYPMessageController {
         self.view.addSubview(self.scrollViewProxy!)
         self.view.addSubview(self.autoCompletionView)
         self.view.addSubview(self.textInputbar)
+        self.view.addSubview(self.emotionView)
+        self.view.addSubview(self.moreView)
         
         self.myp_setupViewConstraints()
         
@@ -83,7 +85,7 @@ extension MYPMessageController {
     
     private func myp_setupViewConstraints() {
         
-        let views = ["scrollView": scrollViewProxy!, "autoCompletionView": autoCompletionView, "textInputbar": textInputbar]
+        let views = ["scrollView": scrollViewProxy!, "autoCompletionView": autoCompletionView, "textInputbar": textInputbar, "emotionView": emotionView, "moreView": moreView]
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView(0@750)]-0@999-[textInputbar(>=0)]|", options: [], metrics: nil, views: views))
         
