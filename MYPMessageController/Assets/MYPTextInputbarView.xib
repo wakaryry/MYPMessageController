@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MYPTextInputbarView" customModule="MYPMessageController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MYPTextInputbarView" customModule="MYPMessageController">
             <connections>
                 <outlet property="actionButtonHeightC" destination="tsq-T7-KjD" id="9uj-s5-8fF"/>
                 <outlet property="bottomDivider" destination="Gyt-B3-ilk" id="WRh-kV-GDM"/>

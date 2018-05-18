@@ -20,6 +20,7 @@ extension MYPMessageController {
         self.view.addSubview(self.scrollViewProxy!)
         self.view.addSubview(self.autoCompletionView)
         self.view.addSubview(self.textInputbar)
+        print("DidLoad")
         self.view.addSubview(self.emotionView)
         self.view.addSubview(self.moreView)
         
