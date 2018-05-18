@@ -150,6 +150,7 @@ extension MYPMessageController {
             }
             else {
                 self.showHoldToSpeakView(false)
+                self.presentKeyboard(animated: true)
             }
         }
     }
@@ -157,7 +158,7 @@ extension MYPMessageController {
     @objc open func didPressRightButton(sender: UIButton) {
         // if default action is allowed
         if self.maintainDefaultLeftAction {
-            if self.imageState(for: sender) == .changed {
+            if self.imageState(for: self.leftButton) == .changed {
                 self.showHoldToSpeakView(false)
             }
         }
@@ -176,7 +177,7 @@ extension MYPMessageController {
     @objc open func didPressRightMoreButton(sender: UIButton) {
         // if default action is allowed
         if self.maintainDefaultLeftAction {
-            if self.imageState(for: sender) == .changed {
+            if self.imageState(for: self.leftButton) == .changed {
                 self.showHoldToSpeakView(false)
             }
         }
@@ -582,6 +583,9 @@ extension MYPMessageController {
         }
         
         if shouldShow {
+            self.currentText = self.textView.text
+            self.currentAttributedText = self.textView.attributedText
+            // clear
             self.textView.text = ""
             self.dismissKeyboard(animated: true)
             self.textView.isHidden = true
@@ -589,7 +593,8 @@ extension MYPMessageController {
             self.textInputbar.holdToSpeakButton.isHidden = false
         }
         else {
-            self.textView.text = "朝辞白帝彩云间，我在这里等你还。两岸猿声啼不住，轻舟已过万重山。"
+            // refill
+            self.textView.attributedText = self.currentAttributedText
             self.textInputbar.holdToSpeakButton.isHidden = true
             self.textView.isHidden = false
             self.textInputbar.bottomDivider.isHidden = false

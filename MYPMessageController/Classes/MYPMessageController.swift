@@ -117,6 +117,10 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     /** The current keyboard status (will/did hide, will/did show) */
     open private(set) var keyboardStatus: MYPKeyboardStatus?
     
+    /** For left action buttono, we need to clear the textView and then refill the text into textview.*/
+    internal var currentText: String = ""
+    internal var currentAttributedText: NSAttributedString = NSAttributedString(string: "")
+    
     /** Convenience accessors (accessed through the text input bar) */
     open var textView: MYPTextView {
         return self.textInputbar.textView
