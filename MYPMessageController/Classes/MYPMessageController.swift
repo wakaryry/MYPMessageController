@@ -168,6 +168,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     internal var scrollViewHeightC: NSLayoutConstraint = NSLayoutConstraint()
     internal var textInputbarHeightC: NSLayoutConstraint = NSLayoutConstraint()
     internal var autoCompletionViewHeightC: NSLayoutConstraint = NSLayoutConstraint()
+    // keyboard height constraint is the inputbar's bottom margin
     internal var keyboardHeightC: NSLayoutConstraint = NSLayoutConstraint()
     
     /** true if the user is moving the keyboard with a gesture */
