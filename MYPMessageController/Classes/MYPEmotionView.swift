@@ -29,4 +29,8 @@ open class MYPEmotionView: MYPXibView {
     private func commonSetting() {
         
     }
+    
+    open func appropriateHeight() -> CGFloat {
+        return 66.0
+    }
 }

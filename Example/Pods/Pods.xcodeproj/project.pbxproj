@@ -7,67 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0719D16B2AD908CB4B8E5A5441B77598 /* MYPMessageController+TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770B6987E9C7046DC3A085404EEB574 /* MYPMessageController+TableDelegate.swift */; };
-		0C2E0DE597625D37FAF314EB0C71DD33 /* MYPMessageController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2DE3F70C850CB06D86B27E4F3E9195 /* MYPMessageController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A1CAB584DEA7582B9D799D59332AA81 /* MYPTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B821A20E038336C003D7D8A28F875 /* MYPTextInput.swift */; };
+		0BE536222D09EB2C71A1BF94DC84B97B /* MYPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846218F145FABCAD3F4B8BD4703103CF /* MYPTextView.swift */; };
+		1109D72672E015BDA88E05449ED164D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		1350284A6A474A93E3C6828BD710301C /* myp_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2336F0FE65EBAC7A9C81D7B557D15910 /* myp_keyboard@2x.png */; };
+		137788CE7CC8D2C770BF448D12B3F9F2 /* myp_plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4754E353CC357D83AA1FE7F5F05D1F6C /* myp_plus@3x.png */; };
 		153EB308C1E332B0D5BED051CF31590D /* Pods-MYPMessageController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15C5A672278EC4D2F01368D745192CD6 /* Pods-MYPMessageController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1652C245EDC73D3FEBEEDBBE85EE20DC /* myp_smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B99614677B8B07EF01DDB2D6387E5AF /* myp_smile@2x.png */; };
-		26ADB9ADB5107F604E1141A98FB1ADD3 /* MYPMessageController+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2CA132FC47476033EDB424A6E6C338 /* MYPMessageController+LifeCycle.swift */; };
-		2D3554F44BF0ADD62CC736B7A535ACC0 /* MYPUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E3AB32029AEBF6AFB8B9446B4FD5F5 /* MYPUIConstants.swift */; };
-		44ADD21978F2BCC20BC82C4783A350FD /* myp_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F6E1B63EC376415E2A24B335B5D9FD9 /* myp_plus.png */; };
-		47B71913AAC15FE6936E150132789597 /* myp_speak@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 600F7BA460A1BA25C99EF5B7ABA5B617 /* myp_speak@3x.png */; };
-		500CBBA27384A0B172B7B536584E7B90 /* UIScrollView+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27F25319A65F0C2EF8D739E365C082 /* UIScrollView+MYPAddition.swift */; };
-		57AC41CD46312030F52CFECF2CB41A8D /* MYPMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163BF0AE195A460ED1AB9A0B7A983140 /* MYPMessageController.swift */; };
-		5AD323275591D18C026F37304A224D18 /* myp_keyboard@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7BDE2800B2E1C8BAEF1B6613B84B42 /* myp_keyboard@3x.png */; };
-		5FF943B2795CD626457682AAFCA8ABC3 /* MYPMessageController+CacheText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18586AFCA7FF873A855D1CB3E5F2B72 /* MYPMessageController+CacheText.swift */; };
-		64302190EFD2999330877399C9C8DF1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
-		6FF9D52A43D4E2E3A8A7BC06DAA495A1 /* myp_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = D7F08AA7C30E565B67BFF6E21CA7AA89 /* myp_smile.png */; };
-		790116A4E1A1F148BFED3C88624B3C4C /* myp_plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B5BB8C1C131A388B4002B887D8BF277 /* myp_plus@3x.png */; };
-		85BC4B3E92F9827A68360E4031E3F148 /* myp_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F295BFCD745192EC24537B43C4E6D2 /* myp_keyboard.png */; };
+		161B93ABE9EFFEECA736979ABDEDA757 /* MYPMessageController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595E29A053C627154300F02F3F46399 /* MYPMessageController+Action.swift */; };
+		1A3BCB14DA07E4421D0E6AD06466F162 /* MYPMessageController+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB3A77556E563EB6EA157A16AFA9B00 /* MYPMessageController+UITextViewDelegate.swift */; };
+		24BBCA05A2E7CFEC92DD5DD8F9126F88 /* myp_speak.png in Resources */ = {isa = PBXBuildFile; fileRef = A61117123E7A19CA4E109CB5E3C2B495 /* myp_speak.png */; };
+		24F2BBF61D02F248FA0CBE734CD945E8 /* MYPUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9203DCCF1FC5A7B4DC03767F58CE0A /* MYPUIConstants.swift */; };
+		2A89AD760DD2881D089B624AEC741290 /* MYPMessageController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 56781DA70D41040C0D0E4B5E570A0D72 /* MYPMessageController.bundle */; };
+		30E38A229A18DC003FDFEDE5FD9C4E33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		32F8646CB0AEAF0DDB0AA5B20F39A56B /* MYPMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F7787FC85902F2856AE32EFCC1698E /* MYPMoreView.xib */; };
+		3A522963E5FF257B2174C560143C9CC2 /* MYPMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E0FA0A266DEAAD5549DCD9D3744BD /* MYPMoreView.swift */; };
+		3D2E8EA2C92D107B2E856F2D5CC61E52 /* myp_smile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5807FB1FBF02F60136F0BB91C15B03 /* myp_smile@3x.png */; };
+		3FE82335C6746F25F90DA20D8C2C4C39 /* MYPMessageController+TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3DDD8B631F34CDC74C049DCA8336A6 /* MYPMessageController+TableDelegate.swift */; };
+		4BCE8FBC2B3B9CAE4C188230E96ADA8D /* myp_speak@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811E788CE63B4118065A05E27B031DF4 /* myp_speak@3x.png */; };
+		5044FE9F939A860E5E424A0C7C5CB3AC /* myp_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ECFB694BB8D591A61F608C986B02FC1 /* myp_keyboard.png */; };
+		5225D2C97BB86F618D164A3FDC88FF28 /* MYPXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4D82C3B9E99FB9AA0644DC7C54A39 /* MYPXibView.swift */; };
+		52CD53BFC0BE246F0D0DE2AB8900DCEF /* myp_keyboard@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE294EA1DE0FBA584AAAECB8E1EEB7A /* myp_keyboard@3x.png */; };
+		53119BB7042BE977389CF046AFF2A88A /* MYPMessageController+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF775C8B4BEB8204EA46B42D1AB29C1 /* MYPMessageController+LifeCycle.swift */; };
+		5612C89C1E3CD5ECC2ED541573FED984 /* myp_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F14197F660FC2FAE841134EF4C9F561 /* myp_plus@2x.png */; };
+		619D43F23385D1B02AEBF2621F9CC632 /* myp_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B47D1B548B72A29E5A77A345DC240D /* myp_plus.png */; };
+		67E4B7DF9D8D23F299EED7B764B03184 /* UIView+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D92D58782DF688B96F07E5F6E16D5C /* UIView+MYPAddition.swift */; };
+		7677A60A9C553FE7CA2CC7C19273903E /* MYPTextInputbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F00ECD9C91AA9B719A1E32E5265E23 /* MYPTextInputbarView.xib */; };
+		82EE82033F566EA37568AD3BD9F77ACE /* myp_speak@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA2144FC08FA3E1D8BE26F503B2FE00 /* myp_speak@2x.png */; };
+		869F68A9D8494A6CC3A4A48D2B4A1E61 /* MYPMessageController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E168ADCBA80E55A416D5AB0913C61 /* MYPMessageController-dummy.m */; };
 		8EA64834C1DA09A9CA6377C594BBB18C /* Pods-MYPMessageController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 480F11FB22B1EF7E87B8345373F462DE /* Pods-MYPMessageController_Tests-dummy.m */; };
-		953945CB774075EA6020DC10C396B819 /* UIView+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13912D7C91F22E05DFBFAA2B7840F0 /* UIView+MYPAddition.swift */; };
-		97BD00F58BE7C3CD398D10AF2A87FD72 /* MYPMessageController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32B8CDCBD315E1F743FE52324352E /* MYPMessageController-dummy.m */; };
-		9B881722E9F899B2218723B924945FD6 /* MYPTextInputbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7AC0244608D4A8D5EE6A815CB82A0 /* MYPTextInputbarView.swift */; };
-		9E17341978D439EFE909BDBD170058C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		9FE348529B335642D46AF6655AC14DA4 /* MYPTextView+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D4342A6DAFC6BCE77ECBEC04071 /* MYPTextView+MYPAddition.swift */; };
+		9216698E22EDCFCF4BA2345DB85A1FFD /* MYPMessageController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13541EDCC7A654EA54F1D5E525E2CF41 /* MYPMessageController+CollectionViewDelegate.swift */; };
+		9787C1F70EC22A8CC5520E702A132776 /* MYPEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0BB24353FA4F2E81BA3545CE1547C /* MYPEmotionView.swift */; };
+		9FCCEA02CE6A1CCF33EA7C3A3484CA00 /* myp_smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3094C9741544C1A4411A5CDF3C4E3B3 /* myp_smile@2x.png */; };
+		A6B93D79FC8E7938BD80E96C2E9B066D /* MYPTextView+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A771C31BC054EC7DD8A421656BC169A /* MYPTextView+MYPAddition.swift */; };
+		A7AB101ACA885D4AD7B74D87DAD64A24 /* MYPMessageController+AutoCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5E835EA7EF037886F235E13389BF /* MYPMessageController+AutoCompletion.swift */; };
 		A8F7354E1E962A24020D01103DFF4B5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		AC92001409A79F4D333B89614AD4FBEB /* MYPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBEB65CEA65CE1D20B45A19E49EF96A /* MYPTextView.swift */; };
-		B3F5AEE791A06244165B70FFC27BC34D /* MYPMessageController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558FD9DC3F9F5AA8EA2EBA682CF3E18 /* MYPMessageController+CollectionViewDelegate.swift */; };
-		BAD65AC0635D6C6CA8621093639F09CB /* MYPTextInputbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038BB391BDC1E7077041D178C0FA8763 /* MYPTextInputbarView.xib */; };
-		C1AA8BA6E8A58C50D36F8F6064E208B1 /* MYPMessageController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 56781DA70D41040C0D0E4B5E570A0D72 /* MYPMessageController.bundle */; };
-		CD2ECE45E0BEC9BF20274C60972751E9 /* MYPMessageController+AutoCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F86CBFCA38AC09BD877DE3FB8FBA6 /* MYPMessageController+AutoCompletion.swift */; };
-		CDC0086C2180E52EC2115F32E7F548BD /* MYPTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8A794A2DFB584C3E966D9E75176F4 /* MYPTextInput.swift */; };
-		D08437B900EDD09E9A62B1DD38DF5CAC /* MYPMessageController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FD6D147608BA9EFF7442E8BC2B1183 /* MYPMessageController+Action.swift */; };
+		CF0957F8C40E83D84267ECABEE0530BB /* UIScrollView+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38496634DE33731DA4344B1BAC622AF /* UIScrollView+MYPAddition.swift */; };
+		CF4DAE2EC61E3C171B7CEEBA0ECF9C56 /* MYPMessageController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50FAAFAE0911E41D3CF77463E0B4B21B /* MYPMessageController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D31C88BFC48256E9FB65FB053EC8DAEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		D3BE841F564DB6453338EC1D723C16A5 /* MYPEmotionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B09DDB466A5BE9535ADDE655E8F0B93 /* MYPEmotionView.xib */; };
 		DEB85E067761AD99704D8CCFAD92464B /* Pods-MYPMessageController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6C435907E6FCAF4013279CD6202F865 /* Pods-MYPMessageController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0425B3EB34A2CE22DC901A207E98392 /* myp_speak@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA10CFEC9CBBF8C4FFB7DF71B8E52E5 /* myp_speak@2x.png */; };
-		E122227132C3E57FA68BE9E8DCDD2144 /* UIResponder+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED48EA5E53993AC9F5A713495644B9C2 /* UIResponder+MYPAddition.swift */; };
-		E7947AC9A7DBC54F352CFDF97FE6338F /* myp_smile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E74C05ACBE51D78D68AC3D540B3149A8 /* myp_smile@3x.png */; };
-		E9EAE7CC20AEB09600696EA3 /* MYPEmotionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9EAE7CB20AEB09600696EA3 /* MYPEmotionView.xib */; };
-		E9EAE7CE20AEB0B300696EA3 /* MYPMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9EAE7CD20AEB0B300696EA3 /* MYPMoreView.xib */; };
-		E9EAE7D020AEB55300696EA3 /* MYPXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7CF20AEB55300696EA3 /* MYPXibView.swift */; };
-		E9EAE7D220AEB83A00696EA3 /* MYPEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7D120AEB83A00696EA3 /* MYPEmotionView.swift */; };
-		E9EAE7D420AEB84D00696EA3 /* MYPMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EAE7D320AEB84D00696EA3 /* MYPMoreView.swift */; };
-		EA0CB873910F32FBDC5F0B20583B26E5 /* myp_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE72C93864C6FE9325C68AA7205150E /* myp_plus@2x.png */; };
-		ECB4088AF57584559CF00EAA84EDA36D /* myp_speak.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFE06FA10027500A6136A8BAA7E8D40 /* myp_speak.png */; };
-		F80C14CEEC46FB6D74CB57CE2ED90821 /* myp_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F6C5AA4D68B8D84CD812A87E0A47F /* myp_keyboard@2x.png */; };
+		DFC47E9A2E7317AF4CAFFDF6B99AAA46 /* MYPMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F70633EB10FBACDF5902881274BF3C4 /* MYPMessageController.swift */; };
+		DFFAE3B60BD73F7CF2045D0D840DE83D /* myp_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 3577C706645DF46F33E5C48C7109F8E7 /* myp_smile.png */; };
+		E0065FEF13D5A1818455BBDCEE2B6149 /* MYPMessageController+CacheText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086892110F3750630399C0F827E4AB7F /* MYPMessageController+CacheText.swift */; };
+		E9F09072C6F10B43F027688F323A0409 /* UIResponder+MYPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D2084F09B40A6D3498EA9407BD142 /* UIResponder+MYPAddition.swift */; };
+		EB997F3D57EEBAB5C92A8E9876A56B5E /* MYPTextInputbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB620A9C4AF4A66C61227C8EAB6400F /* MYPTextInputbarView.swift */; };
 		FBDAA58364464504D22940A0295C20FD /* Pods-MYPMessageController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F2CBEB138856C316FFD02FE55EEA3 /* Pods-MYPMessageController_Example-dummy.m */; };
-		FE11E42030C7DA3B583E341DF0020620 /* MYPMessageController+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409D723E15EB6083A1051E16B42F67C /* MYPMessageController+UITextViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A6FB9C19205C064892D7E78F982FEC6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EB143F44313B83822289B5A577D885C3;
-			remoteInfo = "MYPMessageController-MYPMessageController";
-		};
 		48076DFEC4686339BAD7B822CABBC1E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 15ABAD236DFE9526650FA6910CAA6D65;
+			remoteGlobalIDString = 6A9627A4E773E2B21D1AD368A0FDE0A6;
 			remoteInfo = MYPMessageController;
+		};
+		4BDF959614AE21FB996B150CFC080C7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7464B7CB41999B102883B6E9859FE42E;
+			remoteInfo = "MYPMessageController-MYPMessageController";
 		};
 		4D2FF97F5979E9C0402C77DA4418719F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -79,101 +79,101 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		038BB391BDC1E7077041D178C0FA8763 /* MYPTextInputbarView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MYPTextInputbarView.xib; path = MYPMessageController/Assets/MYPTextInputbarView.xib; sourceTree = "<group>"; };
 		05C06AAE2E204D317426DAA6FF1D9263 /* Pods-MYPMessageController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MYPMessageController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		11847B395920AE9C0F83E26CCC81BF38 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		086892110F3750630399C0F827E4AB7F /* MYPMessageController+CacheText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+CacheText.swift"; path = "MYPMessageController/Classes/MYPMessageController+CacheText.swift"; sourceTree = "<group>"; };
+		090B821A20E038336C003D7D8A28F875 /* MYPTextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextInput.swift; path = MYPMessageController/Classes/MYPTextInput.swift; sourceTree = "<group>"; };
+		0A771C31BC054EC7DD8A421656BC169A /* MYPTextView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPTextView+MYPAddition.swift"; path = "MYPMessageController/Classes/MYPTextView+MYPAddition.swift"; sourceTree = "<group>"; };
 		11D2763D3B128BAEC06B53928BCD96D3 /* Pods-MYPMessageController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MYPMessageController_Example.modulemap"; sourceTree = "<group>"; };
+		13541EDCC7A654EA54F1D5E525E2CF41 /* MYPMessageController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+CollectionViewDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		1595E29A053C627154300F02F3F46399 /* MYPMessageController+Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+Action.swift"; path = "MYPMessageController/Classes/MYPMessageController+Action.swift"; sourceTree = "<group>"; };
 		15C5A672278EC4D2F01368D745192CD6 /* Pods-MYPMessageController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MYPMessageController_Example-umbrella.h"; sourceTree = "<group>"; };
-		163BF0AE195A460ED1AB9A0B7A983140 /* MYPMessageController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPMessageController.swift; path = MYPMessageController/Classes/MYPMessageController.swift; sourceTree = "<group>"; };
-		18E5CEA67C6D47076543A27A7B6BB06A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		2409D723E15EB6083A1051E16B42F67C /* MYPMessageController+UITextViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+UITextViewDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+UITextViewDelegate.swift"; sourceTree = "<group>"; };
-		2CFE06FA10027500A6136A8BAA7E8D40 /* myp_speak.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_speak.png; path = MYPMessageController/Assets/myp_speak.png; sourceTree = "<group>"; };
+		2336F0FE65EBAC7A9C81D7B557D15910 /* myp_keyboard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_keyboard@2x.png"; path = "MYPMessageController/Assets/myp_keyboard@2x.png"; sourceTree = "<group>"; };
+		292BD8B87099178AD8A033D46376FA5E /* MYPMessageController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MYPMessageController.xcconfig; sourceTree = "<group>"; };
 		2DCE1D22CB9ADB82360B141658F9E423 /* Pods-MYPMessageController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MYPMessageController_Example-resources.sh"; sourceTree = "<group>"; };
-		2E7BDE2800B2E1C8BAEF1B6613B84B42 /* myp_keyboard@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_keyboard@3x.png"; path = "MYPMessageController/Assets/myp_keyboard@3x.png"; sourceTree = "<group>"; };
-		34D9AF5ADBA618F98F7D9233DE021995 /* Pods_MYPMessageController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYPMessageController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AA10CFEC9CBBF8C4FFB7DF71B8E52E5 /* myp_speak@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_speak@2x.png"; path = "MYPMessageController/Assets/myp_speak@2x.png"; sourceTree = "<group>"; };
+		34D9AF5ADBA618F98F7D9233DE021995 /* Pods_MYPMessageController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MYPMessageController_Tests.framework; path = "Pods-MYPMessageController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34F7787FC85902F2856AE32EFCC1698E /* MYPMoreView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MYPMoreView.xib; path = MYPMessageController/Assets/MYPMoreView.xib; sourceTree = "<group>"; };
+		3577C706645DF46F33E5C48C7109F8E7 /* myp_smile.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_smile.png; path = MYPMessageController/Assets/myp_smile.png; sourceTree = "<group>"; };
+		37D92D58782DF688B96F07E5F6E16D5C /* UIView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+MYPAddition.swift"; path = "MYPMessageController/Classes/UIView+MYPAddition.swift"; sourceTree = "<group>"; };
+		3A2C5E835EA7EF037886F235E13389BF /* MYPMessageController+AutoCompletion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+AutoCompletion.swift"; path = "MYPMessageController/Classes/MYPMessageController+AutoCompletion.swift"; sourceTree = "<group>"; };
+		3C81331CBDC44103BC888B1E7216A517 /* MYPMessageController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MYPMessageController-prefix.pch"; sourceTree = "<group>"; };
 		44235DC14972D0383CB7A408190FAF0B /* Pods-MYPMessageController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MYPMessageController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		4558FD9DC3F9F5AA8EA2EBA682CF3E18 /* MYPMessageController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+CollectionViewDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		4618031975650B5BE350C5AA29E1C69B /* ResourceBundle-MYPMessageController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MYPMessageController-Info.plist"; sourceTree = "<group>"; };
+		4754E353CC357D83AA1FE7F5F05D1F6C /* myp_plus@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_plus@3x.png"; path = "MYPMessageController/Assets/myp_plus@3x.png"; sourceTree = "<group>"; };
 		480F11FB22B1EF7E87B8345373F462DE /* Pods-MYPMessageController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MYPMessageController_Tests-dummy.m"; sourceTree = "<group>"; };
-		4B99614677B8B07EF01DDB2D6387E5AF /* myp_smile@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_smile@2x.png"; path = "MYPMessageController/Assets/myp_smile@2x.png"; sourceTree = "<group>"; };
-		4F0F6C5AA4D68B8D84CD812A87E0A47F /* myp_keyboard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_keyboard@2x.png"; path = "MYPMessageController/Assets/myp_keyboard@2x.png"; sourceTree = "<group>"; };
-		56781DA70D41040C0D0E4B5E570A0D72 /* MYPMessageController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYPMessageController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A5807FB1FBF02F60136F0BB91C15B03 /* myp_smile@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_smile@3x.png"; path = "MYPMessageController/Assets/myp_smile@3x.png"; sourceTree = "<group>"; };
+		4F14197F660FC2FAE841134EF4C9F561 /* myp_plus@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_plus@2x.png"; path = "MYPMessageController/Assets/myp_plus@2x.png"; sourceTree = "<group>"; };
+		50FAAFAE0911E41D3CF77463E0B4B21B /* MYPMessageController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MYPMessageController-umbrella.h"; sourceTree = "<group>"; };
+		56781DA70D41040C0D0E4B5E570A0D72 /* MYPMessageController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MYPMessageController.bundle; path = "MYPMessageController-MYPMessageController.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B3C5F6E47E59C536AAC39220553756 /* MYPMessageController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MYPMessageController.modulemap; sourceTree = "<group>"; };
 		57BB5CC008FE52A235E3ED2809DECA6C /* Pods-MYPMessageController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MYPMessageController_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		5A13912D7C91F22E05DFBFAA2B7840F0 /* UIView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+MYPAddition.swift"; path = "MYPMessageController/Classes/UIView+MYPAddition.swift"; sourceTree = "<group>"; };
-		600F7BA460A1BA25C99EF5B7ABA5B617 /* myp_speak@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_speak@3x.png"; path = "MYPMessageController/Assets/myp_speak@3x.png"; sourceTree = "<group>"; };
-		63F295BFCD745192EC24537B43C4E6D2 /* myp_keyboard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_keyboard.png; path = MYPMessageController/Assets/myp_keyboard.png; sourceTree = "<group>"; };
-		656D68C63A359854D72FC7D2A71C8844 /* MYPMessageController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MYPMessageController.modulemap; sourceTree = "<group>"; };
-		68E8C6B3B46BD94CC9A7CDAB114B50B0 /* Pods_MYPMessageController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYPMessageController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E32B8CDCBD315E1F743FE52324352E /* MYPMessageController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MYPMessageController-dummy.m"; sourceTree = "<group>"; };
-		6B5BB8C1C131A388B4002B887D8BF277 /* myp_plus@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_plus@3x.png"; path = "MYPMessageController/Assets/myp_plus@3x.png"; sourceTree = "<group>"; };
-		71AA74FDABEB960DC062F4ECB4ED5D8C /* MYPMessageController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MYPMessageController-prefix.pch"; sourceTree = "<group>"; };
-		7E27F25319A65F0C2EF8D739E365C082 /* UIScrollView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+MYPAddition.swift"; path = "MYPMessageController/Classes/UIScrollView+MYPAddition.swift"; sourceTree = "<group>"; };
-		7F6E1B63EC376415E2A24B335B5D9FD9 /* myp_plus.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_plus.png; path = MYPMessageController/Assets/myp_plus.png; sourceTree = "<group>"; };
-		7FC3DDD7A4C38C33975F81B0AD47FE53 /* MYPMessageController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MYPMessageController.xcconfig; sourceTree = "<group>"; };
+		5AB723DDA5D5AEBD492D8C9BCC0E9255 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		5B09DDB466A5BE9535ADDE655E8F0B93 /* MYPEmotionView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MYPEmotionView.xib; path = MYPMessageController/Assets/MYPEmotionView.xib; sourceTree = "<group>"; };
+		5CF775C8B4BEB8204EA46B42D1AB29C1 /* MYPMessageController+LifeCycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+LifeCycle.swift"; path = "MYPMessageController/Classes/MYPMessageController+LifeCycle.swift"; sourceTree = "<group>"; };
+		5F3D415E2F52AEC59ADC8CA606796886 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		668E168ADCBA80E55A416D5AB0913C61 /* MYPMessageController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MYPMessageController-dummy.m"; sourceTree = "<group>"; };
+		68E8C6B3B46BD94CC9A7CDAB114B50B0 /* Pods_MYPMessageController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MYPMessageController_Example.framework; path = "Pods-MYPMessageController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F70633EB10FBACDF5902881274BF3C4 /* MYPMessageController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPMessageController.swift; path = MYPMessageController/Classes/MYPMessageController.swift; sourceTree = "<group>"; };
+		77F00ECD9C91AA9B719A1E32E5265E23 /* MYPTextInputbarView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MYPTextInputbarView.xib; path = MYPMessageController/Assets/MYPTextInputbarView.xib; sourceTree = "<group>"; };
+		7FB620A9C4AF4A66C61227C8EAB6400F /* MYPTextInputbarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextInputbarView.swift; path = MYPMessageController/Classes/MYPTextInputbarView.swift; sourceTree = "<group>"; };
+		811E788CE63B4118065A05E27B031DF4 /* myp_speak@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_speak@3x.png"; path = "MYPMessageController/Assets/myp_speak@3x.png"; sourceTree = "<group>"; };
+		846218F145FABCAD3F4B8BD4703103CF /* MYPTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextView.swift; path = MYPMessageController/Classes/MYPTextView.swift; sourceTree = "<group>"; };
 		8CD710B171CDC0343CB991B7C5122D15 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D3F86CBFCA38AC09BD877DE3FB8FBA6 /* MYPMessageController+AutoCompletion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+AutoCompletion.swift"; path = "MYPMessageController/Classes/MYPMessageController+AutoCompletion.swift"; sourceTree = "<group>"; };
 		8ED21E690EF7B4CCF1737F8F18EAD9A6 /* Pods-MYPMessageController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MYPMessageController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96F8A794A2DFB584C3E966D9E75176F4 /* MYPTextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextInput.swift; path = MYPMessageController/Classes/MYPTextInput.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98095768F3EF6D244F5FB2F6DA99634D /* Pods-MYPMessageController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MYPMessageController_Tests.modulemap"; sourceTree = "<group>"; };
+		9ECFB694BB8D591A61F608C986B02FC1 /* myp_keyboard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_keyboard.png; path = MYPMessageController/Assets/myp_keyboard.png; sourceTree = "<group>"; };
 		9FAF71CC3EA833B8D47163AB18C32D49 /* Pods-MYPMessageController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MYPMessageController_Tests-resources.sh"; sourceTree = "<group>"; };
-		A1C7AC0244608D4A8D5EE6A815CB82A0 /* MYPTextInputbarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextInputbarView.swift; path = MYPMessageController/Classes/MYPTextInputbarView.swift; sourceTree = "<group>"; };
-		A705059C23559F99E898D40FAD5BCFDB /* MYPMessageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYPMessageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61117123E7A19CA4E109CB5E3C2B495 /* myp_speak.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_speak.png; path = MYPMessageController/Assets/myp_speak.png; sourceTree = "<group>"; };
+		A705059C23559F99E898D40FAD5BCFDB /* MYPMessageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MYPMessageController.framework; path = MYPMessageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8B47D1B548B72A29E5A77A345DC240D /* myp_plus.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_plus.png; path = MYPMessageController/Assets/myp_plus.png; sourceTree = "<group>"; };
 		AE8CDF1A23A99D4F1649937C74C2C6A9 /* Pods-MYPMessageController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MYPMessageController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		B3094C9741544C1A4411A5CDF3C4E3B3 /* myp_smile@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_smile@2x.png"; path = "MYPMessageController/Assets/myp_smile@2x.png"; sourceTree = "<group>"; };
+		B38496634DE33731DA4344B1BAC622AF /* UIScrollView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+MYPAddition.swift"; path = "MYPMessageController/Classes/UIScrollView+MYPAddition.swift"; sourceTree = "<group>"; };
+		B3D4D82C3B9E99FB9AA0644DC7C54A39 /* MYPXibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPXibView.swift; path = MYPMessageController/Classes/MYPXibView.swift; sourceTree = "<group>"; };
 		B6C435907E6FCAF4013279CD6202F865 /* Pods-MYPMessageController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MYPMessageController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B943A72E2B413276864814A3BEB65B54 /* Pods-MYPMessageController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MYPMessageController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BD0011E7C3B7CC56191EFEEABEE3BDFD /* MYPMessageController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MYPMessageController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BDA2144FC08FA3E1D8BE26F503B2FE00 /* myp_speak@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_speak@2x.png"; path = "MYPMessageController/Assets/myp_speak@2x.png"; sourceTree = "<group>"; };
+		BE3DDD8B631F34CDC74C049DCA8336A6 /* MYPMessageController+TableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+TableDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+TableDelegate.swift"; sourceTree = "<group>"; };
 		BFDE5B7E9C54BFCBF6031EE3F2C64ED2 /* Pods-MYPMessageController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MYPMessageController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		CA2CA132FC47476033EDB424A6E6C338 /* MYPMessageController+LifeCycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+LifeCycle.swift"; path = "MYPMessageController/Classes/MYPMessageController+LifeCycle.swift"; sourceTree = "<group>"; };
-		CBBEB65CEA65CE1D20B45A19E49EF96A /* MYPTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPTextView.swift; path = MYPMessageController/Classes/MYPTextView.swift; sourceTree = "<group>"; };
+		CAE294EA1DE0FBA584AAAECB8E1EEB7A /* myp_keyboard@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_keyboard@3x.png"; path = "MYPMessageController/Assets/myp_keyboard@3x.png"; sourceTree = "<group>"; };
+		CB9203DCCF1FC5A7B4DC03767F58CE0A /* MYPUIConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPUIConstants.swift; path = MYPMessageController/Classes/MYPUIConstants.swift; sourceTree = "<group>"; };
+		CBB3A77556E563EB6EA157A16AFA9B00 /* MYPMessageController+UITextViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+UITextViewDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+UITextViewDelegate.swift"; sourceTree = "<group>"; };
+		D2C0BB24353FA4F2E81BA3545CE1547C /* MYPEmotionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPEmotionView.swift; path = MYPMessageController/Classes/MYPEmotionView.swift; sourceTree = "<group>"; };
+		D31A334F04A9C34C5A97EA200C0168D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39F2CBEB138856C316FFD02FE55EEA3 /* Pods-MYPMessageController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MYPMessageController_Example-dummy.m"; sourceTree = "<group>"; };
-		D6FD6D147608BA9EFF7442E8BC2B1183 /* MYPMessageController+Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+Action.swift"; path = "MYPMessageController/Classes/MYPMessageController+Action.swift"; sourceTree = "<group>"; };
 		D71E9A0143A1963B8628E588782CF762 /* Pods-MYPMessageController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MYPMessageController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D7F08AA7C30E565B67BFF6E21CA7AA89 /* myp_smile.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = myp_smile.png; path = MYPMessageController/Assets/myp_smile.png; sourceTree = "<group>"; };
 		DCCEDECD44DE1AFCFD89249D2186DC43 /* Pods-MYPMessageController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MYPMessageController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DE2DE3F70C850CB06D86B27E4F3E9195 /* MYPMessageController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MYPMessageController-umbrella.h"; sourceTree = "<group>"; };
-		E18586AFCA7FF873A855D1CB3E5F2B72 /* MYPMessageController+CacheText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+CacheText.swift"; path = "MYPMessageController/Classes/MYPMessageController+CacheText.swift"; sourceTree = "<group>"; };
-		E3E3AB32029AEBF6AFB8B9446B4FD5F5 /* MYPUIConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPUIConstants.swift; path = MYPMessageController/Classes/MYPUIConstants.swift; sourceTree = "<group>"; };
 		E718E84A8576A32F32D3E1E50A38C04C /* Pods-MYPMessageController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MYPMessageController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E74C05ACBE51D78D68AC3D540B3149A8 /* myp_smile@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_smile@3x.png"; path = "MYPMessageController/Assets/myp_smile@3x.png"; sourceTree = "<group>"; };
-		E74D3D4342A6DAFC6BCE77ECBEC04071 /* MYPTextView+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPTextView+MYPAddition.swift"; path = "MYPMessageController/Classes/MYPTextView+MYPAddition.swift"; sourceTree = "<group>"; };
-		E770B6987E9C7046DC3A085404EEB574 /* MYPMessageController+TableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MYPMessageController+TableDelegate.swift"; path = "MYPMessageController/Classes/MYPMessageController+TableDelegate.swift"; sourceTree = "<group>"; };
-		E9EAE7CB20AEB09600696EA3 /* MYPEmotionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYPEmotionView.xib; path = MYPMessageController/Assets/MYPEmotionView.xib; sourceTree = "<group>"; };
-		E9EAE7CD20AEB0B300696EA3 /* MYPMoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYPMoreView.xib; path = MYPMessageController/Assets/MYPMoreView.xib; sourceTree = "<group>"; };
-		E9EAE7CF20AEB55300696EA3 /* MYPXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MYPXibView.swift; path = MYPMessageController/Classes/MYPXibView.swift; sourceTree = "<group>"; };
-		E9EAE7D120AEB83A00696EA3 /* MYPEmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MYPEmotionView.swift; path = MYPMessageController/Classes/MYPEmotionView.swift; sourceTree = "<group>"; };
-		E9EAE7D320AEB84D00696EA3 /* MYPMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MYPMoreView.swift; path = MYPMessageController/Classes/MYPMoreView.swift; sourceTree = "<group>"; };
+		E84E0FA0A266DEAAD5549DCD9D3744BD /* MYPMoreView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MYPMoreView.swift; path = MYPMessageController/Classes/MYPMoreView.swift; sourceTree = "<group>"; };
+		E89D2084F09B40A6D3498EA9407BD142 /* UIResponder+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIResponder+MYPAddition.swift"; path = "MYPMessageController/Classes/UIResponder+MYPAddition.swift"; sourceTree = "<group>"; };
 		E9ED1370891353268CB28B878EAA69BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED48EA5E53993AC9F5A713495644B9C2 /* UIResponder+MYPAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIResponder+MYPAddition.swift"; path = "MYPMessageController/Classes/UIResponder+MYPAddition.swift"; sourceTree = "<group>"; };
-		ED60506EEB4F99BBD5FC44F9D623EB19 /* ResourceBundle-MYPMessageController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MYPMessageController-Info.plist"; sourceTree = "<group>"; };
-		ED6C00221E0DECD68935A44EFB1D9881 /* MYPMessageController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MYPMessageController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F060D10AA5C96BE98363CF8CB386AD97 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		FEE72C93864C6FE9325C68AA7205150E /* myp_plus@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "myp_plus@2x.png"; path = "MYPMessageController/Assets/myp_plus@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1DBBF5871A6E5E4BF547CF2E4039F85E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D19D0C21E7485A8E80B6551D21C6F9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1109D72672E015BDA88E05449ED164D1 /* Foundation.framework in Frameworks */,
+				30E38A229A18DC003FDFEDE5FD9C4E33 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F183CC13C3B1B7E9CCF0FB07AE124A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D31C88BFC48256E9FB65FB053EC8DAEE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88B506DA46359772A0D2E0AB8F41D4FB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9E17341978D439EFE909BDBD170058C4 /* Foundation.framework in Frameworks */,
-				64302190EFD2999330877399C9C8DF1A /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACAB63F621725586A1A6B34B1D00F20D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,46 +197,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		133C2600B16B4C1D9B2B10FA895077C8 /* MYPMessageController */ = {
+		2C8D516B817D5B516EFFE40963AD40D2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				163BF0AE195A460ED1AB9A0B7A983140 /* MYPMessageController.swift */,
-				D6FD6D147608BA9EFF7442E8BC2B1183 /* MYPMessageController+Action.swift */,
-				8D3F86CBFCA38AC09BD877DE3FB8FBA6 /* MYPMessageController+AutoCompletion.swift */,
-				E18586AFCA7FF873A855D1CB3E5F2B72 /* MYPMessageController+CacheText.swift */,
-				4558FD9DC3F9F5AA8EA2EBA682CF3E18 /* MYPMessageController+CollectionViewDelegate.swift */,
-				CA2CA132FC47476033EDB424A6E6C338 /* MYPMessageController+LifeCycle.swift */,
-				E770B6987E9C7046DC3A085404EEB574 /* MYPMessageController+TableDelegate.swift */,
-				2409D723E15EB6083A1051E16B42F67C /* MYPMessageController+UITextViewDelegate.swift */,
-				96F8A794A2DFB584C3E966D9E75176F4 /* MYPTextInput.swift */,
-				A1C7AC0244608D4A8D5EE6A815CB82A0 /* MYPTextInputbarView.swift */,
-				E9EAE7D120AEB83A00696EA3 /* MYPEmotionView.swift */,
-				E9EAE7D320AEB84D00696EA3 /* MYPMoreView.swift */,
-				CBBEB65CEA65CE1D20B45A19E49EF96A /* MYPTextView.swift */,
-				E74D3D4342A6DAFC6BCE77ECBEC04071 /* MYPTextView+MYPAddition.swift */,
-				E3E3AB32029AEBF6AFB8B9446B4FD5F5 /* MYPUIConstants.swift */,
-				E9EAE7CF20AEB55300696EA3 /* MYPXibView.swift */,
-				ED48EA5E53993AC9F5A713495644B9C2 /* UIResponder+MYPAddition.swift */,
-				7E27F25319A65F0C2EF8D739E365C082 /* UIScrollView+MYPAddition.swift */,
-				5A13912D7C91F22E05DFBFAA2B7840F0 /* UIView+MYPAddition.swift */,
-				4C639567F32D57F7EA114E629D2E18C1 /* Pod */,
-				A40A2AD5C25EF0883CD4726FBFD85F38 /* Resources */,
-				29EEC13B338DFD2A8B69CAE8741D74EE /* Support Files */,
-			);
-			name = MYPMessageController;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		29EEC13B338DFD2A8B69CAE8741D74EE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				11847B395920AE9C0F83E26CCC81BF38 /* Info.plist */,
-				656D68C63A359854D72FC7D2A71C8844 /* MYPMessageController.modulemap */,
-				7FC3DDD7A4C38C33975F81B0AD47FE53 /* MYPMessageController.xcconfig */,
-				69E32B8CDCBD315E1F743FE52324352E /* MYPMessageController-dummy.m */,
-				71AA74FDABEB960DC062F4ECB4ED5D8C /* MYPMessageController-prefix.pch */,
-				DE2DE3F70C850CB06D86B27E4F3E9195 /* MYPMessageController-umbrella.h */,
-				ED60506EEB4F99BBD5FC44F9D623EB19 /* ResourceBundle-MYPMessageController-Info.plist */,
+				D31A334F04A9C34C5A97EA200C0168D2 /* Info.plist */,
+				57B3C5F6E47E59C536AAC39220553756 /* MYPMessageController.modulemap */,
+				292BD8B87099178AD8A033D46376FA5E /* MYPMessageController.xcconfig */,
+				668E168ADCBA80E55A416D5AB0913C61 /* MYPMessageController-dummy.m */,
+				3C81331CBDC44103BC888B1E7216A517 /* MYPMessageController-prefix.pch */,
+				50FAAFAE0911E41D3CF77463E0B4B21B /* MYPMessageController-umbrella.h */,
+				4618031975650B5BE350C5AA29E1C69B /* ResourceBundle-MYPMessageController-Info.plist */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/MYPMessageController";
@@ -266,24 +236,6 @@
 				10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4C639567F32D57F7EA114E629D2E18C1 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				18E5CEA67C6D47076543A27A7B6BB06A /* LICENSE */,
-				ED6C00221E0DECD68935A44EFB1D9881 /* MYPMessageController.podspec */,
-				F060D10AA5C96BE98363CF8CB386AD97 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		4D73453F8594A0C30A87F32F8F3F20F2 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				133C2600B16B4C1D9B2B10FA895077C8 /* MYPMessageController */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		6C81B927E313EB68F27D336289FC5C73 /* Pods-MYPMessageController_Tests */ = {
@@ -319,33 +271,43 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				4D73453F8594A0C30A87F32F8F3F20F2 /* Development Pods */,
+				CB11B683408441506B147AFC9397BAF2 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				75339B07502F33A7C77B2E557467B9B3 /* Products */,
 				A83BCF6CF0BBDD9CA7FCA285683AAC39 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A40A2AD5C25EF0883CD4726FBFD85F38 /* Resources */ = {
+		A26C7191E3FC29A084BF891BD5E763E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				63F295BFCD745192EC24537B43C4E6D2 /* myp_keyboard.png */,
-				4F0F6C5AA4D68B8D84CD812A87E0A47F /* myp_keyboard@2x.png */,
-				2E7BDE2800B2E1C8BAEF1B6613B84B42 /* myp_keyboard@3x.png */,
-				7F6E1B63EC376415E2A24B335B5D9FD9 /* myp_plus.png */,
-				FEE72C93864C6FE9325C68AA7205150E /* myp_plus@2x.png */,
-				6B5BB8C1C131A388B4002B887D8BF277 /* myp_plus@3x.png */,
-				D7F08AA7C30E565B67BFF6E21CA7AA89 /* myp_smile.png */,
-				4B99614677B8B07EF01DDB2D6387E5AF /* myp_smile@2x.png */,
-				E74C05ACBE51D78D68AC3D540B3149A8 /* myp_smile@3x.png */,
-				2CFE06FA10027500A6136A8BAA7E8D40 /* myp_speak.png */,
-				3AA10CFEC9CBBF8C4FFB7DF71B8E52E5 /* myp_speak@2x.png */,
-				600F7BA460A1BA25C99EF5B7ABA5B617 /* myp_speak@3x.png */,
-				038BB391BDC1E7077041D178C0FA8763 /* MYPTextInputbarView.xib */,
-				E9EAE7CB20AEB09600696EA3 /* MYPEmotionView.xib */,
-				E9EAE7CD20AEB0B300696EA3 /* MYPMoreView.xib */,
+				9ECFB694BB8D591A61F608C986B02FC1 /* myp_keyboard.png */,
+				2336F0FE65EBAC7A9C81D7B557D15910 /* myp_keyboard@2x.png */,
+				CAE294EA1DE0FBA584AAAECB8E1EEB7A /* myp_keyboard@3x.png */,
+				A8B47D1B548B72A29E5A77A345DC240D /* myp_plus.png */,
+				4F14197F660FC2FAE841134EF4C9F561 /* myp_plus@2x.png */,
+				4754E353CC357D83AA1FE7F5F05D1F6C /* myp_plus@3x.png */,
+				3577C706645DF46F33E5C48C7109F8E7 /* myp_smile.png */,
+				B3094C9741544C1A4411A5CDF3C4E3B3 /* myp_smile@2x.png */,
+				4A5807FB1FBF02F60136F0BB91C15B03 /* myp_smile@3x.png */,
+				A61117123E7A19CA4E109CB5E3C2B495 /* myp_speak.png */,
+				BDA2144FC08FA3E1D8BE26F503B2FE00 /* myp_speak@2x.png */,
+				811E788CE63B4118065A05E27B031DF4 /* myp_speak@3x.png */,
+				5B09DDB466A5BE9535ADDE655E8F0B93 /* MYPEmotionView.xib */,
+				34F7787FC85902F2856AE32EFCC1698E /* MYPMoreView.xib */,
+				77F00ECD9C91AA9B719A1E32E5265E23 /* MYPTextInputbarView.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		A570600F91FC45DAE74985EFA7B9FCCD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				5F3D415E2F52AEC59ADC8CA606796886 /* LICENSE */,
+				BD0011E7C3B7CC56191EFEEABEE3BDFD /* MYPMessageController.podspec */,
+				5AB723DDA5D5AEBD492D8C9BCC0E9255 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		A83BCF6CF0BBDD9CA7FCA285683AAC39 /* Targets Support Files */ = {
@@ -357,22 +319,60 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		CB11B683408441506B147AFC9397BAF2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F90A97103E7CD4E01131ECEA24E36C04 /* MYPMessageController */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F90A97103E7CD4E01131ECEA24E36C04 /* MYPMessageController */ = {
+			isa = PBXGroup;
+			children = (
+				D2C0BB24353FA4F2E81BA3545CE1547C /* MYPEmotionView.swift */,
+				6F70633EB10FBACDF5902881274BF3C4 /* MYPMessageController.swift */,
+				1595E29A053C627154300F02F3F46399 /* MYPMessageController+Action.swift */,
+				3A2C5E835EA7EF037886F235E13389BF /* MYPMessageController+AutoCompletion.swift */,
+				086892110F3750630399C0F827E4AB7F /* MYPMessageController+CacheText.swift */,
+				13541EDCC7A654EA54F1D5E525E2CF41 /* MYPMessageController+CollectionViewDelegate.swift */,
+				5CF775C8B4BEB8204EA46B42D1AB29C1 /* MYPMessageController+LifeCycle.swift */,
+				BE3DDD8B631F34CDC74C049DCA8336A6 /* MYPMessageController+TableDelegate.swift */,
+				CBB3A77556E563EB6EA157A16AFA9B00 /* MYPMessageController+UITextViewDelegate.swift */,
+				E84E0FA0A266DEAAD5549DCD9D3744BD /* MYPMoreView.swift */,
+				090B821A20E038336C003D7D8A28F875 /* MYPTextInput.swift */,
+				7FB620A9C4AF4A66C61227C8EAB6400F /* MYPTextInputbarView.swift */,
+				846218F145FABCAD3F4B8BD4703103CF /* MYPTextView.swift */,
+				0A771C31BC054EC7DD8A421656BC169A /* MYPTextView+MYPAddition.swift */,
+				CB9203DCCF1FC5A7B4DC03767F58CE0A /* MYPUIConstants.swift */,
+				B3D4D82C3B9E99FB9AA0644DC7C54A39 /* MYPXibView.swift */,
+				E89D2084F09B40A6D3498EA9407BD142 /* UIResponder+MYPAddition.swift */,
+				B38496634DE33731DA4344B1BAC622AF /* UIScrollView+MYPAddition.swift */,
+				37D92D58782DF688B96F07E5F6E16D5C /* UIView+MYPAddition.swift */,
+				A570600F91FC45DAE74985EFA7B9FCCD /* Pod */,
+				A26C7191E3FC29A084BF891BD5E763E5 /* Resources */,
+				2C8D516B817D5B516EFFE40963AD40D2 /* Support Files */,
+			);
+			name = MYPMessageController;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		7EB77F00D783EFAA1B2AE39EFA1DAD18 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4DAE2EC61E3C171B7CEEBA0ECF9C56 /* MYPMessageController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5FFB257466100FAF79D1A2D28BDD9E7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				153EB308C1E332B0D5BED051CF31590D /* Pods-MYPMessageController_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE90533F8F4346F3E95CA7C9C4B76ABA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C2E0DE597625D37FAF314EB0C71DD33 /* MYPMessageController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,25 +387,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		15ABAD236DFE9526650FA6910CAA6D65 /* MYPMessageController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B37DD737420BB191ED014DFF2E6EC2DB /* Build configuration list for PBXNativeTarget "MYPMessageController" */;
-			buildPhases = (
-				C32AAE6518E17C3AC508AF45D3330C21 /* Sources */,
-				88B506DA46359772A0D2E0AB8F41D4FB /* Frameworks */,
-				B37BE6C64D5397F6301C98376ECDD278 /* Resources */,
-				BE90533F8F4346F3E95CA7C9C4B76ABA /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9F518DFCAB6F0E03C275A5A104D962B4 /* PBXTargetDependency */,
-			);
-			name = MYPMessageController;
-			productName = MYPMessageController;
-			productReference = A705059C23559F99E898D40FAD5BCFDB /* MYPMessageController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		60C1078E8674CDA9471E09950A6AC6FB /* Pods-MYPMessageController_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F161D5372CCE916E634905E9D80A86D0 /* Build configuration list for PBXNativeTarget "Pods-MYPMessageController_Tests" */;
@@ -424,13 +405,32 @@
 			productReference = 34D9AF5ADBA618F98F7D9233DE021995 /* Pods_MYPMessageController_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EB143F44313B83822289B5A577D885C3 /* MYPMessageController-MYPMessageController */ = {
+		6A9627A4E773E2B21D1AD368A0FDE0A6 /* MYPMessageController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C92CF9AFA1D98FDF3EC63D6C33D5C293 /* Build configuration list for PBXNativeTarget "MYPMessageController-MYPMessageController" */;
+			buildConfigurationList = ECB70D9311EB4F9E223B243AA527C239 /* Build configuration list for PBXNativeTarget "MYPMessageController" */;
 			buildPhases = (
-				3DF448507404C76567AFCC1073AB2D41 /* Sources */,
-				ACAB63F621725586A1A6B34B1D00F20D /* Frameworks */,
-				DA22161249168105F1A84A90C119D6DE /* Resources */,
+				DC5C2A8B30BD9BB945718D7DC1D1C0D4 /* Sources */,
+				2D19D0C21E7485A8E80B6551D21C6F9F /* Frameworks */,
+				023CB38C73F70C3B1556204E609B0313 /* Resources */,
+				7EB77F00D783EFAA1B2AE39EFA1DAD18 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				324B234C1B2B09FDE7282AC63683C90C /* PBXTargetDependency */,
+			);
+			name = MYPMessageController;
+			productName = MYPMessageController;
+			productReference = A705059C23559F99E898D40FAD5BCFDB /* MYPMessageController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7464B7CB41999B102883B6E9859FE42E /* MYPMessageController-MYPMessageController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7932979B00EA575B6C2956188D3D42A8 /* Build configuration list for PBXNativeTarget "MYPMessageController-MYPMessageController" */;
+			buildPhases = (
+				9CFED0577143FF13F26C53A3E74DD8FD /* Sources */,
+				1DBBF5871A6E5E4BF547CF2E4039F85E /* Frameworks */,
+				6FE7A8724FC515524687BEB8D4384953 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -480,8 +480,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				15ABAD236DFE9526650FA6910CAA6D65 /* MYPMessageController */,
-				EB143F44313B83822289B5A577D885C3 /* MYPMessageController-MYPMessageController */,
+				6A9627A4E773E2B21D1AD368A0FDE0A6 /* MYPMessageController */,
+				7464B7CB41999B102883B6E9859FE42E /* MYPMessageController-MYPMessageController */,
 				FB169EFCF60742990B6D1299DD9DA535 /* Pods-MYPMessageController_Example */,
 				60C1078E8674CDA9471E09950A6AC6FB /* Pods-MYPMessageController_Tests */,
 			);
@@ -489,46 +489,39 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B37BE6C64D5397F6301C98376ECDD278 /* Resources */ = {
+		023CB38C73F70C3B1556204E609B0313 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1AA8BA6E8A58C50D36F8F6064E208B1 /* MYPMessageController.bundle in Resources */,
-				E9EAE7CC20AEB09600696EA3 /* MYPEmotionView.xib in Resources */,
-				E9EAE7CE20AEB0B300696EA3 /* MYPMoreView.xib in Resources */,
+				2A89AD760DD2881D089B624AEC741290 /* MYPMessageController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA22161249168105F1A84A90C119D6DE /* Resources */ = {
+		6FE7A8724FC515524687BEB8D4384953 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BC4B3E92F9827A68360E4031E3F148 /* myp_keyboard.png in Resources */,
-				F80C14CEEC46FB6D74CB57CE2ED90821 /* myp_keyboard@2x.png in Resources */,
-				5AD323275591D18C026F37304A224D18 /* myp_keyboard@3x.png in Resources */,
-				44ADD21978F2BCC20BC82C4783A350FD /* myp_plus.png in Resources */,
-				EA0CB873910F32FBDC5F0B20583B26E5 /* myp_plus@2x.png in Resources */,
-				790116A4E1A1F148BFED3C88624B3C4C /* myp_plus@3x.png in Resources */,
-				6FF9D52A43D4E2E3A8A7BC06DAA495A1 /* myp_smile.png in Resources */,
-				1652C245EDC73D3FEBEEDBBE85EE20DC /* myp_smile@2x.png in Resources */,
-				E7947AC9A7DBC54F352CFDF97FE6338F /* myp_smile@3x.png in Resources */,
-				ECB4088AF57584559CF00EAA84EDA36D /* myp_speak.png in Resources */,
-				E0425B3EB34A2CE22DC901A207E98392 /* myp_speak@2x.png in Resources */,
-				47B71913AAC15FE6936E150132789597 /* myp_speak@3x.png in Resources */,
-				BAD65AC0635D6C6CA8621093639F09CB /* MYPTextInputbarView.xib in Resources */,
+				5044FE9F939A860E5E424A0C7C5CB3AC /* myp_keyboard.png in Resources */,
+				1350284A6A474A93E3C6828BD710301C /* myp_keyboard@2x.png in Resources */,
+				52CD53BFC0BE246F0D0DE2AB8900DCEF /* myp_keyboard@3x.png in Resources */,
+				619D43F23385D1B02AEBF2621F9CC632 /* myp_plus.png in Resources */,
+				5612C89C1E3CD5ECC2ED541573FED984 /* myp_plus@2x.png in Resources */,
+				137788CE7CC8D2C770BF448D12B3F9F2 /* myp_plus@3x.png in Resources */,
+				DFFAE3B60BD73F7CF2045D0D840DE83D /* myp_smile.png in Resources */,
+				9FCCEA02CE6A1CCF33EA7C3A3484CA00 /* myp_smile@2x.png in Resources */,
+				3D2E8EA2C92D107B2E856F2D5CC61E52 /* myp_smile@3x.png in Resources */,
+				24BBCA05A2E7CFEC92DD5DD8F9126F88 /* myp_speak.png in Resources */,
+				82EE82033F566EA37568AD3BD9F77ACE /* myp_speak@2x.png in Resources */,
+				4BCE8FBC2B3B9CAE4C188230E96ADA8D /* myp_speak@3x.png in Resources */,
+				D3BE841F564DB6453338EC1D723C16A5 /* MYPEmotionView.xib in Resources */,
+				32F8646CB0AEAF0DDB0AA5B20F39A56B /* MYPMoreView.xib in Resources */,
+				7677A60A9C553FE7CA2CC7C19273903E /* MYPTextInputbarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3DF448507404C76567AFCC1073AB2D41 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		58E11C71597AAB530058A8D95231AD23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,52 +538,59 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C32AAE6518E17C3AC508AF45D3330C21 /* Sources */ = {
+		9CFED0577143FF13F26C53A3E74DD8FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D08437B900EDD09E9A62B1DD38DF5CAC /* MYPMessageController+Action.swift in Sources */,
-				CD2ECE45E0BEC9BF20274C60972751E9 /* MYPMessageController+AutoCompletion.swift in Sources */,
-				5FF943B2795CD626457682AAFCA8ABC3 /* MYPMessageController+CacheText.swift in Sources */,
-				B3F5AEE791A06244165B70FFC27BC34D /* MYPMessageController+CollectionViewDelegate.swift in Sources */,
-				26ADB9ADB5107F604E1141A98FB1ADD3 /* MYPMessageController+LifeCycle.swift in Sources */,
-				0719D16B2AD908CB4B8E5A5441B77598 /* MYPMessageController+TableDelegate.swift in Sources */,
-				FE11E42030C7DA3B583E341DF0020620 /* MYPMessageController+UITextViewDelegate.swift in Sources */,
-				97BD00F58BE7C3CD398D10AF2A87FD72 /* MYPMessageController-dummy.m in Sources */,
-				E9EAE7D420AEB84D00696EA3 /* MYPMoreView.swift in Sources */,
-				57AC41CD46312030F52CFECF2CB41A8D /* MYPMessageController.swift in Sources */,
-				E9EAE7D020AEB55300696EA3 /* MYPXibView.swift in Sources */,
-				E9EAE7D220AEB83A00696EA3 /* MYPEmotionView.swift in Sources */,
-				CDC0086C2180E52EC2115F32E7F548BD /* MYPTextInput.swift in Sources */,
-				9B881722E9F899B2218723B924945FD6 /* MYPTextInputbarView.swift in Sources */,
-				9FE348529B335642D46AF6655AC14DA4 /* MYPTextView+MYPAddition.swift in Sources */,
-				AC92001409A79F4D333B89614AD4FBEB /* MYPTextView.swift in Sources */,
-				2D3554F44BF0ADD62CC736B7A535ACC0 /* MYPUIConstants.swift in Sources */,
-				E122227132C3E57FA68BE9E8DCDD2144 /* UIResponder+MYPAddition.swift in Sources */,
-				500CBBA27384A0B172B7B536584E7B90 /* UIScrollView+MYPAddition.swift in Sources */,
-				953945CB774075EA6020DC10C396B819 /* UIView+MYPAddition.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC5C2A8B30BD9BB945718D7DC1D1C0D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9787C1F70EC22A8CC5520E702A132776 /* MYPEmotionView.swift in Sources */,
+				161B93ABE9EFFEECA736979ABDEDA757 /* MYPMessageController+Action.swift in Sources */,
+				A7AB101ACA885D4AD7B74D87DAD64A24 /* MYPMessageController+AutoCompletion.swift in Sources */,
+				E0065FEF13D5A1818455BBDCEE2B6149 /* MYPMessageController+CacheText.swift in Sources */,
+				9216698E22EDCFCF4BA2345DB85A1FFD /* MYPMessageController+CollectionViewDelegate.swift in Sources */,
+				53119BB7042BE977389CF046AFF2A88A /* MYPMessageController+LifeCycle.swift in Sources */,
+				3FE82335C6746F25F90DA20D8C2C4C39 /* MYPMessageController+TableDelegate.swift in Sources */,
+				1A3BCB14DA07E4421D0E6AD06466F162 /* MYPMessageController+UITextViewDelegate.swift in Sources */,
+				869F68A9D8494A6CC3A4A48D2B4A1E61 /* MYPMessageController-dummy.m in Sources */,
+				DFC47E9A2E7317AF4CAFFDF6B99AAA46 /* MYPMessageController.swift in Sources */,
+				3A522963E5FF257B2174C560143C9CC2 /* MYPMoreView.swift in Sources */,
+				0A1CAB584DEA7582B9D799D59332AA81 /* MYPTextInput.swift in Sources */,
+				EB997F3D57EEBAB5C92A8E9876A56B5E /* MYPTextInputbarView.swift in Sources */,
+				A6B93D79FC8E7938BD80E96C2E9B066D /* MYPTextView+MYPAddition.swift in Sources */,
+				0BE536222D09EB2C71A1BF94DC84B97B /* MYPTextView.swift in Sources */,
+				24F2BBF61D02F248FA0CBE734CD945E8 /* MYPUIConstants.swift in Sources */,
+				5225D2C97BB86F618D164A3FDC88FF28 /* MYPXibView.swift in Sources */,
+				E9F09072C6F10B43F027688F323A0409 /* UIResponder+MYPAddition.swift in Sources */,
+				CF0957F8C40E83D84267ECABEE0530BB /* UIScrollView+MYPAddition.swift in Sources */,
+				67E4B7DF9D8D23F299EED7B764B03184 /* UIView+MYPAddition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		324B234C1B2B09FDE7282AC63683C90C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MYPMessageController-MYPMessageController";
+			target = 7464B7CB41999B102883B6E9859FE42E /* MYPMessageController-MYPMessageController */;
+			targetProxy = 4BDF959614AE21FB996B150CFC080C7E /* PBXContainerItemProxy */;
+		};
 		652BDADD1901D0EA649B4AA37257E0DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MYPMessageController_Example";
 			target = FB169EFCF60742990B6D1299DD9DA535 /* Pods-MYPMessageController_Example */;
 			targetProxy = 4D2FF97F5979E9C0402C77DA4418719F /* PBXContainerItemProxy */;
 		};
-		9F518DFCAB6F0E03C275A5A104D962B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MYPMessageController-MYPMessageController";
-			target = EB143F44313B83822289B5A577D885C3 /* MYPMessageController-MYPMessageController */;
-			targetProxy = 3A6FB9C19205C064892D7E78F982FEC6 /* PBXContainerItemProxy */;
-		};
 		EC05FC5E64DCB827997C8C6EF45017AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MYPMessageController;
-			target = 15ABAD236DFE9526650FA6910CAA6D65 /* MYPMessageController */;
+			target = 6A9627A4E773E2B21D1AD368A0FDE0A6 /* MYPMessageController */;
 			targetProxy = 48076DFEC4686339BAD7B822CABBC1E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -666,22 +666,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		4CDC5FA0F214A9ADFE54D383FC905A1A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FC3DDD7A4C38C33975F81B0AD47FE53 /* MYPMessageController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MYPMessageController";
-				INFOPLIST_FILE = "Target Support Files/MYPMessageController/ResourceBundle-MYPMessageController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = MYPMessageController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		553022A828EE1991F07D2D73F565AEF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -840,9 +824,9 @@
 			};
 			name = Debug;
 		};
-		8A3B82F0F9080A05B1897DB4CF880715 /* Release */ = {
+		8CCAFF985D3FB2C10D17C16D27F43266 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FC3DDD7A4C38C33975F81B0AD47FE53 /* MYPMessageController.xcconfig */;
+			baseConfigurationReference = 292BD8B87099178AD8A033D46376FA5E /* MYPMessageController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MYPMessageController";
@@ -854,11 +838,11 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
-		B312F6FCA1E4D5D788B3DD5871EDC071 /* Release */ = {
+		94253CE07FF7855D937BB1437DD29527 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FC3DDD7A4C38C33975F81B0AD47FE53 /* MYPMessageController.xcconfig */;
+			baseConfigurationReference = 292BD8B87099178AD8A033D46376FA5E /* MYPMessageController.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -890,9 +874,9 @@
 			};
 			name = Release;
 		};
-		CA1E6B75F88C453F564F75607C64FB3D /* Debug */ = {
+		C1DF07049981FC284EB7982BBA625AA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FC3DDD7A4C38C33975F81B0AD47FE53 /* MYPMessageController.xcconfig */;
+			baseConfigurationReference = 292BD8B87099178AD8A033D46376FA5E /* MYPMessageController.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -957,6 +941,22 @@
 			};
 			name = Debug;
 		};
+		FDF07A14212153607864C50ADEBC0357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 292BD8B87099178AD8A033D46376FA5E /* MYPMessageController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MYPMessageController";
+				INFOPLIST_FILE = "Target Support Files/MYPMessageController/ResourceBundle-MYPMessageController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = MYPMessageController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -978,20 +978,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B37DD737420BB191ED014DFF2E6EC2DB /* Build configuration list for PBXNativeTarget "MYPMessageController" */ = {
+		7932979B00EA575B6C2956188D3D42A8 /* Build configuration list for PBXNativeTarget "MYPMessageController-MYPMessageController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CA1E6B75F88C453F564F75607C64FB3D /* Debug */,
-				B312F6FCA1E4D5D788B3DD5871EDC071 /* Release */,
+				8CCAFF985D3FB2C10D17C16D27F43266 /* Debug */,
+				FDF07A14212153607864C50ADEBC0357 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C92CF9AFA1D98FDF3EC63D6C33D5C293 /* Build configuration list for PBXNativeTarget "MYPMessageController-MYPMessageController" */ = {
+		ECB70D9311EB4F9E223B243AA527C239 /* Build configuration list for PBXNativeTarget "MYPMessageController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4CDC5FA0F214A9ADFE54D383FC905A1A /* Debug */,
-				8A3B82F0F9080A05B1897DB4CF880715 /* Release */,
+				C1DF07049981FC284EB7982BBA625AA1 /* Debug */,
+				94253CE07FF7855D937BB1437DD29527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

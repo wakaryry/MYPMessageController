@@ -1,5 +1,5 @@
 PODS:
-  - MYPMessageController (0.2.0)
+  - MYPMessageController (0.3.0)
 
 DEPENDENCIES:
   - MYPMessageController (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MYPMessageController: 5762d83e7821855cb5983d9a279aab619092cdae
+  MYPMessageController: 372f73e335455cf505665b4b5cc730fcccbadd35
 
 PODFILE CHECKSUM: f8a07b68d6d5bf9be5bcf60db90ed1d98a452eae
 
