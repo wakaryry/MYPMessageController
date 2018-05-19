@@ -170,7 +170,14 @@ extension MYPMessageController {
         
         // if default action is allowed
         if self.maintainDefaultRightAction {
-            
+            if self.imageState(for: sender) == .changed {
+                self.textView.inputView = self.emotionView
+                self.textView.reloadInputViews()
+            }
+            else {
+                self.textView.inputView = nil
+                self.textView.reloadInputViews()
+            }
         }
     }
     

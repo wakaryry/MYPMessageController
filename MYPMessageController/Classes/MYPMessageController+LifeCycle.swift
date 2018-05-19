@@ -20,8 +20,8 @@ extension MYPMessageController {
         self.view.addSubview(self.scrollViewProxy!)
         self.view.addSubview(self.autoCompletionView)
         self.view.addSubview(self.textInputbar)
-        self.view.addSubview(self.emotionView)
-        self.view.addSubview(self.moreView)
+        //self.view.addSubview(self.emotionView)
+        //self.view.addSubview(self.moreView)
         
         self.myp_setupViewConstraints()
         
@@ -91,9 +91,9 @@ extension MYPMessageController {
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=0)-[autoCompletionView(0@750)]-0@999-[textInputbar]", options: [], metrics: nil, views: views))
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[textInputbar]-0-[emotionView(>=0)]", options: [], metrics: nil, views: views))
+        //view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[textInputbar]-0-[emotionView(>=0)]", options: [], metrics: nil, views: views))
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[textInputbar]-0-[moreView(>=0)]", options: [], metrics: nil, views: views))
+        //view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[textInputbar]-0-[moreView(>=0)]", options: [], metrics: nil, views: views))
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|", options: [], metrics: nil, views: views))
         
@@ -101,9 +101,9 @@ extension MYPMessageController {
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[textInputbar]|", options: [], metrics: nil, views: views))
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[emotionView]|", options: [], metrics: nil, views: views))
+        //view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[emotionView]|", options: [], metrics: nil, views: views))
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[moreView]|", options: [], metrics: nil, views: views))
+        //view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[moreView]|", options: [], metrics: nil, views: views))
         
         scrollViewHeightC = view.myp_constraint(for: .height, firstItem: scrollViewProxy, secondItem: nil)!
         autoCompletionViewHeightC = view.myp_constraint(for: .height, firstItem: autoCompletionView, secondItem: nil)!
