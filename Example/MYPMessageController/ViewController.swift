@@ -55,7 +55,7 @@ class ViewController: MYPMessageController {
     
     override func didPressSendButton(sender: UIButton) {
         his.insert(self.textView.text, at: 0)
-        self.tableView?.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.bottom)
+        self.tableView?.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.bottom)
         
         super.didPressSendButton(sender: sender)
     }

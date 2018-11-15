@@ -55,7 +55,7 @@ extension MYPMessageController {
         super.viewWillDisappear(animated)
         
         // Stops the keyboard from being dismissed during the navigation controller's "swipe-to-pop"
-        self.textView.didNotResignFirstResponder = self.isMovingFromParentViewController
+        self.textView.didNotResignFirstResponder = self.isMovingFromParent
         
         self.isViewVisible = false
     }
@@ -173,17 +173,17 @@ extension MYPMessageController {
         }
         
         // Esc Key
-        self.textView.observe(keyInput: UIKeyInputEscape, modifiers: UIKeyModifierFlags(rawValue: 0), title: NSLocalizedString("Dismiss", comment: "Dismiss")) { (keyCommand) in
+        self.textView.observe(keyInput: UIKeyCommand.inputEscape, modifiers: UIKeyModifierFlags(rawValue: 0), title: NSLocalizedString("Dismiss", comment: "Dismiss")) { (keyCommand) in
             weakSelf?.didPressEscapeKey(keyCommand)
         }
         
         // Up Arrow
-        self.textView.observe(keyInput: UIKeyInputUpArrow, modifiers: UIKeyModifierFlags(rawValue: 0), title: nil) { (keyCommand) in
+        self.textView.observe(keyInput: UIKeyCommand.inputUpArrow, modifiers: UIKeyModifierFlags(rawValue: 0), title: nil) { (keyCommand) in
             weakSelf?.didPressArrowKey(keyCommand)
         }
         
         // Down Arrow
-        self.textView.observe(keyInput: UIKeyInputDownArrow, modifiers: UIKeyModifierFlags(rawValue: 0), title: nil) { (keyCommand) in
+        self.textView.observe(keyInput: UIKeyCommand.inputDownArrow, modifiers: UIKeyModifierFlags(rawValue: 0), title: nil) { (keyCommand) in
             weakSelf?.didPressArrowKey(keyCommand)
         }
     }

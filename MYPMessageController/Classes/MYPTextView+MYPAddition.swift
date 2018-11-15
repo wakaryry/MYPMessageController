@@ -92,7 +92,7 @@ extension MYPTextView {
          - text: The string to be appended to the current text.
          - attributes: The attributes used to stylize the text.
      */
-    func myp_insertTextAtCaretRange(text: String, with attributes: [NSAttributedStringKey : Any]?) {
+    func myp_insertTextAtCaretRange(text: String, with attributes: [NSAttributedString.Key : Any]?) {
         let range = self.myp_insert(text: text, with: attributes, in: self.selectedRange)
         self.selectedRange = NSMakeRange(range.location, 0)
     }
@@ -120,7 +120,7 @@ extension MYPTextView {
          - range: The range where to insert text.
          - Returns: The range of the newly inserted text.
      */
-    func myp_insert(text: String, with attributes: [NSAttributedStringKey : Any]?, in range: NSRange) -> NSRange {
+    func myp_insert(text: String, with attributes: [NSAttributedString.Key : Any]?, in range: NSRange) -> NSRange {
         let attributedString = NSAttributedString(string: text, attributes: attributes)
         return self.myp_insert(attributedString: attributedString, in: range)
     }
@@ -133,7 +133,7 @@ extension MYPTextView {
          - range: The range of the text that needs to be stylized by the given attributes.
      - Returns: An attributed string.
      */
-    func myp_set(attributes: [NSAttributedStringKey : Any]?, in range: NSRange) -> NSAttributedString {
+    func myp_set(attributes: [NSAttributedString.Key : Any]?, in range: NSRange) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(attributedString: self.attributedText)
         attributedString.setAttributes(attributes, range: range)
         
@@ -221,14 +221,14 @@ extension MYPTextView {
      - Returns: An attributed string.
      */
     func myp_defaultAttributedString(for text: String) -> NSAttributedString {
-        var attributes = [NSAttributedStringKey : Any]()
+        var attributes = [NSAttributedString.Key : Any]()
         
         if let color = self.textColor {
-            attributes[NSAttributedStringKey.foregroundColor] = color
+            attributes[NSAttributedString.Key.foregroundColor] = color
         }
         
         if let ft = self.font {
-            attributes[NSAttributedStringKey.font] = ft
+            attributes[NSAttributedString.Key.font] = ft
         }
         return NSAttributedString(string: text, attributes: attributes)
     }

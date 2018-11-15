@@ -1,4 +1,4 @@
-@version = '0.3.0'
+@version = '0.4.0'
 #
 # Be sure to run `pod lib lint MYPMessageController.podspec' to ensure this is a
 # valid spec before submitting.
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://github.com/wakaryry/'
 
   s.ios.deployment_target = '10.0'
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
   s.requires_arc = true
 
   s.source_files = 'MYPMessageController/Classes/**/*.swift'

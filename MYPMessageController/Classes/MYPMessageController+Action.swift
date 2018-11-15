@@ -88,7 +88,7 @@ extension MYPMessageController {
             if animated {
                 let shouldBounces = self.bounces && self.textView.isFirstResponder
                 
-                self.view.myp_animateLayoutIfNeeded(withBounce: shouldBounces, options: [UIViewAnimationOptions.curveEaseInOut, .layoutSubviews, .beginFromCurrentState], animations: {
+                self.view.myp_animateLayoutIfNeeded(withBounce: shouldBounces, options: [UIView.AnimationOptions.curveEaseInOut, .layoutSubviews, .beginFromCurrentState], animations: {
                     if !self.isInverted {
                         self.scrollViewProxy?.contentOffset = newOffset
                     }

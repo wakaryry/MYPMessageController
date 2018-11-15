@@ -19,11 +19,11 @@ extension UIView {
          - options: A mask of options indicating how you want to perform the animations.
          - animations: An additional block for custom animations.
      */
-    func myp_animateLayoutIfNeeded(withBounce bounce: Bool, options: UIViewAnimationOptions, animations: (() -> Void)?) {
+    func myp_animateLayoutIfNeeded(withBounce bounce: Bool, options: UIView.AnimationOptions, animations: (() -> Void)?) {
         self.myp_animateLayoutIfNeeded(withBounce: bounce, options: options, animations: animations, completion: nil)
     }
     
-    func myp_animateLayoutIfNeeded(withBounce bounce: Bool, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((_ finished: Bool) -> Void)?) {
+    func myp_animateLayoutIfNeeded(withBounce bounce: Bool, options: UIView.AnimationOptions, animations: (() -> Void)?, completion: ((_ finished: Bool) -> Void)?) {
         let duration: TimeInterval = bounce ? 0.65 : 0.2
         self.myp_animateLayoutIfNeeded(withDuration: duration, bounce: bounce, options: options, animations: animations, completion: completion)
     }
@@ -37,7 +37,7 @@ extension UIView {
          - options: A mask of options indicating how you want to perform the animations.
          - animations: An additional block for custom animations.
      */
-    func myp_animateLayoutIfNeeded(withDuration duration: TimeInterval, bounce: Bool, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((_ finished: Bool) -> Void)?) {
+    func myp_animateLayoutIfNeeded(withDuration duration: TimeInterval, bounce: Bool, options: UIView.AnimationOptions, animations: (() -> Void)?, completion: ((_ finished: Bool) -> Void)?) {
         if bounce {
             UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: options, animations: {
                 self.layoutIfNeeded()
@@ -63,7 +63,7 @@ extension UIView {
          -attribute: The layout attribute to use for searching.
      - Returns: An array of matching constraints.
      */
-    func myp_constraints(for attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+    func myp_constraints(for attribute: NSLayoutConstraint.Attribute) -> [NSLayoutConstraint]? {
         return self.constraints.filter({ (constraint) -> Bool in
             return constraint.firstAttribute == attribute
         })
@@ -85,7 +85,7 @@ extension UIView {
          - second: The second item in the relationship.
      - Returns: A layout constraint.
      */
-    func myp_constraint(for attribute: NSLayoutAttribute, firstItem first: Any?, secondItem second: Any?) -> NSLayoutConstraint? {
+    func myp_constraint(for attribute: NSLayoutConstraint.Attribute, firstItem first: Any?, secondItem second: Any?) -> NSLayoutConstraint? {
         // as! UIView
         return self.constraints.filter({ (constraint) -> Bool in
             return constraint.firstAttribute == attribute && (constraint.firstItem as? UIView) == (first as? UIView) && (constraint.secondItem as? UIView) == (second as? UIView)

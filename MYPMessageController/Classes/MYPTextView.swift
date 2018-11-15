@@ -257,7 +257,7 @@ public class MYPTextView: UITextView, MYPTextInput {
         var height = self.font!.lineHeight
         height += self.textContainerInset.top + self.textContainerInset.bottom
         
-        return CGSize(width: UIViewNoIntrinsicMetric, height: height)
+        return CGSize(width: UIView.noIntrinsicMetric, height: height)
     }
     
     /** used for dynamic height. changed when text line changed*/
@@ -310,7 +310,7 @@ public class MYPTextView: UITextView, MYPTextInput {
         if !self.placeholderLabel.isHidden {
             UIView.performWithoutAnimation {
                 self.placeholderLabel.frame = self.myp_placeholderRectThatFits(self.bounds)
-                self.sendSubview(toBack: self.placeholderLabel)
+                self.sendSubviewToBack(self.placeholderLabel)
             }
         }
     }
@@ -328,7 +328,7 @@ public class MYPTextView: UITextView, MYPTextInput {
         var aRect = CGRect.zero
         aRect.size.height = self.placeholderLabel.sizeThatFits(rect.size).height
         aRect.size.width = self.textContainer.size.width - padding * 2.0
-        aRect.origin = UIEdgeInsetsInsetRect(rect, self.textContainerInset).origin
+        aRect.origin = rect.inset(by: self.textContainerInset).origin
         aRect.origin.x += padding
         
         return aRect
@@ -367,7 +367,7 @@ public class MYPTextView: UITextView, MYPTextInput {
             
             self.attributedText = self.myp_defaultAttributedString(for: newValue)
             
-            NotificationCenter.default.post(name: NSNotification.Name.UITextViewTextDidChange, object: self)
+            NotificationCenter.default.post(name: UITextView.textDidChangeNotification, object: self)
         }
     }
     
@@ -380,7 +380,7 @@ public class MYPTextView: UITextView, MYPTextInput {
             
             super.attributedText = newValue
             
-            NotificationCenter.default.post(name: Notification.Name.UITextViewTextDidChange, object: self)
+            NotificationCenter.default.post(name: UITextView.textDidChangeNotification, object: self)
         }
     }
     
@@ -622,10 +622,10 @@ public class MYPTextView: UITextView, MYPTextInput {
             return
         }
         
-        if keyCommand.input == UIKeyInputUpArrow {
+        if keyCommand.input == UIKeyCommand.inputUpArrow {
             self.myp_moveCursorToDirection(UITextLayoutDirection.up)
         }
-        else if (keyCommand.input == UIKeyInputDownArrow) {
+        else if (keyCommand.input == UIKeyCommand.inputDownArrow) {
             self.myp_moveCursorToDirection(.down)
         }
     }
@@ -714,8 +714,8 @@ public class MYPTextView: UITextView, MYPTextInput {
     }
     
     //MARK: - Motion Events
-    override public func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if event?.type == UIEventType.motion && event?.subtype == UIEventSubtype.motionShake {
+    override public func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if event?.type == UIEvent.EventType.motion && event?.subtype == UIEvent.EventSubtype.motionShake {
             NotificationCenter.default.post(name: Notification.Name.MYPTextInputTask.MYPTextViewDidShakeNotification, object: self)
         }
     }
@@ -724,21 +724,21 @@ public class MYPTextView: UITextView, MYPTextInput {
     private func myp_registerNotifications() {
         self.myp_unregisterNotifications()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_didBeginEditing(notification:)), name: Notification.Name.UITextViewTextDidBeginEditing, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_didChangeText(notification:)), name: Notification.Name.UITextViewTextDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_didEndEditing(notification:)), name: Notification.Name.UITextViewTextDidEndEditing, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_didChangeTextInputMode(notification:)), name: Notification.Name.UITextInputCurrentInputModeDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_didChangeContentSizeCategory(notification:)), name: Notification.Name.UIContentSizeCategoryDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_willShowMenuController(notification:)), name: Notification.Name.UIMenuControllerWillShowMenu, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_didHideMenuController(notification:)), name: Notification.Name.UIMenuControllerDidHideMenu, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_didBeginEditing(notification:)), name: UITextView.textDidBeginEditingNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_didChangeText(notification:)), name: UITextView.textDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_didEndEditing(notification:)), name: UITextView.textDidEndEditingNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_didChangeTextInputMode(notification:)), name: UITextInputMode.currentInputModeDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_didChangeContentSizeCategory(notification:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_willShowMenuController(notification:)), name: UIMenuController.willShowMenuNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_didHideMenuController(notification:)), name: UIMenuController.didHideMenuNotification, object: nil)
     }
     
     private func myp_unregisterNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidBeginEditing, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidChange, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidEndEditing, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UITextInputCurrentInputModeDidChange, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIContentSizeCategoryDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidBeginEditingNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidEndEditingNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextInputMode.currentInputModeDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     //MARK: - Notification Events
@@ -776,7 +776,7 @@ public class MYPTextView: UITextView, MYPTextInput {
         if !self.isDynamicTypeEnabled {
             return
         }
-        let category = notification.userInfo![UIContentSizeCategoryNewValueKey]
+        let category = notification.userInfo![UIContentSizeCategory.newValueUserInfoKey]
         self.setFontMame((self.font?.fontName)!, pointSize: self.initialFontSize!, contentSizeCategory: category as! UIContentSizeCategory)
         
         let aText = self.text

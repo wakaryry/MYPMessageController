@@ -269,7 +269,7 @@ open class MYPTextInputbarView: MYPXibView {
     }
     
     override open var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: self.minimumInputbarHeight)
+        return CGSize(width: UIView.noIntrinsicMetric, height: self.minimumInputbarHeight)
     }
     
     override open var backgroundColor: UIColor? {
@@ -312,7 +312,7 @@ open class MYPTextInputbarView: MYPXibView {
     }
     
     private func commonSetting() {
-        self.textView.textContainerInset = UIEdgeInsetsMake(8.0, 4.0, 8.0, 0.0)
+        self.textView.textContainerInset = UIEdgeInsets.init(top: 8.0, left: 4.0, bottom: 8.0, right: 0.0)
         self.textView.maxNumberOfLines = MYPTextInputbarView.myp_defaultNumberOfLines()
         
         self.myp_initialActionButtonHeightAndWidth()
@@ -398,15 +398,15 @@ open class MYPTextInputbarView: MYPXibView {
     private func myp_registerNotifications() {
         self.myp_unregisterNotifications()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_textViewDidChangeText), name: Notification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_textViewDidChangeText), name: UITextView.textDidChangeNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(myp_textViewDidChangeContentSize(notification:)), name: Notification.Name.MYPTextInputTask.MYPTextViewContentSizeDidChangeNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myp_textViewDidChangeContentSizeCategory(notification:)), name: Notification.Name.UIContentSizeCategoryDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(myp_textViewDidChangeContentSizeCategory(notification:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     private func myp_unregisterNotifications() {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: Notification.Name.MYPTextInputTask.MYPTextViewContentSizeDidChangeNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIContentSizeCategoryDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     //MARK: - Notification Events

@@ -169,7 +169,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         var rect = CGRect.zero
         rect.size = CGSize(width: self.view.frame.width, height: 0.5)
         let hairline = UIView(frame: rect)
-        hairline.autoresizingMask = UIViewAutoresizing.flexibleWidth
+        hairline.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
         
         return hairline
     }()
@@ -227,7 +227,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
             return self.myp_appropriateBottomMargin()
         }
         
-        let keyboardRect = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+        let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         
         return self.myp_appropriateKeyboardHeight(from: keyboardRect!)
     }
@@ -263,8 +263,8 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         // Based on http://stackoverflow.com/a/5760910/287403
         // We can determine if the external keyboard is showing by adding the origin.y of the target finish rect (end when showing, begin when hiding) to the inputAccessoryHeight.
         // If it's greater(or equal) the window height, it's an external keyboard.
-        let beginRect = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue!
-        let endRect = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue!
+        let beginRect = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue!
+        let endRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue!
         
         // Grab the base view for conversions as we don't want window coordinates in < iOS 8
         // iOS 8 fixes the whole coordinate system issue for us, but iOS 7 doesn't rotate the app window coordinate space.
@@ -280,12 +280,12 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         let convertBegin = baseView?.convert(beginRect, from: nil)
         let convertEnd = baseView?.convert(endRect, from: nil)
         
-        if notification.name == .UIKeyboardWillShow {
+        if notification.name == UIResponder.keyboardWillShowNotification {
             if convertEnd!.origin.y >= viewBounds.size.height {
                 self.isExternalKeyboardDetected = true
             }
         }
-        else if notification.name == .UIKeyboardWillHide {
+        else if notification.name == UIResponder.keyboardWillHideNotification {
             // The additional logic check here (== to width) accounts for a glitch (iOS 8 only?) where the window has rotated it's coordinates
             // but the beginRect doesn't yet reflect that. It should never cause a false positive.
             if convertBegin!.origin.y >= viewBounds.size.height || convertBegin!.origin.y == viewBounds.size.height {
@@ -353,16 +353,16 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
     
     private func myp_keyboardStatus(for notification: Notification) -> MYPKeyboardStatus? {
         
-        if notification.name == .UIKeyboardWillShow {
+        if notification.name == UIResponder.keyboardWillShowNotification {
             return .willShow
         }
-        if notification.name == .UIKeyboardWillHide {
+        if notification.name == UIResponder.keyboardWillHideNotification {
             return .willHide
         }
-        if notification.name == .UIKeyboardDidShow {
+        if notification.name == UIResponder.keyboardDidShowNotification {
             return .didShow
         }
-        if notification.name == .UIKeyboardDidHide {
+        if notification.name == UIResponder.keyboardDidHideNotification {
             return .didHide
         }
         
@@ -426,7 +426,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      - Parameters:
      - style: A constant that specifies the style of main table view that the controller object is to manage (UITableViewStylePlain or UITableViewStyleGrouped).
      */
-    public init(tableViewStyle style: UITableViewStyle) {
+    public init(tableViewStyle style: UITableView.Style) {
         super.init(nibName: nil, bundle: nil)
         
         self.tableView = self.tableView(with: style)
@@ -435,7 +435,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         commonSetting()
     }
     
-    private func tableView(with style: UITableViewStyle) -> UITableView {
+    private func tableView(with style: UITableView.Style) -> UITableView {
         let table = UITableView(frame: .zero, style: style)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.scrollsToTop = true
@@ -527,7 +527,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
      Returns the tableView style to be configured when using Interface Builder. Default is UITableViewStyle.plain.
      You must override this method if you want to configure a tableView.
      */
-    open class func tableViewStyle(for decoder: NSCoder?) -> UITableViewStyle {
+    open class func tableViewStyle(for decoder: NSCoder?) -> UITableView.Style {
         return .plain
     }
     
@@ -741,45 +741,45 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         let center = NotificationCenter.default
         
         // keyboard notifications
-        center.addObserver(self, selector: #selector(myp_willShowOrHideKeyboard(notification:)), name: .UIKeyboardWillShow, object: nil)
-        center.addObserver(self, selector: #selector(myp_willShowOrHideKeyboard(notification:)), name: .UIKeyboardWillHide, object: nil)
-        center.addObserver(self, selector: #selector(myp_didShowOrHideKeyboard(notification:)), name: .UIKeyboardDidShow, object: nil)
-        center.addObserver(self, selector: #selector(myp_didShowOrHideKeyboard(notification:)), name: .UIKeyboardDidHide, object: nil)
+        center.addObserver(self, selector: #selector(myp_willShowOrHideKeyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: #selector(myp_willShowOrHideKeyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        center.addObserver(self, selector: #selector(myp_didShowOrHideKeyboard(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        center.addObserver(self, selector: #selector(myp_didShowOrHideKeyboard(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         // textView notifications
         center.addObserver(self, selector: #selector(myp_willChangeTextViewText(notification:)), name: Notification.Name.MYPTextInputTask.MYPTextViewTextWillChangeNotification, object: nil)
-        center.addObserver(self, selector: #selector(myp_didChangeTextViewText(notification:)), name: .UITextViewTextDidChange, object: nil)
+        center.addObserver(self, selector: #selector(myp_didChangeTextViewText(notification:)), name: UITextView.textDidChangeNotification, object: nil)
         center.addObserver(self, selector: #selector(myp_didChangeTextViewContentSize(notification:)), name: Notification.Name.MYPTextInputTask.MYPTextViewContentSizeDidChangeNotification, object: nil)
         center.addObserver(self, selector: #selector(myp_didChangeTextViewSelectedRange(notification:)), name: Notification.Name.MYPTextInputTask.MYPTextViewSelectedRangeDidChangeNotification, object: nil)
         center.addObserver(self, selector: #selector(myp_didChangeTextViewPasteboard(notification:)), name: Notification.Name.MYPTextInputTask.MYPTextViewDidPasteItemNotification, object: nil)
         center.addObserver(self, selector: #selector(myp_didShakeTextView(notification:)), name: Notification.Name.MYPTextInputTask.MYPTextViewDidShakeNotification, object: nil)
         
         // application notifications
-        center.addObserver(self, selector: #selector(cacheTextView), name: .UIApplicationWillTerminate, object: nil)
-        center.addObserver(self, selector: #selector(cacheTextView), name: .UIApplicationDidEnterBackground, object: nil)
-        center.addObserver(self, selector: #selector(cacheTextView), name: .UIApplicationDidReceiveMemoryWarning, object: nil)
+        center.addObserver(self, selector: #selector(cacheTextView), name: UIApplication.willTerminateNotification, object: nil)
+        center.addObserver(self, selector: #selector(cacheTextView), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        center.addObserver(self, selector: #selector(cacheTextView), name: UIApplication.didReceiveMemoryWarningNotification, object: nil)
     }
     
     private func myp_unregisterNotifications() {
         let center = NotificationCenter.default
         
-        center.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        center.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
-        center.removeObserver(self, name: .UIKeyboardDidShow, object: nil)
-        center.removeObserver(self, name: .UIKeyboardDidHide, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
         
-        center.removeObserver(self, name: .UITextViewTextDidBeginEditing, object: nil)
-        center.removeObserver(self, name: .UITextViewTextDidEndEditing, object: nil)
-        center.removeObserver(self, name: .UITextViewTextDidChange, object: nil)
+        center.removeObserver(self, name: UITextView.textDidBeginEditingNotification, object: nil)
+        center.removeObserver(self, name: UITextView.textDidEndEditingNotification, object: nil)
+        center.removeObserver(self, name: UITextView.textDidChangeNotification, object: nil)
         center.removeObserver(self, name: Notification.Name.MYPTextInputTask.MYPTextViewTextWillChangeNotification, object: nil)
         center.removeObserver(self, name: Notification.Name.MYPTextInputTask.MYPTextViewContentSizeDidChangeNotification, object: nil)
         center.removeObserver(self, name: Notification.Name.MYPTextInputTask.MYPTextViewSelectedRangeDidChangeNotification, object: nil)
         center.removeObserver(self, name: Notification.Name.MYPTextInputTask.MYPTextViewDidPasteItemNotification, object: nil)
         center.removeObserver(self, name: Notification.Name.MYPTextInputTask.MYPTextViewDidShakeNotification, object: nil)
         
-        center.removeObserver(self, name: .UIApplicationWillTerminate, object: nil)
-        center.removeObserver(self, name: .UIApplicationDidEnterBackground, object: nil)
-        center.removeObserver(self, name: .UIApplicationDidReceiveMemoryWarning, object: nil)
+        center.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
+        center.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
+        center.removeObserver(self, name: UIApplication.didReceiveMemoryWarningNotification, object: nil)
     }
     
     //MARK: Keyboard Observer
@@ -838,11 +838,11 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         
         let scroll = self.scrollViewProxy!
         
-        let curve = Int((notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as AnyObject).doubleValue)
-        let duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
+        let curve = Int((notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as AnyObject).doubleValue)
+        let duration = (notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
         
-        let beginFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue
-        let endFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+        let beginFrame = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue
+        let endFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         
         let animations: (() -> Void) = {() -> Void in
             // Scrolls to bottom only if the keyboard is about to show.
@@ -871,7 +871,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
                 scroll.contentOffset = CGPoint(x: contentOffset.x, y: newOffset)
             }
             // Only for this animation, we set bo to bounce since we want to give the impression that the text input is glued to the keyboard.
-            self.view.myp_animateLayoutIfNeeded(withDuration: duration!, bounce: false, options: [UIViewAnimationOptions(rawValue: UInt(curve<<16)), .layoutSubviews, .beginFromCurrentState], animations: animations, completion: nil)
+            self.view.myp_animateLayoutIfNeeded(withDuration: duration!, bounce: false, options: [UIView.AnimationOptions(rawValue: UInt(curve<<16)), .layoutSubviews, .beginFromCurrentState], animations: animations, completion: nil)
         }
         else {
             animations()
