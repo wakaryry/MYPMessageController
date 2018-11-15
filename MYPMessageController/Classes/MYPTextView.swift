@@ -88,7 +88,7 @@ public class MYPTextView: UITextView, MYPTextInput {
                 
                 var factor = pointSizeDifference / self.initialFontSize!
                 
-                if fabs(factor) > 0.75 {
+                if abs(factor) > 0.75 {
                     factor = 0.75
                 }
                 
@@ -118,7 +118,7 @@ public class MYPTextView: UITextView, MYPTextInput {
             var contentHeight = aContentSize.height
             contentHeight = contentHeight - self.textContainerInset.top - self.textContainerInset.bottom
             
-            var lines = Int(fabs(contentHeight / self.font!.lineHeight))
+            var lines = Int(abs(contentHeight / self.font!.lineHeight))
             
             // This helps preventing the content's height to be larger that the bounds' height
             // Avoiding this way to have unnecessary scrolling in the text view when there is only 1 line of content

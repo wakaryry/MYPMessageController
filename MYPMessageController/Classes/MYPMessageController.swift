@@ -858,7 +858,7 @@ open class MYPMessageController: UIViewController, UITextViewDelegate, UIGesture
         // Begin and end frames are the same when the keyboard is shown during navigation controller's push animation.
         // The animation happens in window coordinates (slides from right to left) but doesn't in the view controller's view coordinates.
         // Second condition: check if the height of the keyboard changed.
-        if beginFrame != endFrame || fabs(previousKeyboardHeight - self.keyboardHeightC.constant) > 0.0 {
+        if beginFrame != endFrame || abs(previousKeyboardHeight - self.keyboardHeightC.constant) > 0.0 {
             // Content Offset correction if not inverted and not auto-completing.
             if !self.isInverted && !self.isAutoCompleting {
                 let scrollHeight = self.scrollViewHeightC.constant
