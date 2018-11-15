@@ -36,9 +36,11 @@ It could be used in many cases, especailly in conversation style or comment styl
 - markdown input supported.
 - markdown cell.
 - default emotion keyboard.
+- emotion text support.
 - more cell style and surfaces.
 - more examples or use cases.
-- documentation.
+- separate TextView and Controller, then could use a non-controller input view.
+- documentation--coming soon.
 
 ## Design structure
 Coming soon
